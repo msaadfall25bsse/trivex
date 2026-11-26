@@ -362,5 +362,29 @@ html.lenis body {
   animation-play-state: paused;
 }
 
+/* Mobile & Touch GPU Scroll Performance Optimization */
+@media (max-width: 767px), (pointer: coarse) {
+  .glass-surface,
+  .glass-surface-card,
+  .glass-card-pro,
+  .glass-panel-pro,
+  .glass-subcard {
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+  }
+
+  .backdrop-blur-2xl,
+  .backdrop-blur-xl,
+  .backdrop-blur-lg {
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+  }
+
+  .glass-surface-card:hover,
+  .glass-card-pro:hover {
+    transform: none !important;
+  }
+}
+
 
 

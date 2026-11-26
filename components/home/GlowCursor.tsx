@@ -974,6 +974,7 @@ const GlowCursor = ({
     };
 
     const onPointerMove = (event: PointerEvent) => {
+      if (event.pointerType === 'touch') return;
       const rect = container.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;

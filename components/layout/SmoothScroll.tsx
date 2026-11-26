@@ -12,7 +12,6 @@ const CARD_SELECTOR =
   ".glass-card-pro, .glass-panel-pro, .glass-surface-card, .glass-card-dark";
 
 function getCardInnerTexts(card: HTMLElement): HTMLElement[] {
-  // Skip tiny stat/badge cards so numeric counters don't stagger inside narrow padding
   if (card.clientWidth < 190 || card.clientHeight < 120) {
     return [];
   }
@@ -23,8 +22,9 @@ function getCardInnerTexts(card: HTMLElement): HTMLElement[] {
 
 /**
  * Scroll-site-generator hybrid motion engine (Lenis + GSAP ScrollTrigger).
- * - Scrolling DOWN: cards fade up from below (y: +48 -> 0), text slides in from right (x: +54 -> 0).
- * - Scrolling UP:   cards fade down from above (y: -48 -> 0), text slides in from left  (x: -54 -> 0).
+ * - Desktop: Lenis wheel smoothing + bidirectional card/text scroll choreography.
+ * - Mobile / Touch: Native browser momentum scroll (zero JS scroll hijacking) +
+ *   lightweight GPU-composited card/heading transitions for lag-free 60/120fps scrolling.
  */
 export default function SmoothScroll({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -34,17 +34,29 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    const lenis = new Lenis({
-      lerp: 0.085,
-      smoothWheel: true,
-    });
+    const isTouchOrMobile =
+      window.innerWidth < 768 ||
+      window.matchMedia("(pointer: coarse)").matches;
 
-    lenis.on("scroll", ScrollTrigger.update);
-    const raf = (time: number) => lenis.raf(time * 1000);
-    gsap.ticker.add(raf);
-    gsap.ticker.lagSmoothing(0);
+    let lenis: Lenis | null = null;
+    let raf: ((time: number) => void) | null = null;
 
-    // Smooth anchor navigation with offset for sticky header
+    if (!isTouchOrMobile) {
+      lenis = new Lenis({
+        lerp: 0.085,
+        smoothWheel: true,
+      });
+
+      lenis.on("scroll", ScrollTrigger.update);
+      raf = (time: number) => lenis?.raf(time * 1000);
+      gsap.ticker.add(raf);
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      // On touch devices, ignore resize refreshes triggered by mobile URL bar collapse
+      ScrollTrigger.config({ ignoreMobileResize: true });
+    }
+
+    // Smooth anchor navigation
     const handleAnchorClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement)?.closest("a");
       if (!target) return;
@@ -53,7 +65,11 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
         const dest = document.querySelector(href);
         if (dest) {
           e.preventDefault();
-          lenis.scrollTo(dest as HTMLElement, { offset: -96 });
+          if (lenis) {
+            lenis.scrollTo(dest as HTMLElement, { offset: -96 });
+          } else {
+            dest.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
         }
       }
     };
@@ -78,10 +94,12 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
           (el) => !rawCards.some((other) => other !== el && other.contains(el))
         );
 
+        const textSelector = isTouchOrMobile
+          ? "section h1, section h2"
+          : "h1, h2, h3, h4, section p, section .inline-flex.rounded-full";
+
         const rawTextTargets = Array.from(
-          main.querySelectorAll<HTMLElement>(
-            "h1, h2, h3, h4, section p, section .inline-flex.rounded-full"
-          )
+          main.querySelectorAll<HTMLElement>(textSelector)
         ).filter(
           (el) =>
             !el.closest(".animate-marquee") &&
@@ -90,7 +108,6 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
             !cards.some((c) => c === el || c.contains(el))
         );
 
-        // Deduplicate nested text targets (e.g. an inline-flex pill with inner text)
         const textTargets = rawTextTargets.filter(
           (el) =>
             !rawTextTargets.some((other) => other !== el && other.contains(el))
@@ -98,6 +115,8 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
 
         const vw = window.innerWidth;
         const vh = window.innerHeight;
+        const cardDuration = isTouchOrMobile ? 0.48 : 0.78;
+        const textDuration = isTouchOrMobile ? 0.45 : 0.74;
 
         const playCardEnter = (
           card: HTMLElement,
@@ -105,31 +124,32 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
           direction: "down" | "up",
           delay = 0
         ) => {
-          const fromY = direction === "down" ? 48 : -48;
+          const fromY = direction === "down" ? (isTouchOrMobile ? 28 : 48) : (isTouchOrMobile ? -28 : -48);
           const fromX = direction === "down" ? 24 : -24;
 
-          gsap.killTweensOf([card, ...innerTexts]);
-          card.style.transition = "none";
+          gsap.killTweensOf(isTouchOrMobile ? card : [card, ...innerTexts]);
+          if (!isTouchOrMobile) card.style.transition = "none";
 
           gsap.fromTo(
             card,
-            { opacity: 0, y: fromY, scale: 0.98 },
+            { opacity: 0, y: fromY, ...(isTouchOrMobile ? {} : { scale: 0.98 }) },
             {
               opacity: 1,
               y: 0,
-              scale: 1,
-              duration: 0.78,
-              delay,
-              ease: "power3.out",
+              ...(isTouchOrMobile ? {} : { scale: 1 }),
+              duration: cardDuration,
+              delay: isTouchOrMobile ? 0 : delay,
+              ease: "power2.out",
+              force3D: true,
               overwrite: "auto",
               onComplete: () => {
-                card.style.transition = "";
+                if (!isTouchOrMobile) card.style.transition = "";
                 gsap.set(card, { clearProps: "transform" });
               },
             }
           );
 
-          if (innerTexts.length > 0) {
+          if (!isTouchOrMobile && innerTexts.length > 0) {
             gsap.fromTo(
               innerTexts,
               { opacity: 0, x: fromX },
@@ -140,6 +160,7 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
                 delay: delay + 0.08,
                 stagger: 0.04,
                 ease: "power3.out",
+                force3D: true,
                 overwrite: "auto",
                 clearProps: "transform",
               }
@@ -152,16 +173,18 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
           innerTexts: HTMLElement[],
           edge: "top" | "bottom"
         ) => {
-          gsap.killTweensOf([card, ...innerTexts]);
-          card.style.transition = "none";
+          gsap.killTweensOf(isTouchOrMobile ? card : [card, ...innerTexts]);
+          if (!isTouchOrMobile) card.style.transition = "none";
           gsap.set(card, {
             opacity: 0,
-            y: edge === "top" ? -36 : 36,
+            y: edge === "top" ? -28 : 28,
+            force3D: true,
           });
-          if (innerTexts.length > 0) {
+          if (!isTouchOrMobile && innerTexts.length > 0) {
             gsap.set(innerTexts, {
               opacity: 0,
               x: edge === "top" ? -20 : 20,
+              force3D: true,
             });
           }
         };
@@ -171,7 +194,7 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
           direction: "down" | "up",
           delay = 0
         ) => {
-          const fromX = direction === "down" ? 54 : -54;
+          const fromX = direction === "down" ? (isTouchOrMobile ? 28 : 54) : (isTouchOrMobile ? -28 : -54);
           gsap.killTweensOf(el);
           gsap.fromTo(
             el,
@@ -179,9 +202,10 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
             {
               opacity: 1,
               x: 0,
-              duration: 0.74,
-              delay,
-              ease: "power3.out",
+              duration: textDuration,
+              delay: isTouchOrMobile ? 0 : delay,
+              ease: "power2.out",
+              force3D: true,
               overwrite: "auto",
               clearProps: "transform",
             }
@@ -195,18 +219,21 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
           gsap.killTweensOf(el);
           gsap.set(el, {
             opacity: 0,
-            x: edge === "top" ? -40 : 40,
+            x: edge === "top" ? -24 : 24,
+            force3D: true,
           });
         };
 
         // 1. Register Cards
         let initialCardCount = 0;
         cards.forEach((card) => {
-          const innerTexts = getCardInnerTexts(card);
-          const siblings = Array.from(
-            card.parentElement?.children ?? []
-          ).filter((c) => cards.includes(c as HTMLElement));
-          const colIndex = Math.max(0, siblings.indexOf(card));
+          const innerTexts = isTouchOrMobile ? [] : getCardInnerTexts(card);
+          const siblings = isTouchOrMobile
+            ? []
+            : Array.from(card.parentElement?.children ?? []).filter((c) =>
+                cards.includes(c as HTMLElement)
+              );
+          const colIndex = isTouchOrMobile ? 0 : Math.max(0, siblings.indexOf(card));
           const staggerDelay = vw >= 640 ? Math.min(colIndex * 0.09, 0.3) : 0;
 
           const rect = card.getBoundingClientRect();
@@ -228,6 +255,8 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
             trigger: card,
             start: "top 92%",
             end: "bottom 4%",
+            fastScrollEnd: true,
+            preventOverlaps: true,
             onEnter: () => playCardEnter(card, innerTexts, "down", staggerDelay),
             onLeave: () => resetCardOffscreen(card, innerTexts, "top"),
             onEnterBack: () => playCardEnter(card, innerTexts, "up", staggerDelay),
@@ -238,10 +267,12 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
         // 2. Register Standalone Text Blocks
         let initialTextCount = 0;
         textTargets.forEach((el) => {
-          const siblings = Array.from(
-            el.parentElement?.children ?? []
-          ).filter((c) => textTargets.includes(c as HTMLElement));
-          const rowIndex = Math.max(0, siblings.indexOf(el));
+          const siblings = isTouchOrMobile
+            ? []
+            : Array.from(el.parentElement?.children ?? []).filter((c) =>
+                textTargets.includes(c as HTMLElement)
+              );
+          const rowIndex = isTouchOrMobile ? 0 : Math.max(0, siblings.indexOf(el));
           const textDelay = Math.min(rowIndex * 0.06, 0.24);
 
           const rect = el.getBoundingClientRect();
@@ -258,6 +289,8 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
             trigger: el,
             start: "top 92%",
             end: "bottom 4%",
+            fastScrollEnd: true,
+            preventOverlaps: true,
             onEnter: () => playTextEnter(el, "down", textDelay),
             onLeave: () => resetTextOffscreen(el, "top"),
             onEnterBack: () => playTextEnter(el, "up", textDelay),
@@ -273,8 +306,8 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       cancelAnimationFrame(frameId);
       document.removeEventListener("click", handleAnchorClick);
       ctx?.revert();
-      gsap.ticker.remove(raf);
-      lenis.destroy();
+      if (raf) gsap.ticker.remove(raf);
+      lenis?.destroy();
     };
   }, [pathname]);
 

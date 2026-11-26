@@ -238,15 +238,20 @@ const FadeContent = ({
         return;
       }
 
-      const seconds = Math.max(toSeconds(duration) || 0, 0.01);
-      const blurAmount = blur === true ? 10 : Math.max(Number(blur) || 0, 0);
+      const isTouchOrMobile =
+        window.innerWidth < 768 ||
+        (window.matchMedia?.('(pointer: coarse)').matches ?? false);
+      const rawSeconds = Math.max(toSeconds(duration) || 0, 0.01);
+      const seconds = isTouchOrMobile ? Math.min(rawSeconds, 0.5) : rawSeconds;
+      const blurAmount = isTouchOrMobile ? 0 : (blur === true ? 10 : Math.max(Number(blur) || 0, 0));
       const startOpacity = clamp01(Number(initialOpacity) || 0);
       const staggerVars: gsap.TweenVars =
         stagger > 0 ? { stagger: { each: toSeconds(stagger), from: staggerFrom } } : {};
-      const noisy = NOISE_EFFECTS.includes(effect);
-      const looks = noisy ? [] : getLooks(effect, blurAmount, startOpacity);
+      const effectiveEffect: FadeContentEffect = isTouchOrMobile ? 'fade' : effect;
+      const noisy = NOISE_EFFECTS.includes(effectiveEffect);
+      const looks = noisy ? [] : getLooks(effectiveEffect, blurAmount, startOpacity);
 
-      if (noisy) masks = targets.map(target => createNoiseMask(target, effect, startOpacity, blurAmount));
+      if (noisy) masks = targets.map(target => createNoiseMask(target, effectiveEffect, startOpacity, blurAmount));
       const proxies = masks.map(mask => mask.state);
       const draw = () => masks.forEach(mask => mask.render());
 

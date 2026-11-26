@@ -869,7 +869,8 @@ const ElectricLogo = ({
     const applyResize = () => {
       width = Math.max(1, container.clientWidth);
       height = Math.max(1, container.clientHeight);
-      renderer.dpr = Math.min(window.devicePixelRatio || 1, 2, Math.sqrt(PIXEL_BUDGET / (width * height)));
+      const maxDpr = width < 768 ? 1 : 2;
+      renderer.dpr = Math.min(window.devicePixelRatio || 1, maxDpr, Math.sqrt(PIXEL_BUDGET / (width * height)));
       renderer.setSize(width, height);
       uniforms.uResolution.value = [width, height];
     };

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useMemo, useRef, type CSSProperties, type RefObject } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type RefObject } from 'react';
 
 export type GradualBlurPosition = 'top' | 'bottom' | 'left' | 'right';
 export type GradualBlurCurve = 'linear' | 'bezier' | 'ease-in' | 'ease-out' | 'ease-in-out';
@@ -88,13 +88,28 @@ const GradualBlur = ({
   style
 }: GradualBlurProps) => {
   const rootRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => {
+      setIsMobile(
+        window.innerWidth < 768 ||
+          (window.matchMedia?.('(pointer: coarse)').matches ?? false)
+      );
+    };
+    check();
+    window.addEventListener('resize', check, { passive: true });
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
   const edge = DIRECTIONS[position] ? position : 'bottom';
   const vertical = edge === 'top' || edge === 'bottom';
 
   const stack = useMemo(() => {
-    const count = Math.min(Math.max(Math.round(layers) || 1, 1), 16);
+    const requestedLayers = Math.min(Math.max(Math.round(layers) || 1, 1), 16);
+    const count = isMobile ? Math.min(requestedLayers, 2) : requestedLayers;
     const shape = CURVES[curve] || CURVES.linear;
-    const maxBlur = Math.max(strength, 0) * 12;
+    const maxBlur = Math.max(isMobile ? Math.min(strength, 0.75) : strength, 0) * 12;
     const level = (u: number) => {
       const t = shape(clamp01(u));
       return maxBlur * (exponential ? (Math.pow(2, 4 * t) - 1) / 15 : t);
@@ -147,7 +162,7 @@ const GradualBlur = ({
           }
         : null;
     return { steps, wash };
-  }, [layers, curve, strength, exponential, saturation, duration, easing, edge, opacity, tint]);
+  }, [layers, curve, strength, exponential, saturation, duration, easing, edge, opacity, tint, isMobile]);
 
   useIsomorphicLayoutEffect(() => {
     const root = rootRef.current;
