@@ -1,0 +1,80 @@
+const differentiators = [
+  {
+    tag: "Direct Access",
+    icon: "person_check",
+    title: "No Middle-Management Disconnect",
+    description:
+      "Clients collaborate directly with specialized discipline principals. Requirements are never diluted through layers of non-technical account managers.",
+    impact: "Immediate architectural decisions and 3x faster delivery cycles.",
+  },
+  {
+    tag: "Cohesive Unit",
+    icon: "sync_alt",
+    title: "Synchronized Execution",
+    description:
+      "Engineers sit alongside product designers and performance marketers. Features are built with data telemetry and UX ergonomics fully wired from inception.",
+    impact: "Zero post-launch refactoring due to uncommunicated marketing requirements.",
+  },
+  {
+    tag: "Global Footprint",
+    icon: "public",
+    title: "Global Standards, Agile Agility",
+    description:
+      "We apply ISO 27001-grade security frameworks and Tier-1 deployment practices with the rapid turnaround of a dedicated boutique sprint squad.",
+    impact: "Institutional enterprise security without bureaucratic stagnation.",
+  },
+];
+
+export default function AboutDifferentiators() {
+  return (
+    <section className="w-full bg-transparent py-16 md:py-24 relative z-10">
+      <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold mb-2 block">
+            Architectural Differentiation
+          </span>
+          <h2 className="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-3">
+            The structural advantage of TRIVEX.
+          </h2>
+          <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-secondary font-medium">
+            How our lean, lead-driven model compares against bloated legacy agencies.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+          {differentiators.map((item) => (
+            <div
+              key={item.title}
+              className="glass-card-pro rounded-3xl p-7 sm:p-8 flex flex-col justify-between glass-rim group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="font-label-sm text-label-sm uppercase font-bold text-primary glass-subcard px-3 py-1 rounded-full">
+                    {item.tag}
+                  </span>
+                  <div className="w-10 h-10 rounded-xl bg-surface-container text-primary flex items-center justify-center neumorphic-inset group-hover:scale-105 transition-transform">
+                    <span className="material-symbols-outlined text-xl">{item.icon}</span>
+                  </div>
+                </div>
+                <h3 className="font-headline-sm text-headline-sm text-on-surface mb-3 font-bold">
+                  {item.title}
+                </h3>
+                <p className="font-body-sm text-body-sm text-secondary leading-relaxed mb-6 font-medium">
+                  {item.description}
+                </p>
+              </div>
+              <div className="glass-subcard p-4 rounded-2xl">
+                <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold block mb-1">
+                  Impact
+                </span>
+                <span className="font-body-sm text-body-sm text-on-surface font-semibold leading-snug block">
+                  {item.impact}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
