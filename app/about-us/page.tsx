@@ -6,6 +6,7 @@ import AboutDifferentiators from "@/components/about/AboutDifferentiators";
 import AboutPhilosophy from "@/components/about/AboutPhilosophy";
 import AboutCta from "@/components/about/AboutCta";
 import FixedBackground from "@/components/layout/FixedBackground";
+import MistPageSections from "@/components/layout/MistPageSections";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function AboutPage() {
     <div className="relative w-full min-h-screen overflow-x-clip">
       <FixedBackground />
 
-      <div className="relative z-10 flex flex-col w-full">
+      <MistPageSections>
         <AboutHero />
         <AboutOrigin />
         <AboutMissionVision />
@@ -27,7 +28,7 @@ export default function AboutPage() {
         <AboutDifferentiators />
         <AboutPhilosophy />
         <AboutCta />
-      </div>
+      </MistPageSections>
     </div>
   );
 }

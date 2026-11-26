@@ -273,7 +273,6 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       cancelAnimationFrame(frameId);
       document.removeEventListener("click", handleAnchorClick);
       ctx?.revert();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
       gsap.ticker.remove(raf);
       lenis.destroy();
     };

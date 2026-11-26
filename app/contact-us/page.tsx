@@ -4,6 +4,7 @@ import AgencyInfo from '@/components/contact/AgencyInfo';
 import OnboardingProcess from '@/components/contact/OnboardingProcess';
 import EnterpriseNda from '@/components/contact/EnterpriseNda';
 import FixedBackground from '@/components/layout/FixedBackground';
+import MistPageSections from '@/components/layout/MistPageSections';
 
 export const metadata = {
   title: 'Contact Us | TRIVEX',
@@ -14,7 +15,7 @@ export default function ContactUsPage() {
   return (
     <div className="relative w-full min-h-screen overflow-x-clip">
       <FixedBackground />
-      <div className="relative z-10 flex flex-col w-full">
+      <MistPageSections>
         <ContactHero />
 
         <section className="relative w-full bg-transparent max-w-7xl mx-auto px-margin-mobile md:px-margin pb-16 md:pb-24 z-10">
@@ -28,7 +29,7 @@ export default function ContactUsPage() {
 
         <OnboardingProcess />
         <EnterpriseNda />
-      </div>
+      </MistPageSections>
     </div>
   );
 }

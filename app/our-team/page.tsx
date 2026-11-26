@@ -4,6 +4,7 @@ import FounderAdvantage from '@/components/team/FounderAdvantage';
 import CollaborationPhilosophy from '@/components/team/CollaborationPhilosophy';
 import TeamCta from '@/components/team/TeamCta';
 import FixedBackground from '@/components/layout/FixedBackground';
+import MistPageSections from '@/components/layout/MistPageSections';
 
 export const metadata = {
   title: 'Our Executive Leadership | TRIVEX',
@@ -14,13 +15,13 @@ export default function OurTeamPage() {
   return (
     <div className="relative w-full min-h-screen overflow-x-clip">
       <FixedBackground />
-      <div className="relative z-10 flex flex-col w-full">
+      <MistPageSections>
         <TeamHero />
         <ThreeFoundersCards />
         <FounderAdvantage />
         <CollaborationPhilosophy />
         <TeamCta />
-      </div>
+      </MistPageSections>
     </div>
   );
 }

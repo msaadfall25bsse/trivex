@@ -6,6 +6,7 @@ import SynergyMatrix from "@/components/services/SynergyMatrix";
 import EngagementModels from "@/components/services/EngagementModels";
 import ServicesCta from "@/components/services/ServicesCta";
 import FixedBackground from "@/components/layout/FixedBackground";
+import MistPageSections from "@/components/layout/MistPageSections";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function ServicesPage() {
   return (
     <div className="relative w-full min-h-screen overflow-x-clip">
       <FixedBackground />
-      <div className="relative z-10 flex flex-col w-full">
+      <MistPageSections>
         <ServicesHero />
         <Pillar1Software />
         <Pillar2Marketing />
@@ -26,7 +27,7 @@ export default function ServicesPage() {
         <SynergyMatrix />
         <EngagementModels />
         <ServicesCta />
-      </div>
+      </MistPageSections>
     </div>
   );
 }

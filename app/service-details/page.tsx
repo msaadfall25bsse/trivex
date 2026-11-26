@@ -5,6 +5,7 @@ import DesignDetail from "@/components/service-details/DesignDetail";
 import FaqSection from "@/components/service-details/FaqSection";
 import DetailCta from "@/components/service-details/DetailCta";
 import FixedBackground from "@/components/layout/FixedBackground";
+import MistPageSections from "@/components/layout/MistPageSections";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,14 +18,14 @@ export default function ServiceDetailsPage() {
   return (
     <div className="relative w-full min-h-screen overflow-x-clip">
       <FixedBackground />
-      <div className="relative z-10 flex flex-col w-full">
+      <MistPageSections>
         <DetailMasthead />
         <SoftwareDetail />
         <MarketingDetail />
         <DesignDetail />
         <FaqSection />
         <DetailCta />
-      </div>
+      </MistPageSections>
     </div>
   );
 }

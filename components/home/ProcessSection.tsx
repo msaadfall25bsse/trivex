@@ -1,118 +1,118 @@
 export default function ProcessSection() {
   return (
-    <section className="w-full py-6 md:py-12 relative z-10">
-      {/* Fully Transparent Blurred Glass Container (90% width on tablet/desktop, 5% margins, deep backdrop blur) */}
-      <div className="w-full md:w-[90%] mx-auto bg-white/[0.05] backdrop-blur-2xl py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl border-y md:border border-white/60 shadow-[0_8px_32px_rgba(13,28,46,0.03)] glass-rim">
+    <section className="w-full py-8 md:py-16 relative z-10">
+      {/* Dark Translucent Glass Container on Black Glow Background */}
+      <div className="w-full md:w-[90%] mx-auto bg-white/[0.05] backdrop-blur-2xl py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl border-y md:border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold block mb-2">
+            <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-2">
               PRECISION ROADMAP
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            <h2 className="font-headline-lg text-headline-lg text-white tracking-tight">
               The 4-Step Triad Delivery Framework
             </h2>
           </div>
 
-          {/* 4-Step Bento Roadmap with Glassmorphism & Structured Flow */}
+          {/* 4-Step Bento Roadmap with Dark Glassmorphism & Structured Flow */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {/* Step 1 */}
-          <div className="glass-surface-card p-7 rounded-3xl glass-rim flex flex-col justify-between group">
-            <div>
-              <div className="flex items-center justify-between mb-5">
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container font-extrabold text-3xl font-headline-md tracking-tighter">
-                  01
-                </span>
-                <div className="w-12 h-12 rounded-2xl bg-surface-container text-primary flex items-center justify-center shadow-sm neumorphic-inset group-hover:scale-105 transition-transform">
-                  <span className="material-symbols-outlined text-2xl">search_insights</span>
+            {/* Step 1 */}
+            <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/50 transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0058bc] to-cyan-300 font-extrabold text-3xl font-headline-md tracking-tighter">
+                    01
+                  </span>
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 text-cyan-300 flex items-center justify-center shadow-sm border border-white/10 group-hover:scale-105 transition-transform">
+                    <span className="material-symbols-outlined text-2xl">search_insights</span>
+                  </div>
                 </div>
+                <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold text-lg">
+                  Discovery &amp; Strategy
+                </h3>
+                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
+                  Technical feasibility assessment, KPI benchmarks, target audience taxonomy, and competitive gap auditing.
+                </p>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2 font-bold text-lg">
-                Discovery &amp; Strategy
-              </h3>
-              <p className="font-body-sm text-body-sm text-secondary leading-relaxed font-medium">
-                Technical feasibility assessment, KPI benchmarks, target audience taxonomy, and competitive gap auditing.
-              </p>
+              <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl bg-white/10 border border-white/10 flex items-center gap-2 text-white/80">
+                <span className="material-symbols-outlined text-[#0058bc] text-base">timer</span>
+                <span className="font-label-sm text-label-sm uppercase font-semibold">Scope &amp; Architecture Audit</span>
+              </div>
             </div>
-            <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl glass-subcard flex items-center gap-2 text-on-surface-variant">
-              <span className="material-symbols-outlined text-primary text-base">timer</span>
-              <span className="font-label-sm text-label-sm uppercase font-semibold">Scope &amp; Architecture Audit</span>
-            </div>
-          </div>
 
-          {/* Step 2 */}
-          <div className="glass-surface-card p-7 rounded-3xl glass-rim flex flex-col justify-between group">
-            <div>
-              <div className="flex items-center justify-between mb-5">
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container font-extrabold text-3xl font-headline-md tracking-tighter">
-                  02
-                </span>
-                <div className="w-12 h-12 rounded-2xl bg-surface-container text-primary flex items-center justify-center shadow-sm neumorphic-inset group-hover:scale-105 transition-transform">
-                  <span className="material-symbols-outlined text-2xl">architecture</span>
+            {/* Step 2 */}
+            <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/50 transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0058bc] to-cyan-300 font-extrabold text-3xl font-headline-md tracking-tighter">
+                    02
+                  </span>
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 text-[#0058bc] flex items-center justify-center shadow-sm border border-white/10 group-hover:scale-105 transition-transform">
+                    <span className="material-symbols-outlined text-2xl">architecture</span>
+                  </div>
                 </div>
+                <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold text-lg">
+                  Architecture &amp; Design
+                </h3>
+                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
+                  Wireframe blueprints, microservice infrastructure modeling, brand design tokens, and technical documentation.
+                </p>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2 font-bold text-lg">
-                Architecture &amp; Design
-              </h3>
-              <p className="font-body-sm text-body-sm text-secondary leading-relaxed font-medium">
-                Wireframe blueprints, microservice infrastructure modeling, brand design tokens, and technical documentation.
-              </p>
+              <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl bg-white/10 border border-white/10 flex items-center gap-2 text-white/80">
+                <span className="material-symbols-outlined text-[#0058bc] text-base">design_services</span>
+                <span className="font-label-sm text-label-sm uppercase font-semibold">Interactive Prototype Gate</span>
+              </div>
             </div>
-            <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl glass-subcard flex items-center gap-2 text-on-surface-variant">
-              <span className="material-symbols-outlined text-primary text-base">design_services</span>
-              <span className="font-label-sm text-label-sm uppercase font-semibold">Interactive Prototype Gate</span>
-            </div>
-          </div>
 
-          {/* Step 3 */}
-          <div className="glass-surface-card p-7 rounded-3xl glass-rim flex flex-col justify-between group">
-            <div>
-              <div className="flex items-center justify-between mb-5">
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container font-extrabold text-3xl font-headline-md tracking-tighter">
-                  03
-                </span>
-                <div className="w-12 h-12 rounded-2xl bg-surface-container text-primary flex items-center justify-center shadow-sm neumorphic-inset group-hover:scale-105 transition-transform">
-                  <span className="material-symbols-outlined text-2xl">code_blocks</span>
+            {/* Step 3 */}
+            <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/50 transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0058bc] to-cyan-300 font-extrabold text-3xl font-headline-md tracking-tighter">
+                    03
+                  </span>
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 text-cyan-300 flex items-center justify-center shadow-sm border border-white/10 group-hover:scale-105 transition-transform">
+                    <span className="material-symbols-outlined text-2xl">code_blocks</span>
+                  </div>
                 </div>
+                <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold text-lg">
+                  Agile Execution
+                </h3>
+                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
+                  Rapid two-week sprint cycles, automated CI/CD unit testing, conversion ad asset rendering, and QA telemetry.
+                </p>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2 font-bold text-lg">
-                Agile Execution
-              </h3>
-              <p className="font-body-sm text-body-sm text-secondary leading-relaxed font-medium">
-                Rapid two-week sprint cycles, automated CI/CD unit testing, conversion ad asset rendering, and QA telemetry.
-              </p>
+              <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl bg-white/10 border border-white/10 flex items-center gap-2 text-white/80">
+                <span className="material-symbols-outlined text-[#0058bc] text-base">bolt</span>
+                <span className="font-label-sm text-label-sm uppercase font-semibold">Continuous CI/CD Delivery</span>
+              </div>
             </div>
-            <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl glass-subcard flex items-center gap-2 text-on-surface-variant">
-              <span className="material-symbols-outlined text-primary text-base">bolt</span>
-              <span className="font-label-sm text-label-sm uppercase font-semibold">Continuous CI/CD Delivery</span>
-            </div>
-          </div>
 
-          {/* Step 4 */}
-          <div className="glass-surface-card p-7 rounded-3xl glass-rim flex flex-col justify-between group">
-            <div>
-              <div className="flex items-center justify-between mb-5">
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-container font-extrabold text-3xl font-headline-md tracking-tighter">
-                  04
-                </span>
-                <div className="w-12 h-12 rounded-2xl bg-surface-container text-primary flex items-center justify-center shadow-sm neumorphic-inset group-hover:scale-105 transition-transform">
-                  <span className="material-symbols-outlined text-2xl">rocket_launch</span>
+            {/* Step 4 */}
+            <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/50 transition-all duration-300">
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0058bc] to-cyan-300 font-extrabold text-3xl font-headline-md tracking-tighter">
+                    04
+                  </span>
+                  <div className="w-12 h-12 rounded-2xl bg-white/10 text-[#0058bc] flex items-center justify-center shadow-sm border border-white/10 group-hover:scale-105 transition-transform">
+                    <span className="material-symbols-outlined text-2xl">rocket_launch</span>
+                  </div>
                 </div>
+                <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold text-lg">
+                  Launch &amp; Optimization
+                </h3>
+                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
+                  Zero-downtime production cutover, ongoing algorithmic CRO, continuous code hardening, and global scaling.
+                </p>
               </div>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2 font-bold text-lg">
-                Launch &amp; Optimization
-              </h3>
-              <p className="font-body-sm text-body-sm text-secondary leading-relaxed font-medium">
-                Zero-downtime production cutover, ongoing algorithmic CRO, continuous code hardening, and global scaling.
-              </p>
-            </div>
-            <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl glass-subcard flex items-center gap-2 text-on-surface-variant">
-              <span className="material-symbols-outlined text-primary text-base">verified</span>
-              <span className="font-label-sm text-label-sm uppercase font-semibold">Zero-Downtime Guarantee</span>
+              <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl bg-white/10 border border-white/10 flex items-center gap-2 text-white/80">
+                <span className="material-symbols-outlined text-[#0058bc] text-base">verified</span>
+                <span className="font-label-sm text-label-sm uppercase font-semibold">Zero-Downtime Guarantee</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 }

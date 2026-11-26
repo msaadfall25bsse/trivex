@@ -2,33 +2,49 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white/25 backdrop-blur-2xl border-t border-white/60 text-on-surface py-space-xl relative z-10 glass-rim">
-      <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-lg mb-space-xl">
-          {/* Col 1: Brand & Socials */}
-          <div className="lg:col-span-4 flex flex-col gap-space-sm">
-            <div className="flex items-center mb-space-xs">
-              <Link className="inline-block" href="/">
-                <img
-                  alt="TRIVEX — THREE MINDS. ONE VISION."
-                  className="w-auto object-contain h-12 md:h-14"
-                  src="/trivex-logo.png"
-                />
-              </Link>
-            </div>
-            <p className="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+    <footer className="w-full bg-[#05080f]/95 backdrop-blur-2xl border-t border-white/15 text-white pt-16 pb-10 relative z-10 overflow-hidden">
+      {/* Top #0058bc Ambient Accent Line */}
+      <div
+        aria-hidden="true"
+        className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0058bc]/70 to-transparent"
+      />
+      {/* Subtle Ambient Radial Glow */}
+      <div
+        aria-hidden="true"
+        className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-[#0058bc]/10 rounded-full blur-3xl pointer-events-none"
+      />
+
+      <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14">
+          {/* Col 1: Brand, Certification & Socials */}
+          <div className="lg:col-span-4 flex flex-col gap-5">
+            <Link className="cursor-target inline-flex items-center gap-2.5 group w-fit" data-cursor-label="Home" href="/">
+              <img
+                alt="TRIVEX"
+                className="w-auto object-contain h-9 md:h-11 brightness-0 invert transition-transform duration-200 group-hover:scale-[1.03]"
+                src="/trivex-logo.png"
+              />
+              <span className="font-extrabold tracking-widest text-xl md:text-2xl text-white font-headline-md">
+                TRIVE<span className="text-[#0058bc]">X</span>
+              </span>
+            </Link>
+
+            <p className="font-body-sm text-body-sm text-white/75 max-w-sm leading-relaxed">
               International digital architecture and technology agency. Delivering enterprise scale, surgical precision, and bespoke digital agility for global market leaders.
             </p>
-            <div className="flex items-center gap-space-sm mt-space-xs text-on-surface-variant">
-              <span className="material-symbols-outlined text-primary text-xl">verified</span>
-              <span className="font-label-md text-label-md font-semibold tracking-wide uppercase text-on-surface">
+
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.05] border border-white/10 w-fit">
+              <span className="material-symbols-outlined text-[#0058bc] text-lg">verified</span>
+              <span className="font-label-sm text-label-sm font-bold tracking-wider uppercase text-white/90">
                 ISO 27001 Certified Architecture
               </span>
             </div>
-            <div className="flex items-center gap-2 pt-2">
+
+            <div className="flex items-center gap-2.5 pt-1">
               <a
                 aria-label="LinkedIn"
-                className="w-9 h-9 rounded-xl glass-subcard flex items-center justify-center text-on-surface hover:text-primary hover:bg-white/40 transition-all duration-200"
+                data-cursor-label="LinkedIn"
+                className="cursor-target w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
                 href="https://linkedin.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -39,7 +55,8 @@ export default function Footer() {
               </a>
               <a
                 aria-label="X / Twitter"
-                className="w-9 h-9 rounded-xl glass-subcard flex items-center justify-center text-on-surface hover:text-primary hover:bg-white/40 transition-all duration-200"
+                data-cursor-label="X"
+                className="cursor-target w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
                 href="https://x.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -50,7 +67,8 @@ export default function Footer() {
               </a>
               <a
                 aria-label="GitHub"
-                className="w-9 h-9 rounded-xl glass-subcard flex items-center justify-center text-on-surface hover:text-primary hover:bg-white/40 transition-all duration-200"
+                data-cursor-label="GitHub"
+                className="cursor-target w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
                 href="https://github.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -61,7 +79,8 @@ export default function Footer() {
               </a>
               <a
                 aria-label="Dribbble"
-                className="w-9 h-9 rounded-xl glass-subcard flex items-center justify-center text-on-surface hover:text-primary hover:bg-white/40 transition-all duration-200"
+                data-cursor-label="Dribbble"
+                className="cursor-target w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
                 href="https://dribbble.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -73,78 +92,114 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Navigation Links */}
-          <div className="grid grid-cols-2 gap-space-md col-span-1 md:col-span-2 lg:col-span-5 lg:grid-cols-5">
-            <div className="flex flex-col gap-space-xs lg:col-span-3">
-              <span className="font-label-md text-label-md uppercase tracking-widest text-on-surface font-bold mb-space-xs">
-                Navigation
-              </span>
-              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1" href="/">
-                Home
+          {/* Col 2: Navigation */}
+          <div className="lg:col-span-2 flex flex-col gap-2.5">
+            <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold mb-2">
+              Navigation
+            </span>
+            {[
+              { name: "Home", href: "/" },
+              { name: "About Us", href: "/about-us" },
+              { name: "Services", href: "/services" },
+              { name: "Service Details", href: "/service-details" },
+              { name: "Our Team", href: "/our-team" },
+              { name: "Contact Us", href: "/contact-us" },
+            ].map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                data-cursor-label={item.name}
+                className="cursor-target font-body-sm text-body-sm text-white/75 hover:text-white hover:translate-x-1 transition-all py-1 w-fit"
+              >
+                {item.name}
               </Link>
-              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1" href="/about-us">
-                About Us
-              </Link>
-              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1" href="/services">
-                Services
-              </Link>
-              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1" href="/service-details">
-                Service Details
-              </Link>
-              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1" href="/our-team">
-                Our Team
-              </Link>
-              <Link className="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors py-1" href="/contact-us">
-                Contact Us
-              </Link>
-            </div>
+            ))}
           </div>
 
-          {/* Col 3: Global Presence */}
-          <div className="lg:col-span-3 flex flex-col gap-space-xs">
-            <span className="font-label-md text-label-md uppercase tracking-widest text-on-surface font-bold mb-space-xs">
+          {/* Col 3: Core Pillars */}
+          <div className="lg:col-span-3 flex flex-col gap-2.5">
+            <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold mb-2">
+              Core Capabilities
+            </span>
+            {[
+              { name: "Software Development", href: "/services", icon: "terminal" },
+              { name: "Digital Marketing & SEO", href: "/services", icon: "trending_up" },
+              { name: "Brand & UI/UX Systems", href: "/services", icon: "palette" },
+              { name: "Technical Architecture", href: "/service-details", icon: "architecture" },
+              { name: "Enterprise Consulting", href: "/contact-us", icon: "hub" },
+            ].map((cap) => (
+              <Link
+                key={cap.name}
+                href={cap.href}
+                data-cursor-label="Explore"
+                className="cursor-target inline-flex items-center gap-2 font-body-sm text-body-sm text-white/75 hover:text-white hover:translate-x-1 transition-all py-1 w-fit group"
+              >
+                <span className="material-symbols-outlined text-sm text-[#0058bc] group-hover:text-cyan-400 transition-colors">
+                  {cap.icon}
+                </span>
+                <span>{cap.name}</span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Col 4: Global Presence */}
+          <div className="lg:col-span-3 flex flex-col gap-3">
+            <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold mb-1">
               Global Presence
             </span>
-            <div className="flex items-start gap-space-xs py-1">
-              <span className="material-symbols-outlined text-primary text-base mt-0.5">location_on</span>
-              <span className="font-body-sm text-body-sm text-on-surface-variant">
+            <div className="flex items-start gap-2.5 py-0.5">
+              <span className="material-symbols-outlined text-cyan-400 text-base mt-0.5 shrink-0">location_on</span>
+              <span className="font-body-sm text-body-sm text-white/80 leading-relaxed">
                 One World Trade Center, Suite 8500, New York, NY
               </span>
             </div>
-            <div className="flex items-start gap-space-xs py-1">
-              <span className="material-symbols-outlined text-primary text-base mt-0.5">mail</span>
-              <span className="font-body-sm text-body-sm text-on-surface-variant">
-                connect@trivex-global.com
-              </span>
-            </div>
-            <div className="flex items-start gap-space-xs py-1">
-              <span className="material-symbols-outlined text-primary text-base mt-0.5">call</span>
-              <span className="font-body-sm text-body-sm text-on-surface-variant">
-                +1 (800) 874-8390
-              </span>
-            </div>
-            <div className="mt-space-xs pt-space-xs">
-              <span className="inline-flex items-center gap-space-xs px-3 py-1.5 glass-subcard rounded-full text-primary font-label-sm text-label-sm uppercase font-bold">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <a
+              href="mailto:connect@trivex-global.com"
+              data-cursor-label="Email"
+              className="cursor-target flex items-center gap-2.5 py-0.5 text-white/80 hover:text-cyan-300 transition-colors w-fit"
+            >
+              <span className="material-symbols-outlined text-cyan-400 text-base shrink-0">mail</span>
+              <span className="font-body-sm text-body-sm">connect@trivex-global.com</span>
+            </a>
+            <a
+              href="tel:+18008748390"
+              data-cursor-label="Call"
+              className="cursor-target flex items-center gap-2.5 py-0.5 text-white/80 hover:text-cyan-300 transition-colors w-fit"
+            >
+              <span className="material-symbols-outlined text-cyan-400 text-base shrink-0">call</span>
+              <span className="font-body-sm text-body-sm">+1 (800) 874-8390</span>
+            </a>
+
+            <div className="mt-2 pt-3 border-t border-white/10 flex flex-col gap-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/[0.06] border border-white/15 rounded-full text-cyan-300 font-label-sm text-label-sm uppercase font-bold w-fit">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
                 Global Operations Active
-              </span>
+              </div>
+              <Link
+                href="/contact-us"
+                data-cursor-label="Start Project"
+                className="cursor-target inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#0058bc] hover:bg-[#0058bc]/90 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#0058bc]/25 transition-all w-fit"
+              >
+                <span>Schedule Discovery</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md border-t border-surface-container">
-          <p className="font-body-sm text-body-sm text-on-surface-variant">
-            © 2025 TRIVEX Architecture Group. All rights reserved.
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/15">
+          <p className="font-body-sm text-body-sm text-white/65">
+            © 2025 TRIVE<span className="text-[#0058bc] font-bold">X</span> Architecture Group. All rights reserved.
           </p>
-          <div className="flex items-center gap-space-lg text-on-surface-variant">
-            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-on-surface transition-colors" href="#">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-white/65">
+            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-white transition-colors" href="#">
               Privacy Policy
             </Link>
-            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-on-surface transition-colors" href="#">
+            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-white transition-colors" href="#">
               Terms of Service
             </Link>
-            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-on-surface transition-colors" href="#">
+            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-white transition-colors" href="#">
               Security Compliance
             </Link>
           </div>
