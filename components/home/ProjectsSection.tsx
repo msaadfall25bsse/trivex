@@ -1,5 +1,101 @@
 import Link from "next/link";
 import SplitText from "@/components/home/SplitText";
+import ScrollStack, { ScrollStackItem } from "@/components/home/ScrollStack";
+
+const projects = [
+  {
+    id: "aurapay",
+    badge: "Fintech SaaS",
+    badgeColor: "text-cyan-300",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDQM9t5BuA7gSVIfTZaHnRw65gwowH5PrUzqyRn1WYjEyfXjfglETyyonj-hjLrl32E1wtI75a8m7ZGkUqMcf7NzSekkJ5-YX4BbWiCjBidC4hHZSt0A2yrHkS5BxIUE-C6d1S77Ppq8GlR54GzYo_4_ogErgOcMa3oSA3kwE1XUVbmLNeNP6cbzehGwyw4HZlDTcpdt95TJIirJj0sZ3EU3VrMZ5SPvMTC7dwx37fc",
+    alt: "Modern financial technology dashboard web application interface",
+    title: "AuraPay Global Cloud Platform",
+    description:
+      "Re-architected real-time cross-border settlements engine with sub-second reconciliations and SOC2 compliant telemetry.",
+    metric1Label: "Transaction Vol",
+    metric1Value: "$140M+/mo",
+    metric2Label: "Latency Cut",
+    metric2Value: "-74%",
+  },
+  {
+    id: "nordic-retail",
+    badge: "Global Growth",
+    badgeColor: "text-white",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAXrvqMasqmCRvDJhDVYbdxBXQutdqdT6jYpNwRHksgJYf1xx2feDG5_8EGSu1xJgJTK7TXrR2hDQJ-BAm2qZW8qPL18uLoBzC3GLuxYeDCxSn6garOsAoCeNRsVviAYDBDH2rRpFpxh_ZZXBc918jkuVQLLYxkfDyvcVgKF5GqPwqbd-uW5NoLGseG58FTwSRUFWG8MB4LhX_0EqsQqbjKlxD_Wve8fLdHlfq3LUjc",
+    alt: "International e-commerce consumer goods brand marketing analytics console",
+    title: "Nordic Retail Omni-Channel Scaling",
+    description:
+      "Executed multi-region programmatic media and automated feed optimization spanning 14 European markets.",
+    metric1Label: "Blended ROAS",
+    metric1Value: "5.8x",
+    metric2Label: "New ARR",
+    metric2Value: "+$12.4M",
+  },
+  {
+    id: "sovereign-aerospace",
+    badge: "Enterprise Architecture",
+    badgeColor: "text-cyan-300",
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDDUcJpp8frTWqHTEMs64hniQoZCQkajjhUZ05xeG6n2aEynaFl_Z02h26j2UBdyDhsgCVrXUB-T23YzH9ZU-eFYkzQ94A4wSDkYOyr9QunRcSspLCb8yj14c3rR-XhfKG3whljYUWwO4QPuDTjuDkfWCxmw7mteFTdBORUA6Ew7R6g5qWzqo5o1aNH9n9HOhlt2Qt05T6CIeV-OcP50MFfwreJ-hw5raQL09YD5oYc",
+    alt: "Corporate brand identity book and design system components",
+    title: "Sovereign Aerospace UI/UX Design System",
+    description:
+      "Crafted multi-platform design tokens and accessibility validated cockpit interface components for defense avionics.",
+    metric1Label: "System Components",
+    metric1Value: "480+",
+    metric2Label: "Adoption Velocity",
+    metric2Value: "3.2x",
+  },
+];
+
+function ProjectCard({ project }: { project: (typeof projects)[number] }) {
+  return (
+    <div className="bg-[#0d111a] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl h-full">
+      <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md">
+        <img
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          alt={project.alt}
+          src={project.image}
+        />
+        <div
+          className={`absolute top-4 left-4 bg-black/75 backdrop-blur-xl px-3.5 py-1.5 rounded-full ${project.badgeColor} font-label-sm text-label-sm uppercase font-bold shadow-md border border-white/20`}
+        >
+          {project.badge}
+        </div>
+      </div>
+      <div className="flex flex-col flex-1 justify-between gap-5 px-1">
+        <div>
+          <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold group-hover:text-cyan-300 transition-colors">
+            {project.title}
+          </h3>
+          <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
+            {project.description}
+          </p>
+        </div>
+        <div className="bg-white/10 border border-white/10 rounded-2xl p-4 flex items-center justify-between">
+          <div>
+            <span className="font-label-sm text-label-sm text-white/70 block">
+              {project.metric1Label}
+            </span>
+            <span className="font-headline-sm text-headline-sm text-white font-extrabold">
+              {project.metric1Value}
+            </span>
+          </div>
+          <div className="text-right">
+            <span className="font-label-sm text-label-sm text-white/70 block">
+              {project.metric2Label}
+            </span>
+            <span className="font-headline-sm text-headline-sm text-cyan-400 font-extrabold">
+              {project.metric2Value}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function ProjectsSection() {
   return (
@@ -38,108 +134,35 @@ export default function ProjectsSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Project 1 */}
-          <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl">
-            <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md">
-              <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                alt="Modern financial technology dashboard web application interface"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQM9t5BuA7gSVIfTZaHnRw65gwowH5PrUzqyRn1WYjEyfXjfglETyyonj-hjLrl32E1wtI75a8m7ZGkUqMcf7NzSekkJ5-YX4BbWiCjBidC4hHZSt0A2yrHkS5BxIUE-C6d1S77Ppq8GlR54GzYo_4_ogErgOcMa3oSA3kwE1XUVbmLNeNP6cbzehGwyw4HZlDTcpdt95TJIirJj0sZ3EU3VrMZ5SPvMTC7dwx37fc"
-              />
-              <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-xl px-3.5 py-1.5 rounded-full text-cyan-300 font-label-sm text-label-sm uppercase font-bold shadow-md border border-white/20">
-                Fintech SaaS
-              </div>
-            </div>
-            <div className="flex flex-col flex-1 justify-between gap-5 px-1">
-              <div>
-                <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold group-hover:text-cyan-300 transition-colors">
-                  AuraPay Global Cloud Platform
-                </h3>
-                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
-                  Re-architected real-time cross-border settlements engine with sub-second reconciliations and SOC2 compliant telemetry.
-                </p>
-              </div>
-              <div className="bg-white/10 border border-white/10 rounded-2xl p-4 flex items-center justify-between">
-                <div>
-                  <span className="font-label-sm text-label-sm text-white/70 block">Transaction Vol</span>
-                  <span className="font-headline-sm text-headline-sm text-white font-extrabold">$140M+/mo</span>
-                </div>
-                <div className="text-right">
-                  <span className="font-label-sm text-label-sm text-white/70 block">Latency Cut</span>
-                  <span className="font-headline-sm text-headline-sm text-cyan-400 font-extrabold">-74%</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Mobile: ScrollStack */}
+        <div className="md:hidden">
+          <ScrollStack
+            useWindowScroll
+            smoothScroll={false}
+            stackPosition={104}
+            itemDistance={72}
+            itemStackDistance={22}
+            itemScale={0.04}
+            baseScale={0.88}
+            dimAmount={0.22}
+            holdDistance={100}
+          >
+            {projects.map((project) => (
+              <ScrollStackItem
+                key={project.id}
+                itemClassName="!p-0 !bg-transparent"
+              >
+                <ProjectCard project={project} />
+              </ScrollStackItem>
+            ))}
+          </ScrollStack>
+        </div>
 
-          {/* Project 2 */}
-          <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl">
-            <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md">
-              <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                alt="International e-commerce consumer goods brand marketing analytics console"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXrvqMasqmCRvDJhDVYbdxBXQutdqdT6jYpNwRHksgJYf1xx2feDG5_8EGSu1xJgJTK7TXrR2hDQJ-BAm2qZW8qPL18uLoBzC3GLuxYeDCxSn6garOsAoCeNRsVviAYDBDH2rRpFpxh_ZZXBc918jkuVQLLYxkfDyvcVgKF5GqPwqbd-uW5NoLGseG58FTwSRUFWG8MB4LhX_0EqsQqbjKlxD_Wve8fLdHlfq3LUjc"
-              />
-              <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-xl px-3.5 py-1.5 rounded-full text-white font-label-sm text-label-sm uppercase font-bold shadow-md border border-white/20">
-                Global Growth
-              </div>
-            </div>
-            <div className="flex flex-col flex-1 justify-between gap-5 px-1">
-              <div>
-                <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold group-hover:text-cyan-300 transition-colors">
-                  Nordic Retail Omni-Channel Scaling
-                </h3>
-                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
-                  Executed multi-region programmatic media and automated feed optimization spanning 14 European markets.
-                </p>
-              </div>
-              <div className="bg-white/10 border border-white/10 rounded-2xl p-4 flex items-center justify-between">
-                <div>
-                  <span className="font-label-sm text-label-sm text-white/70 block">Blended ROAS</span>
-                  <span className="font-headline-sm text-headline-sm text-white font-extrabold">5.8x</span>
-                </div>
-                <div className="text-right">
-                  <span className="font-label-sm text-label-sm text-white/70 block">New ARR</span>
-                  <span className="font-headline-sm text-headline-sm text-cyan-400 font-extrabold">+$12.4M</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Project 3 */}
-          <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl">
-            <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md">
-              <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                alt="Corporate brand identity book and design system components"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDUcJpp8frTWqHTEMs64hniQoZCQkajjhUZ05xeG6n2aEynaFl_Z02h26j2UBdyDhsgCVrXUB-T23YzH9ZU-eFYkzQ94A4wSDkYOyr9QunRcSspLCb8yj14c3rR-XhfKG3whljYUWwO4QPuDTjuDkfWCxmw7mteFTdBORUA6Ew7R6g5qWzqo5o1aNH9n9HOhlt2Qt05T6CIeV-OcP50MFfwreJ-hw5raQL09YD5oYc"
-              />
-              <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-xl px-3.5 py-1.5 rounded-full text-cyan-300 font-label-sm text-label-sm uppercase font-bold shadow-md border border-white/20">
-                Enterprise Architecture
-              </div>
-            </div>
-            <div className="flex flex-col flex-1 justify-between gap-5 px-1">
-              <div>
-                <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold group-hover:text-cyan-300 transition-colors">
-                  Sovereign Aerospace UI/UX Design System
-                </h3>
-                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
-                  Crafted multi-platform design tokens and accessibility validated cockpit interface components for defense avionics.
-                </p>
-              </div>
-              <div className="bg-white/10 border border-white/10 rounded-2xl p-4 flex items-center justify-between">
-                <div>
-                  <span className="font-label-sm text-label-sm text-white/70 block">System Components</span>
-                  <span className="font-headline-sm text-headline-sm text-white font-extrabold">480+</span>
-                </div>
-                <div className="text-right">
-                  <span className="font-label-sm text-label-sm text-white/70 block">Adoption Velocity</span>
-                  <span className="font-headline-sm text-headline-sm text-cyan-400 font-extrabold">3.2x</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Desktop & Tablet: 3-Column Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </div>
       </div>
     </section>
