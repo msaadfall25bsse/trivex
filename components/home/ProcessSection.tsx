@@ -1,19 +1,31 @@
+import SplitText from "@/components/home/SplitText";
+
 export default function ProcessSection() {
   return (
-    <section className="w-full py-8 md:py-16 relative z-10">
-      {/* Dark Translucent Glass Container on Black Glow Background */}
-      <div className="w-full md:w-[90%] mx-auto bg-white/[0.05] backdrop-blur-2xl py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl border-y md:border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+    <section className="w-full bg-black py-10 md:py-16 relative z-10">
+      <div className="w-full md:w-[90%] mx-auto bg-white/[0.04] backdrop-blur-xl py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl border-y md:border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-2">
               PRECISION ROADMAP
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-white tracking-tight">
-              The 4-Step Triad Delivery Framework
-            </h2>
+            <SplitText
+              tag="h2"
+              text="The 4-Step Triad Delivery Framework"
+              className="font-headline-lg text-headline-lg text-white tracking-tight"
+              effect="flip"
+              splitType="words, chars"
+              delay={25}
+              duration={1.0}
+              staggerFrom="start"
+              trigger="view"
+              mask
+              threshold={0.1}
+              rootMargin="-60px"
+              textAlign="center"
+            />
           </div>
 
-          {/* 4-Step Bento Roadmap with Dark Glassmorphism & Structured Flow */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
             {/* Step 1 */}
             <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/50 transition-all duration-300">

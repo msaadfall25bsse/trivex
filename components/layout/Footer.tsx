@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14">
           {/* Col 1: Brand, Certification & Socials */}
           <div className="lg:col-span-4 flex flex-col gap-5">
-            <Link className="cursor-target inline-flex items-center gap-2.5 group w-fit" data-cursor-label="Home" href="/">
+            <Link className="inline-flex items-center gap-2.5 group w-fit" href="/">
               <img
                 alt="TRIVEX"
                 className="w-auto object-contain h-9 md:h-11 brightness-0 invert transition-transform duration-200 group-hover:scale-[1.03]"
@@ -43,8 +43,7 @@ export default function Footer() {
             <div className="flex items-center gap-2.5 pt-1">
               <a
                 aria-label="LinkedIn"
-                data-cursor-label="LinkedIn"
-                className="cursor-target w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
                 href="https://linkedin.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -55,8 +54,7 @@ export default function Footer() {
               </a>
               <a
                 aria-label="X / Twitter"
-                data-cursor-label="X"
-                className="cursor-target w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
                 href="https://x.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -67,8 +65,7 @@ export default function Footer() {
               </a>
               <a
                 aria-label="GitHub"
-                data-cursor-label="GitHub"
-                className="cursor-target w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
                 href="https://github.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -79,8 +76,7 @@ export default function Footer() {
               </a>
               <a
                 aria-label="Dribbble"
-                data-cursor-label="Dribbble"
-                className="cursor-target w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
                 href="https://dribbble.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -108,8 +104,7 @@ export default function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                data-cursor-label={item.name}
-                className="cursor-target font-body-sm text-body-sm text-white/75 hover:text-white hover:translate-x-1 transition-all py-1 w-fit"
+                className="font-body-sm text-body-sm text-white/75 hover:text-white hover:translate-x-1 transition-all py-1 w-fit"
               >
                 {item.name}
               </Link>
@@ -131,8 +126,7 @@ export default function Footer() {
               <Link
                 key={cap.name}
                 href={cap.href}
-                data-cursor-label="Explore"
-                className="cursor-target inline-flex items-center gap-2 font-body-sm text-body-sm text-white/75 hover:text-white hover:translate-x-1 transition-all py-1 w-fit group"
+                className="inline-flex items-center gap-2 font-body-sm text-body-sm text-white/75 hover:text-white hover:translate-x-1 transition-all py-1 w-fit group"
               >
                 <span className="material-symbols-outlined text-sm text-[#0058bc] group-hover:text-cyan-400 transition-colors">
                   {cap.icon}
@@ -155,16 +149,14 @@ export default function Footer() {
             </div>
             <a
               href="mailto:connect@trivex-global.com"
-              data-cursor-label="Email"
-              className="cursor-target flex items-center gap-2.5 py-0.5 text-white/80 hover:text-cyan-300 transition-colors w-fit"
+              className="flex items-center gap-2.5 py-0.5 text-white/80 hover:text-cyan-300 transition-colors w-fit"
             >
               <span className="material-symbols-outlined text-cyan-400 text-base shrink-0">mail</span>
               <span className="font-body-sm text-body-sm">connect@trivex-global.com</span>
             </a>
             <a
               href="tel:+18008748390"
-              data-cursor-label="Call"
-              className="cursor-target flex items-center gap-2.5 py-0.5 text-white/80 hover:text-cyan-300 transition-colors w-fit"
+              className="flex items-center gap-2.5 py-0.5 text-white/80 hover:text-cyan-300 transition-colors w-fit"
             >
               <span className="material-symbols-outlined text-cyan-400 text-base shrink-0">call</span>
               <span className="font-body-sm text-body-sm">+1 (800) 874-8390</span>
@@ -177,8 +169,7 @@ export default function Footer() {
               </div>
               <Link
                 href="/contact-us"
-                data-cursor-label="Start Project"
-                className="cursor-target inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#0058bc] hover:bg-[#0058bc]/90 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#0058bc]/25 transition-all w-fit"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#0058bc] hover:bg-[#0058bc]/90 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#0058bc]/25 transition-all w-fit"
               >
                 <span>Schedule Discovery</span>
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>

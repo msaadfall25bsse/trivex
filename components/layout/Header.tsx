@@ -25,7 +25,7 @@ export default function Header() {
   };
 
   return (
-    <header className="relative w-full z-50 bg-black border-b border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.45)]">
+    <header className="sticky top-0 w-full z-50 bg-black/50 backdrop-blur-xl border-b border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.35)]">
       <div className="h-20 max-w-7xl mx-auto px-margin-mobile md:px-margin flex items-center justify-between">
         {/* Left Side: Brand Logo (white treatment on black header) */}
         <div className="flex items-center">

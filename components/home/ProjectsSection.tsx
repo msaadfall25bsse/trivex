@@ -1,21 +1,33 @@
 import Link from "next/link";
+import SplitText from "@/components/home/SplitText";
 
 export default function ProjectsSection() {
   return (
-    <section className="w-full bg-transparent py-24 relative z-10">
+    <section className="w-full bg-black py-20 relative z-10">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-2">
               CASE EVIDENCE
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-white tracking-tight">
-              Recent Enterprise Deliveries
-            </h2>
+            <SplitText
+              tag="h2"
+              text="Recent Enterprise Deliveries"
+              className="font-headline-lg text-headline-lg text-white tracking-tight"
+              effect="flip"
+              splitType="words, chars"
+              delay={25}
+              duration={1.0}
+              staggerFrom="start"
+              trigger="view"
+              mask
+              threshold={0.1}
+              rootMargin="-60px"
+              textAlign="left"
+            />
           </div>
           <Link
-            className="cursor-target inline-flex items-center gap-2 font-label-lg text-label-lg text-cyan-300 hover:text-white font-bold group transition-colors"
-            data-cursor-label="All Cases"
+            className="inline-flex items-center gap-2 font-label-lg text-label-lg text-cyan-300 hover:text-white font-bold group transition-colors"
             href="/services"
           >
             <span>View All Documented Cases</span>
@@ -25,11 +37,9 @@ export default function ProjectsSection() {
           </Link>
         </div>
 
-        {/* Bento Grid: 3 Case Studies with Generous Spacing between Image and Text */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Project 1 */}
           <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl">
-            {/* Visual Image Container with Breathing Room */}
             <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -40,7 +50,6 @@ export default function ProjectsSection() {
                 Fintech SaaS
               </div>
             </div>
-            {/* Text Information Panel (separated with clean gap) */}
             <div className="flex flex-col flex-1 justify-between gap-5 px-1">
               <div>
                 <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold group-hover:text-cyan-300 transition-colors">
@@ -65,7 +74,6 @@ export default function ProjectsSection() {
 
           {/* Project 2 */}
           <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl">
-            {/* Visual Image Container with Breathing Room */}
             <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -76,7 +84,6 @@ export default function ProjectsSection() {
                 Global Growth
               </div>
             </div>
-            {/* Text Information Panel (separated with clean gap) */}
             <div className="flex flex-col flex-1 justify-between gap-5 px-1">
               <div>
                 <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold group-hover:text-cyan-300 transition-colors">
@@ -101,7 +108,6 @@ export default function ProjectsSection() {
 
           {/* Project 3 */}
           <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl">
-            {/* Visual Image Container with Breathing Room */}
             <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -112,7 +118,6 @@ export default function ProjectsSection() {
                 Enterprise Architecture
               </div>
             </div>
-            {/* Text Information Panel (separated with clean gap) */}
             <div className="flex flex-col flex-1 justify-between gap-5 px-1">
               <div>
                 <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold group-hover:text-cyan-300 transition-colors">

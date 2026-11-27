@@ -1,17 +1,30 @@
 import Link from "next/link";
+import SplitText from "@/components/home/SplitText";
 
 export default function TeamPreviewSection() {
   return (
-    <section className="w-full bg-transparent py-24 relative z-10">
+    <section className="w-full bg-black py-20 relative z-10">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-2">
               LEADERSHIP TRIAD
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-white tracking-tight">
-              Three Minds. Singular Executive Focus.
-            </h2>
+            <SplitText
+              tag="h2"
+              text="Three Minds. Singular Executive Focus."
+              className="font-headline-lg text-headline-lg text-white tracking-tight"
+              effect="flip"
+              splitType="words, chars"
+              delay={25}
+              duration={1.0}
+              staggerFrom="start"
+              trigger="view"
+              mask
+              threshold={0.1}
+              rootMargin="-60px"
+              textAlign="left"
+            />
           </div>
           <Link
             className="inline-flex items-center gap-2 font-label-lg text-label-lg text-cyan-300 hover:text-white font-bold group transition-colors"
@@ -24,9 +37,8 @@ export default function TeamPreviewSection() {
           </Link>
         </div>
 
-        {/* 3 Leadership Bento Cards with Generous Spacing between Image and Text */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Founder 1: Technology */}
+          {/* Founder 1 */}
           <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl">
             <div className="h-72 w-full rounded-2xl overflow-hidden bg-black/40 relative shadow-md">
               <img
@@ -62,7 +74,7 @@ export default function TeamPreviewSection() {
             </div>
           </div>
 
-          {/* Founder 2: Marketing */}
+          {/* Founder 2 */}
           <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl">
             <div className="h-72 w-full rounded-2xl overflow-hidden bg-black/40 relative shadow-md">
               <img
@@ -98,7 +110,7 @@ export default function TeamPreviewSection() {
             </div>
           </div>
 
-          {/* Founder 3: Creative */}
+          {/* Founder 3 */}
           <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl">
             <div className="h-72 w-full rounded-2xl overflow-hidden bg-black/40 relative shadow-md">
               <img

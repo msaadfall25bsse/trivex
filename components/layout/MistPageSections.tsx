@@ -2,8 +2,8 @@ import { Children, type ReactNode } from "react";
 import FadeContent from "@/components/layout/FadeContent";
 
 /**
- * Shared per-section mist animation wrapper applied across every page.
- * Renders the top hero section immediately on mount and scroll-triggers subsequent sections cleanly.
+ * Shared per-section reveal wrapper applied across pages.
+ * Uses pure GPU opacity/transform fade for zero-lag, hydration-safe rendering.
  */
 export default function MistPageSections({
   children,
@@ -15,11 +15,10 @@ export default function MistPageSections({
       {Children.toArray(children).map((section, index) => (
         <FadeContent
           key={index}
-          effect="mist"
-          duration={1.8}
+          effect="fade"
+          duration={0.85}
           ease="power2.out"
-          stagger={0.1}
-          threshold={0.1}
+          threshold={0.08}
           trigger={index === 0 ? "mount" : "scroll"}
           className="w-full"
         >

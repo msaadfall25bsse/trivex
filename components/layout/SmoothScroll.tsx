@@ -76,7 +76,10 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
     document.addEventListener("click", handleAnchorClick);
 
     let ctx: gsap.Context | undefined;
-    const frameId = requestAnimationFrame(() => {
+    let cancelled = false;
+    // Wait two frames after React hydration completes before mutating DOM styles with GSAP
+    const timerId = window.setTimeout(() => {
+      if (cancelled) return;
       const main = document.querySelector("main");
       if (!main || prefersReducedMotion) return;
 
@@ -86,7 +89,9 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
         ).filter(
           (el) =>
             !el.matches("a, button") &&
-            !el.closest(".animate-marquee")
+            !el.closest(".animate-marquee") &&
+            !el.closest("[data-no-scroll-anim]") &&
+            !el.closest("[data-stack-slot]")
         );
 
         // Keep top-level cards only so nested glass panels don't double-animate
@@ -102,9 +107,13 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
           main.querySelectorAll<HTMLElement>(textSelector)
         ).filter(
           (el) =>
+            !el.matches(".split-parent") &&
+            !el.closest(".split-parent") &&
             !el.closest(".animate-marquee") &&
             !el.closest("svg") &&
             !el.closest("form") &&
+            !el.closest("[data-no-scroll-anim]") &&
+            !el.closest("[data-stack-slot]") &&
             !cards.some((c) => c === el || c.contains(el))
         );
 
@@ -300,10 +309,11 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
 
         ScrollTrigger.refresh();
       }, main);
-    });
+    }, 120);
 
     return () => {
-      cancelAnimationFrame(frameId);
+      cancelled = true;
+      window.clearTimeout(timerId);
       document.removeEventListener("click", handleAnchorClick);
       ctx?.revert();
       if (raf) gsap.ticker.remove(raf);
