@@ -1,4 +1,88 @@
 import SplitText from "@/components/home/SplitText";
+import BorderGlow from "@/components/home/BorderGlow";
+import ScrollStack, { ScrollStackItem } from "@/components/home/ScrollStack";
+
+const advantageCards = [
+  {
+    id: "founder-led",
+    icon: "supervisor_account",
+    iconColor: "text-cyan-300",
+    title: "Founder-Led Expertise",
+    description:
+      "Work directly with our founding team, ensuring strategic alignment, clear communication, and hands-on oversight from the very beginning.",
+    badge: "Direct Collaboration",
+    badgeColor: "text-cyan-300",
+  },
+  {
+    id: "integrated",
+    icon: "hub",
+    iconColor: "text-[#0058bc]",
+    title: "Integrated Capabilities",
+    description:
+      "Technology, creative design, and digital marketing work together to create cohesive solutions that support your business objectives.",
+    badge: "Connected Solutions",
+    badgeColor: "text-[#0058bc]",
+  },
+  {
+    id: "results-driven",
+    icon: "monitoring",
+    iconColor: "text-cyan-300",
+    title: "Results-Driven Approach",
+    description:
+      "Every project is guided by clear objectives, measurable outcomes, and a continuous focus on improving performance and delivering value.",
+    badge: "Measurable Impact",
+    badgeColor: "text-cyan-300",
+  },
+  {
+    id: "transparent",
+    icon: "sync_alt",
+    iconColor: "text-[#0058bc]",
+    title: "Transparent Execution",
+    description:
+      "Stay informed at every stage through clear communication, structured workflows, regular updates, and transparent project delivery.",
+    badge: "Clear Communication",
+    badgeColor: "text-[#0058bc]",
+  },
+];
+
+function AdvantageCard({ card }: { card: (typeof advantageCards)[number] }) {
+  return (
+    <BorderGlow
+      edgeSensitivity={48}
+      glowColor="210 90 60"
+      backgroundColor="#0d111a"
+      borderRadius={24}
+      glowRadius={48}
+      glowIntensity={0.45}
+      coneSpread={35}
+      animated
+      colors={["#0058bc", "#38bdf8", "#0070eb"]}
+      className="h-full"
+    >
+      <div className="p-7 flex flex-col justify-between h-full group">
+        <div>
+          <div
+            className={`w-12 h-12 rounded-2xl bg-white/10 ${card.iconColor} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform border border-white/10`}
+          >
+            <span className="material-symbols-outlined text-2xl">{card.icon}</span>
+          </div>
+          <h3 className="font-headline-sm text-headline-sm text-white mb-2.5 font-bold text-lg">
+            {card.title}
+          </h3>
+          <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
+            {card.description}
+          </p>
+        </div>
+        <div className="mt-6 pt-3 px-3.5 py-2 rounded-xl bg-white/10 border border-white/10 flex items-center justify-between gap-2">
+          <span className={`font-label-sm text-label-sm ${card.badgeColor} font-bold uppercase`}>
+            {card.badge}
+          </span>
+          <span className="material-symbols-outlined text-[#0058bc] text-sm">arrow_forward</span>
+        </div>
+      </div>
+    </BorderGlow>
+  );
+}
 
 export default function WhyChooseSection() {
   return (
@@ -19,6 +103,7 @@ export default function WhyChooseSection() {
               duration={1.0}
               staggerFrom="start"
               trigger="view"
+              replayOnScroll
               mask
               threshold={0.1}
               rootMargin="-60px"
@@ -29,90 +114,35 @@ export default function WhyChooseSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card 01 */}
-            <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/50 transition-all duration-300">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-white/10 text-cyan-300 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform border border-white/10">
-                  <span className="material-symbols-outlined text-2xl">supervisor_account</span>
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-white mb-2.5 font-bold text-lg">
-                  Founder-Led Expertise
-                </h3>
-                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
-                  Work directly with our founding team, ensuring strategic alignment, clear communication, and hands-on oversight from the very beginning.
-                </p>
-              </div>
-              <div className="mt-6 pt-3 px-3.5 py-2 rounded-xl bg-white/10 border border-white/10 flex items-center justify-between gap-2">
-                <span className="font-label-sm text-label-sm uppercase font-mono text-cyan-300 font-bold tracking-wide">
-                  DIRECT COLLABORATION
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0058bc] animate-pulse shrink-0"></span>
-              </div>
-            </div>
+          {/* Mobile: ScrollStack */}
+          <div className="md:hidden">
+            <ScrollStack
+              useWindowScroll
+              smoothScroll={false}
+              stackPosition={104}
+              itemDistance={72}
+              itemStackDistance={22}
+              itemScale={0.04}
+              baseScale={0.88}
+              dimAmount={0.22}
+              holdDistance={100}
+            >
+              {advantageCards.map((card) => (
+                <ScrollStackItem
+                  key={card.id}
+                  itemClassName="!p-0 !bg-transparent"
+                >
+                  <AdvantageCard card={card} />
+                </ScrollStackItem>
+              ))}
+            </ScrollStack>
+          </div>
 
-            {/* Card 02 */}
-            <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/50 transition-all duration-300">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-white/10 text-[#0058bc] flex items-center justify-center mb-5 group-hover:scale-105 transition-transform border border-white/10">
-                  <span className="material-symbols-outlined text-2xl">dataset</span>
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-white mb-2.5 font-bold text-lg">
-                  Integrated Capabilities
-                </h3>
-                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
-                  Technology, creative design, and digital marketing work together to create cohesive solutions that support your business objectives.
-                </p>
-              </div>
-              <div className="mt-6 pt-3 px-3.5 py-2 rounded-xl bg-white/10 border border-white/10 flex items-center justify-between gap-2">
-                <span className="font-label-sm text-label-sm uppercase font-mono text-[#0058bc] font-bold tracking-wide">
-                  CONNECTED SOLUTIONS
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0058bc] animate-pulse shrink-0"></span>
-              </div>
-            </div>
-
-            {/* Card 03 */}
-            <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/50 transition-all duration-300">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-white/10 text-cyan-300 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform border border-white/10">
-                  <span className="material-symbols-outlined text-2xl">analytics</span>
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-white mb-2.5 font-bold text-lg">
-                  Results-Driven Approach
-                </h3>
-                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
-                  Every project is guided by clear objectives, measurable outcomes, and a continuous focus on improving performance and delivering value.
-                </p>
-              </div>
-              <div className="mt-6 pt-3 px-3.5 py-2 rounded-xl bg-white/10 border border-white/10 flex items-center justify-between gap-2">
-                <span className="font-label-sm text-label-sm uppercase font-mono text-cyan-300 font-bold tracking-wide">
-                  MEASURABLE IMPACT
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0058bc] animate-pulse shrink-0"></span>
-              </div>
-            </div>
-
-            {/* Card 04 */}
-            <div className="bg-white/[0.06] border border-white/15 backdrop-blur-xl p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/50 transition-all duration-300">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-white/10 text-[#0058bc] flex items-center justify-center mb-5 group-hover:scale-105 transition-transform border border-white/10">
-                  <span className="material-symbols-outlined text-2xl">published_with_changes</span>
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-white mb-2.5 font-bold text-lg">
-                  Transparent Execution
-                </h3>
-                <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
-                  Stay informed at every stage through clear communication, structured workflows, regular updates, and transparent project delivery.
-                </p>
-              </div>
-              <div className="mt-6 pt-3 px-3.5 py-2 rounded-xl bg-white/10 border border-white/10 flex items-center justify-between gap-2">
-                <span className="font-label-sm text-label-sm uppercase font-mono text-[#0058bc] font-bold tracking-wide">
-                  CLEAR COMMUNICATION
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#0058bc] animate-pulse shrink-0"></span>
-              </div>
-            </div>
+          {/* Desktop & Tablet: 4-Column Grid */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {advantageCards.map((card) => (
+              <AdvantageCard key={card.id} card={card} />
+            ))}
           </div>
         </div>
       </div>

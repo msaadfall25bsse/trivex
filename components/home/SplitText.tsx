@@ -32,6 +32,7 @@ export interface SplitTextProps {
   hoverEffect?: 'none' | 'lift' | 'wave';
   color?: string;
   accentColor?: string;
+  replayOnScroll?: boolean;
   onLetterAnimationComplete?: () => void;
 }
 
@@ -107,6 +108,7 @@ const SplitText = ({
   hoverEffect = 'none',
   color,
   accentColor,
+  replayOnScroll = false,
   onLetterAnimationComplete
 }: SplitTextProps) => {
   const ref = useRef<HTMLParagraphElement>(null);
@@ -369,12 +371,20 @@ const SplitText = ({
             busy.kill();
             busy = null;
           }
-          if (revealed) return undefined;
+          if (revealed && !replayOnScroll) return undefined;
           intro = reveal(true, {
             scrollTrigger:
-              trigger === 'load'
+              trigger === 'load' && !replayOnScroll
                 ? undefined
-                : { trigger: el, start, once: true, fastScrollEnd: true, anticipatePin: 0.4 },
+                : {
+                    trigger: el,
+                    start: trigger === 'load' ? 'top 95%' : start,
+                    end: 'bottom top',
+                    once: !replayOnScroll,
+                    toggleActions: replayOnScroll ? 'play reset play reset' : undefined,
+                    fastScrollEnd: true,
+                    anticipatePin: 0.4
+                  },
             onComplete: () => {
               revealed = true;
               intro = null;

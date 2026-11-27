@@ -20,6 +20,7 @@ export default function ProjectsSection() {
               duration={1.0}
               staggerFrom="start"
               trigger="view"
+              replayOnScroll
               mask
               threshold={0.1}
               rootMargin="-60px"

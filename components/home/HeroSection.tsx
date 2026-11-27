@@ -82,6 +82,7 @@ export default function HeroSection() {
               duration={1.1}
               staggerFrom="start"
               trigger="load"
+              replayOnScroll
               hoverEffect="none"
               mask
               textAlign="left"
