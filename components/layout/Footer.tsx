@@ -2,16 +2,11 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#05080f]/95 backdrop-blur-2xl border-t border-white/15 text-white pt-16 pb-10 relative z-10 overflow-hidden">
+    <footer className="w-full bg-white border-t border-slate-200 text-slate-900 pt-16 pb-10 relative z-10 overflow-hidden">
       {/* Top #0058bc Ambient Accent Line */}
       <div
         aria-hidden="true"
-        className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0058bc]/70 to-transparent"
-      />
-      {/* Subtle Ambient Radial Glow */}
-      <div
-        aria-hidden="true"
-        className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-[#0058bc]/10 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0058bc]/40 to-transparent"
       />
 
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin relative z-10">
@@ -21,21 +16,20 @@ export default function Footer() {
             <Link className="inline-flex items-center gap-2.5 group w-fit" href="/">
               <img
                 alt="TRIVEX"
-                className="w-auto object-contain h-9 md:h-11 brightness-0 invert transition-transform duration-200 group-hover:scale-[1.03]"
-                src="/trivex-logo.png"
+                className="w-auto object-contain h-9 md:h-11 transition-transform duration-200 group-hover:scale-[1.03]"
+                src="/trivex-logo-transparent.png"
+                loading="lazy"
+                decoding="async"
               />
-              <span className="font-extrabold tracking-widest text-xl md:text-2xl text-white font-headline-md">
-                TRIVE<span className="text-[#0058bc]">X</span>
-              </span>
             </Link>
 
-            <p className="font-body-sm text-body-sm text-white/75 max-w-sm leading-relaxed">
+            <p className="font-body-sm text-body-sm text-slate-600 max-w-sm leading-relaxed">
               International digital architecture and technology agency. Delivering enterprise scale, surgical precision, and bespoke digital agility for global market leaders.
             </p>
 
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white/[0.05] border border-white/10 w-fit">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#f4f7fb] border border-slate-200 w-fit">
               <span className="material-symbols-outlined text-[#0058bc] text-lg">verified</span>
-              <span className="font-label-sm text-label-sm font-bold tracking-wider uppercase text-white/90">
+              <span className="font-label-sm text-label-sm font-bold tracking-wider uppercase text-slate-800">
                 ISO 27001 Certified Architecture
               </span>
             </div>
@@ -43,7 +37,7 @@ export default function Footer() {
             <div className="flex items-center gap-2.5 pt-1">
               <a
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#f4f7fb] border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0058bc] hover:border-[#0058bc]/40 hover:bg-[#0058bc]/5 transition-all duration-200"
                 href="https://linkedin.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -54,7 +48,7 @@ export default function Footer() {
               </a>
               <a
                 aria-label="X / Twitter"
-                className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#f4f7fb] border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0058bc] hover:border-[#0058bc]/40 hover:bg-[#0058bc]/5 transition-all duration-200"
                 href="https://x.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -65,7 +59,7 @@ export default function Footer() {
               </a>
               <a
                 aria-label="GitHub"
-                className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#f4f7fb] border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0058bc] hover:border-[#0058bc]/40 hover:bg-[#0058bc]/5 transition-all duration-200"
                 href="https://github.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -76,7 +70,7 @@ export default function Footer() {
               </a>
               <a
                 aria-label="Dribbble"
-                className="w-10 h-10 rounded-xl bg-white/[0.06] border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:border-[#0058bc]/70 hover:bg-[#0058bc]/20 transition-all duration-200"
+                className="w-10 h-10 rounded-xl bg-[#f4f7fb] border border-slate-200 flex items-center justify-center text-slate-600 hover:text-[#0058bc] hover:border-[#0058bc]/40 hover:bg-[#0058bc]/5 transition-all duration-200"
                 href="https://dribbble.com"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -104,7 +98,7 @@ export default function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="font-body-sm text-body-sm text-white/75 hover:text-white hover:translate-x-1 transition-all py-1 w-fit"
+                className="font-body-sm text-body-sm text-slate-600 hover:text-[#0058bc] hover:translate-x-1 transition-all py-1 w-fit"
               >
                 {item.name}
               </Link>
@@ -126,9 +120,9 @@ export default function Footer() {
               <Link
                 key={cap.name}
                 href={cap.href}
-                className="inline-flex items-center gap-2 font-body-sm text-body-sm text-white/75 hover:text-white hover:translate-x-1 transition-all py-1 w-fit group"
+                className="inline-flex items-center gap-2 font-body-sm text-body-sm text-slate-600 hover:text-[#0058bc] hover:translate-x-1 transition-all py-1 w-fit group"
               >
-                <span className="material-symbols-outlined text-sm text-[#0058bc] group-hover:text-cyan-400 transition-colors">
+                <span className="material-symbols-outlined text-sm text-[#0058bc] group-hover:text-[#0284c7] transition-colors">
                   {cap.icon}
                 </span>
                 <span>{cap.name}</span>
@@ -142,34 +136,34 @@ export default function Footer() {
               Global Presence
             </span>
             <div className="flex items-start gap-2.5 py-0.5">
-              <span className="material-symbols-outlined text-cyan-400 text-base mt-0.5 shrink-0">location_on</span>
-              <span className="font-body-sm text-body-sm text-white/80 leading-relaxed">
+              <span className="material-symbols-outlined text-[#0058bc] text-base mt-0.5 shrink-0">location_on</span>
+              <span className="font-body-sm text-body-sm text-slate-600 leading-relaxed">
                 One World Trade Center, Suite 8500, New York, NY
               </span>
             </div>
             <a
               href="mailto:connect@trivex-global.com"
-              className="flex items-center gap-2.5 py-0.5 text-white/80 hover:text-cyan-300 transition-colors w-fit"
+              className="flex items-center gap-2.5 py-0.5 text-slate-600 hover:text-[#0058bc] transition-colors w-fit"
             >
-              <span className="material-symbols-outlined text-cyan-400 text-base shrink-0">mail</span>
+              <span className="material-symbols-outlined text-[#0058bc] text-base shrink-0">mail</span>
               <span className="font-body-sm text-body-sm">connect@trivex-global.com</span>
             </a>
             <a
               href="tel:+18008748390"
-              className="flex items-center gap-2.5 py-0.5 text-white/80 hover:text-cyan-300 transition-colors w-fit"
+              className="flex items-center gap-2.5 py-0.5 text-slate-600 hover:text-[#0058bc] transition-colors w-fit"
             >
-              <span className="material-symbols-outlined text-cyan-400 text-base shrink-0">call</span>
+              <span className="material-symbols-outlined text-[#0058bc] text-base shrink-0">call</span>
               <span className="font-body-sm text-body-sm">+1 (800) 874-8390</span>
             </a>
 
-            <div className="mt-2 pt-3 border-t border-white/10 flex flex-col gap-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/[0.06] border border-white/15 rounded-full text-cyan-300 font-label-sm text-label-sm uppercase font-bold w-fit">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <div className="mt-2 pt-3 border-t border-slate-200 flex flex-col gap-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#0058bc]/10 border border-[#0058bc]/20 rounded-full text-[#0058bc] font-label-sm text-label-sm uppercase font-bold w-fit">
+                <span className="w-2 h-2 rounded-full bg-[#0058bc] animate-pulse"></span>
                 Global Operations Active
               </div>
               <Link
                 href="/contact-us"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#0058bc] hover:bg-[#0058bc]/90 text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#0058bc]/25 transition-all w-fit"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#0058bc] hover:bg-[#004696] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#0058bc]/20 transition-all w-fit"
               >
                 <span>Schedule Discovery</span>
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -179,18 +173,18 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/15">
-          <p className="font-body-sm text-body-sm text-white/65">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-slate-200">
+          <p className="font-body-sm text-body-sm text-slate-500">
             © 2025 TRIVE<span className="text-[#0058bc] font-bold">X</span> Architecture Group. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-white/65">
-            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-white transition-colors" href="#">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-slate-500">
+            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-[#0058bc] transition-colors" href="#">
               Privacy Policy
             </Link>
-            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-white transition-colors" href="#">
+            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-[#0058bc] transition-colors" href="#">
               Terms of Service
             </Link>
-            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-white transition-colors" href="#">
+            <Link className="font-label-sm text-label-sm uppercase tracking-wider hover:text-[#0058bc] transition-colors" href="#">
               Security Compliance
             </Link>
           </div>

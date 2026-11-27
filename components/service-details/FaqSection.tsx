@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import GlassSlabSection from "@/components/layout/GlassSlabSection";
+import SplitText from "@/components/home/SplitText";
 
 const faqs = [
   {
@@ -36,13 +37,13 @@ export default function FaqSection() {
   return (
     <GlassSlabSection containerClassName="max-w-4xl mx-auto">
       <div className="text-center mb-12">
-        <span className="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest block mb-2">
+        <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold tracking-widest block mb-2">
           Operational Queries
         </span>
-        <h2 className="font-headline-lg text-headline-lg text-on-surface">
-          Frequently Asked Questions
+        <h2 className="font-headline-lg text-headline-lg text-slate-900">
+          <SplitText text="Frequently Asked Questions" effect="flip" replayOnScroll />
         </h2>
-        <p className="font-body-md text-body-md text-on-surface-variant mt-3 max-w-xl mx-auto font-medium">
+        <p className="font-body-md text-body-md text-slate-600 mt-3 max-w-xl mx-auto font-medium">
           Clear answers on delivery timelines, engineering selections, reporting intervals, and design iteration protocols.
         </p>
       </div>
@@ -53,7 +54,7 @@ export default function FaqSection() {
           return (
             <div
               key={faq.question}
-              className="glass-surface-card rounded-2xl overflow-hidden glass-rim"
+              className="bg-[#f4f7fb] border border-slate-200 rounded-2xl overflow-hidden"
             >
               <button
                 aria-expanded={isOpen}
@@ -61,11 +62,11 @@ export default function FaqSection() {
                 type="button"
                 onClick={() => toggle(index)}
               >
-                <span className="font-headline-sm text-headline-sm text-on-surface font-bold">
+                <span className="font-headline-sm text-headline-sm text-slate-900 font-bold">
                   {faq.question}
                 </span>
                 <span
-                  className={`material-symbols-outlined text-primary text-2xl transition-transform duration-200 shrink-0 ${
+                  className={`material-symbols-outlined text-[#0058bc] text-2xl transition-transform duration-200 shrink-0 ${
                     isOpen ? "rotate-180" : ""
                   }`}
                 >
@@ -73,7 +74,7 @@ export default function FaqSection() {
                 </span>
               </button>
               {isOpen && (
-                <div className="px-5 sm:px-6 pb-6 pt-2 text-body-md text-on-surface-variant font-medium border-t border-white/40 leading-relaxed">
+                <div className="px-5 sm:px-6 pb-6 pt-2 text-body-md text-slate-600 font-medium border-t border-slate-200 leading-relaxed bg-white">
                   {faq.answer}
                 </div>
               )}

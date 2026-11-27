@@ -1,5 +1,6 @@
 import Link from "next/link";
 import GlassSlabSection from "@/components/layout/GlassSlabSection";
+import SplitText from "@/components/home/SplitText";
 
 const models = [
   {
@@ -54,14 +55,14 @@ export default function EngagementModels() {
     <GlassSlabSection>
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
         <div>
-          <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">
+          <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold">
             Partnership Frameworks
           </span>
-          <h2 className="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-2">
-            Structured for Velocity &amp; Predictability
+          <h2 className="font-headline-lg text-headline-lg text-slate-900 tracking-tight mt-2">
+            <SplitText text="Structured for Velocity & Predictability" effect="flip" replayOnScroll />
           </h2>
         </div>
-        <p className="font-body-md text-body-md text-on-surface-variant max-w-md font-medium">
+        <p className="font-body-md text-body-md text-slate-600 max-w-md font-medium">
           Flexible contractual arrangements tailored to enterprise transformation requirements, early stage hypergrowth, or long-term brand dominance.
         </p>
       </div>
@@ -70,12 +71,12 @@ export default function EngagementModels() {
         {models.map((model) => (
           <div
             key={model.title}
-            className={`glass-surface-card p-7 sm:p-8 rounded-3xl glass-rim flex flex-col justify-between relative group ${
-              model.featured ? "ring-1 ring-primary/40 shadow-2xl" : ""
+            className={`bg-[#f4f7fb] border p-7 sm:p-8 rounded-3xl flex flex-col justify-between relative group hover:shadow-md transition-shadow ${
+              model.featured ? "border-[#0058bc]/40 ring-1 ring-[#0058bc]/20 shadow-md" : "border-slate-200"
             }`}
           >
             {model.badge && (
-              <div className="absolute -top-3 right-6 bg-gradient-to-r from-primary to-primary-container text-on-primary px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold tracking-wider shadow-md">
+              <div className="absolute -top-3 right-6 bg-[#0058bc] text-white px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold tracking-wider shadow-md">
                 {model.badge}
               </div>
             )}
@@ -83,8 +84,8 @@ export default function EngagementModels() {
               <div
                 className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-105 ${
                   model.featured
-                    ? "bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-lg shadow-primary/20 tactile-surface"
-                    : "glass-subcard text-primary"
+                    ? "bg-[#0058bc] text-white shadow-md shadow-[#0058bc]/20"
+                    : "bg-white border border-slate-200 text-[#0058bc]"
                 }`}
               >
                 <span className="material-symbols-outlined text-2xl">{model.icon}</span>

@@ -1,3 +1,5 @@
+import SplitText from "@/components/home/SplitText";
+
 const differentiators = [
   {
     tag: "Direct Access",
@@ -30,13 +32,13 @@ export default function AboutDifferentiators() {
     <section className="w-full bg-transparent py-16 md:py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest font-bold mb-2 block">
+          <span className="font-label-sm text-label-sm text-[#0058bc] uppercase tracking-widest font-bold mb-2 block">
             Architectural Differentiation
           </span>
-          <h2 className="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-3">
-            The structural advantage of TRIVEX.
+          <h2 className="font-headline-lg text-headline-lg text-slate-900 tracking-tight mb-3">
+            <SplitText text="The structural advantage of TRIVEX." effect="flip" replayOnScroll />
           </h2>
-          <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-secondary font-medium">
+          <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-slate-600 font-medium">
             How our lean, lead-driven model compares against bloated legacy agencies.
           </p>
         </div>
@@ -45,29 +47,29 @@ export default function AboutDifferentiators() {
           {differentiators.map((item) => (
             <div
               key={item.title}
-              className="glass-card-pro rounded-3xl p-7 sm:p-8 flex flex-col justify-between glass-rim group"
+              className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow rounded-3xl p-7 sm:p-8 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="font-label-sm text-label-sm uppercase font-bold text-primary glass-subcard px-3 py-1 rounded-full">
+                  <span className="font-label-sm text-label-sm uppercase font-bold text-[#0058bc] bg-[#0058bc]/10 border border-[#0058bc]/20 px-3 py-1 rounded-full">
                     {item.tag}
                   </span>
-                  <div className="w-10 h-10 rounded-xl bg-surface-container text-primary flex items-center justify-center neumorphic-inset group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-[#f4f7fb] border border-slate-200 text-[#0058bc] flex items-center justify-center group-hover:scale-105 transition-transform">
                     <span className="material-symbols-outlined text-xl">{item.icon}</span>
                   </div>
                 </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface mb-3 font-bold">
+                <h3 className="font-headline-sm text-headline-sm text-slate-900 mb-3 font-bold">
                   {item.title}
                 </h3>
-                <p className="font-body-sm text-body-sm text-secondary leading-relaxed mb-6 font-medium">
+                <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed mb-6 font-medium">
                   {item.description}
                 </p>
               </div>
-              <div className="glass-subcard p-4 rounded-2xl">
-                <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold block mb-1">
+              <div className="bg-[#f4f7fb] border border-slate-200 p-4 rounded-2xl">
+                <span className="font-label-sm text-label-sm uppercase tracking-wider text-[#0058bc] font-bold block mb-1">
                   Impact
                 </span>
-                <span className="font-body-sm text-body-sm text-on-surface font-semibold leading-snug block">
+                <span className="font-body-sm text-body-sm text-slate-900 font-semibold leading-snug block">
                   {item.impact}
                 </span>
               </div>

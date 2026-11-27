@@ -35,37 +35,37 @@ export default function Pillar2Marketing() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Visual Analytics */}
           <div className="lg:col-span-6 order-2 lg:order-1">
-            <div className="glass-card-pro rounded-3xl p-5 sm:p-7 glass-rim relative overflow-hidden">
+            <div className="bg-white border border-slate-200 shadow-sm rounded-3xl p-5 sm:p-7 relative overflow-hidden">
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <span className="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">
+                  <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold tracking-wider">
                     Real-Time Demand Funnel
                   </span>
-                  <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">
+                  <h3 className="font-headline-sm text-headline-sm text-slate-900 font-bold">
                     Multi-Channel Attribution
                   </h3>
                 </div>
-                <span className="px-3 py-1 glass-subcard text-primary font-label-sm text-label-sm rounded-full font-bold">
+                <span className="px-3 py-1 bg-[#0058bc]/10 border border-[#0058bc]/20 text-[#0058bc] font-label-sm text-label-sm rounded-full font-bold">
                   Live Data
                 </span>
               </div>
 
               {/* Inlined Interactive Visual SVG Chart */}
-              <div className="glass-subcard p-5 rounded-2xl mb-5">
+              <div className="bg-[#f4f7fb] border border-slate-200 p-5 rounded-2xl mb-5">
                 <div className="flex justify-between items-baseline mb-4">
                   <div>
-                    <span className="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">
+                    <span className="font-headline-md text-headline-md text-slate-900 font-extrabold tracking-tight">
                       +342%
                     </span>
-                    <span className="font-label-sm text-label-sm text-primary font-bold block">
+                    <span className="font-label-sm text-label-sm text-[#0058bc] font-bold block">
                       Organic Acquisition Surge
                     </span>
                   </div>
-                  <span className="font-label-md text-label-md text-on-surface-variant font-semibold">
+                  <span className="font-label-md text-label-md text-slate-600 font-semibold">
                     Past 90 Days
                   </span>
                 </div>
-                <svg className="w-full h-24 overflow-visible text-primary" viewBox="0 0 400 120">
+                <svg className="w-full h-24 overflow-visible text-[#0058bc]" viewBox="0 0 400 120">
                   <defs>
                     <linearGradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
                       <stop offset="0%" stopColor="currentColor" stopOpacity="0.3"></stop>

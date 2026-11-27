@@ -35,14 +35,14 @@ export default function Pillar1Software() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         {/* Left Narrative */}
         <div className="lg:col-span-6 flex flex-col">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 glass-subcard text-primary rounded-full font-label-sm text-label-sm uppercase font-bold mb-4">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 bg-[#0058bc]/10 border border-[#0058bc]/20 text-[#0058bc] rounded-full font-label-sm text-label-sm uppercase font-bold mb-4">
             <span className="material-symbols-outlined text-sm">terminal</span>
             Pillar 01 • Engineering
           </div>
-          <h2 className="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-4">
+          <h2 className="font-headline-lg text-headline-lg text-slate-900 tracking-tight mb-4">
             Software Development
           </h2>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed font-medium">
+          <p className="font-body-lg text-body-lg text-slate-600 mb-8 leading-relaxed font-medium">
             Robust, scalable, secure web and mobile applications engineered for high performance, continuous operational continuity, and enterprise compliance.
           </p>
 
@@ -51,22 +51,22 @@ export default function Pillar1Software() {
             {modules.map((mod) => (
               <div
                 key={mod.title}
-                className="flex items-center justify-between p-4 glass-surface-card rounded-2xl glass-rim group"
+                className="flex items-center justify-between p-4 bg-[#f4f7fb] border border-slate-200 rounded-2xl group hover:shadow-sm transition-shadow"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-xl glass-subcard flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#0058bc] shrink-0 group-hover:scale-105 transition-transform">
                     <span className="material-symbols-outlined text-lg">{mod.icon}</span>
                   </div>
                   <div>
-                    <span className="font-headline-sm text-headline-sm text-on-surface font-bold block text-base leading-snug">
+                    <span className="font-headline-sm text-headline-sm text-slate-900 font-bold block text-base leading-snug">
                       {mod.title}
                     </span>
-                    <span className="font-body-sm text-body-sm text-on-surface-variant font-medium">
+                    <span className="font-body-sm text-body-sm text-slate-600 font-medium">
                       {mod.desc}
                     </span>
                   </div>
                 </div>
-                <span className="material-symbols-outlined text-primary text-xl group-hover:translate-x-1 transition-transform shrink-0 ml-2">
+                <span className="material-symbols-outlined text-[#0058bc] text-xl group-hover:translate-x-1 transition-transform shrink-0 ml-2">
                   arrow_forward_ios
                 </span>
               </div>
@@ -74,7 +74,7 @@ export default function Pillar1Software() {
           </div>
 
           <Link
-            className="inline-flex items-center gap-2 font-label-lg text-label-lg text-primary font-bold hover:gap-3 transition-all duration-200 self-start"
+            className="inline-flex items-center gap-2 font-label-lg text-label-lg text-[#0058bc] font-bold hover:gap-3 transition-all duration-200 self-start"
             href="/service-details"
           >
             View Software Details
@@ -84,8 +84,8 @@ export default function Pillar1Software() {
 
         {/* Right Visual Showcase */}
         <div className="lg:col-span-6">
-          <div className="glass-surface-card rounded-3xl p-5 sm:p-7 glass-rim relative overflow-hidden">
-            <div className="flex items-center justify-between mb-6 glass-subcard rounded-2xl p-3.5">
+          <div className="bg-[#f4f7fb] border border-slate-200 rounded-3xl p-5 sm:p-7 relative overflow-hidden">
+            <div className="flex items-center justify-between mb-6 bg-white border border-slate-200 rounded-2xl p-3.5">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-error/80"></span>
                 <span className="w-3 h-3 rounded-full bg-amber-400"></span>

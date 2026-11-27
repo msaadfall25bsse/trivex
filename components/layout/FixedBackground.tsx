@@ -1,39 +1,16 @@
 /**
  * Stationary fixed background layer shared across all pages.
- * Keeps the image rich and legible while gently softening the right edge so the
- * darker hardware bezel blends smoothly behind foreground content.
+ * Soft alabaster-slate (#f4f7fb) surface with subtle static ambient depth
+ * for zero-lag scrolling and eye-friendly contrast.
  */
 export default function FixedBackground() {
   return (
     <div
-      className="fixed inset-0 pointer-events-none z-0 w-full h-full overflow-hidden select-none"
+      className="fixed inset-0 pointer-events-none z-0 w-full h-full overflow-hidden select-none bg-[#f4f7fb]"
       aria-hidden="true"
     >
-      {/* Mobile Background Image (Vertical Portrait: < md) */}
-      <div
-        className="block md:hidden absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-100"
-        style={{
-          backgroundImage: "url('/homepage-bg-mobile.jpg')",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
-
-      {/* Desktop / Tablet Background Image (Horizontal Landscape: >= md) */}
-      <div
-        className="hidden md:block absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-100"
-        style={{
-          backgroundImage: "url('/homepage-bg.jpg')",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
-
-      {/* Right-Side Gentle Veil: softens only the far right side while keeping left & center 100% clear */}
-      <div className="hidden md:block absolute inset-0 bg-gradient-to-l from-[#f4f7ff]/65 via-[#f4f7ff]/25 via-40% to-transparent" />
-      <div className="block md:hidden absolute inset-0 bg-gradient-to-l from-[#f4f7ff]/45 via-transparent via-35% to-transparent" />
+      <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-[#0058bc]/[0.04] blur-3xl" />
+      <div className="absolute top-1/2 -left-40 w-[500px] h-[500px] rounded-full bg-[#0284c7]/[0.03] blur-3xl" />
     </div>
   );
 }

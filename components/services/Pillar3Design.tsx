@@ -30,14 +30,14 @@ export default function Pillar3Design() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         {/* Left Narrative */}
         <div className="lg:col-span-6 flex flex-col">
-          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 glass-subcard text-primary rounded-full font-label-sm text-label-sm uppercase font-bold mb-4">
+          <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 bg-[#0058bc]/10 border border-[#0058bc]/20 text-[#0058bc] rounded-full font-label-sm text-label-sm uppercase font-bold mb-4">
             <span className="material-symbols-outlined text-sm">palette</span>
             Pillar 03 • Brand &amp; Interface
           </div>
-          <h2 className="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-4">
+          <h2 className="font-headline-lg text-headline-lg text-slate-900 tracking-tight mb-4">
             Graphic Designing
           </h2>
-          <p className="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed font-medium">
+          <p className="font-body-lg text-body-lg text-slate-600 mb-8 leading-relaxed font-medium">
             Memorable visual identities and human-centered user interfaces that elevate brand authority, inspire conviction, and drive effortless digital conversion.
           </p>
 
@@ -46,22 +46,22 @@ export default function Pillar3Design() {
             {modules.map((mod) => (
               <div
                 key={mod.title}
-                className="flex items-center justify-between p-4 glass-surface-card rounded-2xl glass-rim group"
+                className="flex items-center justify-between p-4 bg-[#f4f7fb] border border-slate-200 rounded-2xl group hover:shadow-sm transition-shadow"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-xl glass-subcard flex items-center justify-center text-primary shrink-0 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#0058bc] shrink-0 group-hover:scale-105 transition-transform">
                     <span className="material-symbols-outlined text-lg">{mod.icon}</span>
                   </div>
                   <div>
-                    <span className="font-headline-sm text-headline-sm text-on-surface font-bold block text-base leading-snug">
+                    <span className="font-headline-sm text-headline-sm text-slate-900 font-bold block text-base leading-snug">
                       {mod.title}
                     </span>
-                    <span className="font-body-sm text-body-sm text-on-surface-variant font-medium">
+                    <span className="font-body-sm text-body-sm text-slate-600 font-medium">
                       {mod.desc}
                     </span>
                   </div>
                 </div>
-                <span className="material-symbols-outlined text-primary text-xl group-hover:translate-x-1 transition-transform shrink-0 ml-2">
+                <span className="material-symbols-outlined text-[#0058bc] text-xl group-hover:translate-x-1 transition-transform shrink-0 ml-2">
                   arrow_forward_ios
                 </span>
               </div>
@@ -69,7 +69,7 @@ export default function Pillar3Design() {
           </div>
 
           <Link
-            className="inline-flex items-center gap-2 font-label-lg text-label-lg text-primary font-bold hover:gap-3 transition-all duration-200 self-start"
+            className="inline-flex items-center gap-2 font-label-lg text-label-lg text-[#0058bc] font-bold hover:gap-3 transition-all duration-200 self-start"
             href="/service-details"
           >
             View Design Details
@@ -79,12 +79,12 @@ export default function Pillar3Design() {
 
         {/* Right Creative UI/UX Showcase */}
         <div className="lg:col-span-6">
-          <div className="glass-surface-card rounded-3xl p-5 sm:p-7 glass-rim relative overflow-hidden">
+          <div className="bg-[#f4f7fb] border border-slate-200 rounded-3xl p-5 sm:p-7 relative overflow-hidden">
             {/* Canvas Simulation Bar */}
-            <div className="flex items-center justify-between mb-4 glass-subcard rounded-2xl p-3.5">
+            <div className="flex items-center justify-between mb-4 bg-white border border-slate-200 rounded-2xl p-3.5">
               <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-primary text-xl">design_services</span>
-                <span className="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">
+                <span className="material-symbols-outlined text-[#0058bc] text-xl">design_services</span>
+                <span className="font-label-sm text-label-sm font-bold text-slate-900 uppercase tracking-wider">
                   TRIVEX UI Design System v4.8
                 </span>
               </div>
