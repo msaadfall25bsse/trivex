@@ -1,5 +1,4 @@
 import SplitText from "@/components/home/SplitText";
-import BorderGlow from "@/components/home/BorderGlow";
 import ScrollStack, { ScrollStackItem } from "@/components/home/ScrollStack";
 
 const processSteps = [
@@ -47,122 +46,96 @@ const processSteps = [
 
 function ProcessCard({ item }: { item: (typeof processSteps)[number] }) {
   return (
-    <BorderGlow
-      edgeSensitivity={48}
-      glowColor="215 90 52"
-      backgroundColor="#ffffff"
-      borderRadius={24}
-      glowRadius={48}
-      glowIntensity={0.45}
-      coneSpread={35}
-      animated
-      colors={["#0058bc", "#0284c7", "#3b82f6"]}
-      className="h-full"
-    >
-      <div className="h-full p-7 rounded-3xl flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300">
-        <div>
-          <div className="flex items-center justify-between mb-5">
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0058bc] to-sky-500 font-extrabold text-3xl font-headline-md tracking-tighter">
-              {item.step}
-            </span>
-            <div
-              className={`w-12 h-12 rounded-2xl bg-blue-50 ${item.iconColor} flex items-center justify-center shadow-sm border border-blue-100 group-hover:scale-105 transition-transform`}
-            >
-              <span className="material-symbols-outlined text-2xl">{item.icon}</span>
-            </div>
+    <div className="bg-white border border-slate-200 rounded-3xl h-full p-7 flex flex-col justify-between group hover:-translate-y-1 hover:border-[#0058bc]/40 hover:shadow-lg transition-all duration-300 shadow-sm">
+      <div>
+        <div className="flex items-center justify-between mb-5">
+          <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#0058bc] to-sky-500 font-extrabold text-3xl font-headline-md tracking-tighter">
+            {item.step}
+          </span>
+          <div
+            className={`w-12 h-12 rounded-2xl bg-blue-50 ${item.iconColor} flex items-center justify-center shadow-sm border border-blue-100 group-hover:scale-105 transition-transform`}
+          >
+            <span className="material-symbols-outlined text-2xl">{item.icon}</span>
           </div>
-          <h3 className="font-headline-sm text-headline-sm text-slate-900 mb-2 font-bold text-lg">
-            {item.title}
-          </h3>
-          <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed font-medium">
-            {item.description}
-          </p>
         </div>
-        <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2 text-slate-700">
-          <span className="material-symbols-outlined text-[#0058bc] text-base">
-            {item.footerIcon}
-          </span>
-          <span className="font-label-sm text-label-sm uppercase font-semibold">
-            {item.footerLabel}
-          </span>
-        </div>
+        <h3 className="font-headline-sm text-headline-sm text-slate-900 mb-2 font-bold text-lg">
+          {item.title}
+        </h3>
+        <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed font-medium">
+          {item.description}
+        </p>
       </div>
-    </BorderGlow>
+      <div className="mt-6 pt-3 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2 text-slate-700">
+        <span className="material-symbols-outlined text-[#0058bc] text-base">
+          {item.footerIcon}
+        </span>
+        <span className="font-label-sm text-label-sm uppercase font-semibold">
+          {item.footerLabel}
+        </span>
+      </div>
+    </div>
   );
 }
 
 export default function ProcessSection() {
   return (
     <section className="w-full bg-white py-10 md:py-16 relative z-10">
-      <BorderGlow
-        edgeSensitivity={48}
-        glowColor="215 90 52"
-        backgroundColor="#f8fafc"
-        borderRadius={24}
-        glowRadius={48}
-        glowIntensity={0.45}
-        coneSpread={35}
-        animated
-        colors={["#0058bc", "#0284c7", "#3b82f6"]}
-        className="w-full md:w-[90%] mx-auto"
-      >
-        <div className="py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl shadow-[0_8px_32px_rgba(15,23,42,0.06)]">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-2">
-                PRECISION ROADMAP
-              </span>
-              <SplitText
-                tag="h2"
-                text="The 4-Step Triad Delivery Framework"
-                className="font-headline-lg text-headline-lg text-slate-900 tracking-tight"
-                effect="flip"
-                splitType="words, chars"
-                delay={25}
-                duration={1.0}
-                staggerFrom="start"
-                trigger="view"
-                replayOnScroll
-                mask
-                threshold={0.1}
-                rootMargin="-60px"
-                textAlign="center"
-              />
-            </div>
+      <div className="w-full md:w-[90%] mx-auto bg-slate-50 py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl border-y md:border border-slate-200 shadow-[0_8px_32px_rgba(15,23,42,0.06)]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-2">
+              PRECISION ROADMAP
+            </span>
+            <SplitText
+              tag="h2"
+              text="The 4-Step Triad Delivery Framework"
+              className="font-headline-lg text-headline-lg text-slate-900 tracking-tight"
+              effect="flip"
+              splitType="words, chars"
+              delay={25}
+              duration={1.0}
+              staggerFrom="start"
+              trigger="view"
+              replayOnScroll
+              mask
+              threshold={0.1}
+              rootMargin="-60px"
+              textAlign="center"
+            />
+          </div>
 
-            {/* Mobile: ScrollStack */}
-            <div className="md:hidden">
-              <ScrollStack
-                useWindowScroll
-                smoothScroll={false}
-                stackPosition={104}
-                itemDistance={72}
-                itemStackDistance={22}
-                itemScale={0.04}
-                baseScale={0.88}
-                dimAmount={0.12}
-                holdDistance={100}
-              >
-                {processSteps.map((item) => (
-                  <ScrollStackItem
-                    key={item.step}
-                    itemClassName="!p-0 !bg-transparent"
-                  >
-                    <ProcessCard item={item} />
-                  </ScrollStackItem>
-                ))}
-              </ScrollStack>
-            </div>
-
-            {/* Desktop & Tablet: 4-Column Grid */}
-            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          {/* Mobile: ScrollStack */}
+          <div className="md:hidden">
+            <ScrollStack
+              useWindowScroll
+              smoothScroll={false}
+              stackPosition={104}
+              itemDistance={72}
+              itemStackDistance={22}
+              itemScale={0.04}
+              baseScale={0.88}
+              dimAmount={0.12}
+              holdDistance={100}
+            >
               {processSteps.map((item) => (
-                <ProcessCard key={item.step} item={item} />
+                <ScrollStackItem
+                  key={item.step}
+                  itemClassName="!p-0 !bg-transparent"
+                >
+                  <ProcessCard item={item} />
+                </ScrollStackItem>
               ))}
-            </div>
+            </ScrollStack>
+          </div>
+
+          {/* Desktop & Tablet: 4-Column Grid */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            {processSteps.map((item) => (
+              <ProcessCard key={item.step} item={item} />
+            ))}
           </div>
         </div>
-      </BorderGlow>
+      </div>
     </section>
   );
 }
