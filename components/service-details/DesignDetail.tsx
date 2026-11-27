@@ -1,6 +1,16 @@
 import GlassSlabSection from "@/components/layout/GlassSlabSection";
+import ScrollStack, { ScrollStackItem } from "@/components/home/ScrollStack";
+import SplitText from "@/components/home/SplitText";
 
-const designScopes = [
+interface DesignScope {
+  icon: string;
+  title: string;
+  desc: string;
+  tags: string[];
+  spanTwo: boolean;
+}
+
+const designScopes: DesignScope[] = [
   {
     icon: "auto_stories",
     title: "Brand Identity",
@@ -80,6 +90,42 @@ const synergyCards = [
   },
 ];
 
+function DesignCard({ item }: { item: DesignScope }) {
+  return (
+    <div
+      className={`bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-6 sm:p-7 rounded-3xl flex flex-col justify-between group h-full ${
+        item.spanTwo ? "lg:col-span-2" : ""
+      }`}
+    >
+      <div>
+        <div className="w-11 h-11 rounded-2xl bg-[#f4f7fb] border border-slate-200 text-[#0058bc] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <span className="material-symbols-outlined text-xl">{item.icon}</span>
+        </div>
+        <h3 className="font-headline-sm text-headline-sm text-slate-900 mb-2 font-bold">
+          {item.title}
+        </h3>
+        <p
+          className={`font-body-sm text-body-sm text-slate-600 mb-6 font-medium leading-relaxed ${
+            item.spanTwo ? "max-w-2xl" : ""
+          }`}
+        >
+          {item.desc}
+        </p>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {item.tags.map((tag) => (
+          <span
+            key={tag}
+            className="px-2.5 py-1 bg-[#f4f7fb] border border-slate-200 rounded-lg text-slate-700 font-label-sm text-label-sm font-semibold"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function DesignDetail() {
   return (
     <>
@@ -87,76 +133,66 @@ export default function DesignDetail() {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12 sm:mb-14">
           <div>
-            <div className="flex items-center gap-2 text-primary font-label-sm text-label-sm font-bold uppercase tracking-widest mb-2">
-              <span className="font-mono text-on-surface-variant">03 / IDENTITY</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            <div className="flex items-center gap-2 text-[#0058bc] font-label-sm text-label-sm font-bold uppercase tracking-widest mb-2">
+              <span className="font-mono text-slate-500">03 / IDENTITY</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0058bc]"></span>
               <span>Design Systems &amp; Visual Mastery</span>
             </div>
-            <h2 className="font-headline-lg text-headline-lg text-on-surface">
-              Comprehensive Graphic Designing
+            <h2 className="font-headline-lg text-headline-lg text-slate-900">
+              <SplitText text="Comprehensive Graphic Designing" effect="flip" replayOnScroll />
             </h2>
           </div>
-          <p className="font-body-md text-body-md text-on-surface-variant max-w-xl font-medium">
+          <p className="font-body-md text-body-md text-slate-600 max-w-xl font-medium">
             Visual languages forged for enterprise recognition. Scalable design tokens, high-velocity marketing collateral, and uncompromising interface usability.
           </p>
         </div>
 
-        {/* Scope Breakdown Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 sm:mb-12">
+        {/* Mobile: ScrollStack */}
+        <div className="md:hidden mb-10">
+          <ScrollStack
+            useWindowScroll
+            smoothScroll={false}
+            stackPosition={104}
+            itemDistance={72}
+            itemStackDistance={22}
+            itemScale={0.04}
+            baseScale={0.88}
+            dimAmount={0.12}
+            holdDistance={100}
+          >
+            {designScopes.map((item) => (
+              <ScrollStackItem key={item.title} itemClassName="!p-0 !bg-transparent">
+                <DesignCard item={item} />
+              </ScrollStackItem>
+            ))}
+          </ScrollStack>
+        </div>
+
+        {/* Scope Breakdown Grid (Desktop & Tablet) */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 sm:mb-12">
           {designScopes.map((item) => (
-            <div
-              key={item.title}
-              className={`glass-surface-card p-6 sm:p-7 rounded-3xl glass-rim flex flex-col justify-between group ${
-                item.spanTwo ? "lg:col-span-2" : ""
-              }`}
-            >
-              <div>
-                <div className="w-11 h-11 rounded-2xl glass-subcard flex items-center justify-center text-primary mb-5 neumorphic-inset group-hover:scale-110 transition-transform">
-                  <span className="material-symbols-outlined text-xl">{item.icon}</span>
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2 font-bold">
-                  {item.title}
-                </h3>
-                <p
-                  className={`font-body-sm text-body-sm text-on-surface-variant mb-6 font-medium leading-relaxed ${
-                    item.spanTwo ? "max-w-2xl" : ""
-                  }`}
-                >
-                  {item.desc}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {item.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2.5 py-1 glass-subcard rounded-lg text-on-surface font-label-sm text-label-sm font-semibold"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <DesignCard key={item.title} item={item} />
           ))}
         </div>
 
         {/* Creative Delivery Process Rail */}
-        <div className="w-full glass-surface-card p-6 sm:p-8 md:p-10 rounded-3xl glass-rim">
-          <span className="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest block mb-1">
+        <div className="w-full bg-[#f4f7fb] border border-slate-200 p-6 sm:p-8 md:p-10 rounded-3xl">
+          <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold tracking-widest block mb-1">
             Execution Rhythm
           </span>
-          <h3 className="font-headline-md text-headline-md text-on-surface mb-6 font-bold">
+          <h3 className="font-headline-md text-headline-md text-slate-900 mb-6 font-bold">
             Creative Delivery Process
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {deliverySteps.map((s) => (
-              <div key={s.step} className="glass-subcard p-5 sm:p-6 rounded-2xl">
-                <div className="w-9 h-9 rounded-full bg-primary/15 text-primary flex items-center justify-center font-bold text-label-md mb-4">
+              <div key={s.step} className="bg-white border border-slate-200 p-5 sm:p-6 rounded-2xl shadow-sm">
+                <div className="w-9 h-9 rounded-full bg-[#0058bc]/10 text-[#0058bc] flex items-center justify-center font-bold text-label-md mb-4">
                   {s.step}
                 </div>
-                <h4 className="font-headline-sm text-headline-sm text-on-surface mb-1.5 font-bold">
+                <h4 className="font-headline-sm text-headline-sm text-slate-900 mb-1.5 font-bold">
                   {s.title}
                 </h4>
-                <p className="font-body-sm text-body-sm text-on-surface-variant font-medium">
+                <p className="font-body-sm text-body-sm text-slate-600 font-medium">
                   {s.desc}
                 </p>
               </div>
@@ -170,40 +206,87 @@ export default function DesignDetail() {
         <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest block mb-1">
+              <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold tracking-widest block mb-1">
                 Portfolio In Action
               </span>
-              <h2 className="font-headline-lg text-headline-lg text-on-surface">
-                Integrated Discipline Synergy
+              <h2 className="font-headline-lg text-headline-lg text-slate-900">
+                <SplitText text="Integrated Discipline Synergy" effect="flip" replayOnScroll />
               </h2>
             </div>
-            <p className="font-body-sm text-body-sm text-on-surface-variant max-w-md font-medium">
+            <p className="font-body-sm text-body-sm text-slate-600 max-w-md font-medium">
               How code, data intelligence, and visual craftsmanship merge into high-performing digital flagships.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {/* Mobile: ScrollStack for Synergy Cards */}
+          <div className="md:hidden">
+            <ScrollStack
+              useWindowScroll
+              smoothScroll={false}
+              stackPosition={104}
+              itemDistance={72}
+              itemStackDistance={22}
+              itemScale={0.04}
+              baseScale={0.88}
+              dimAmount={0.12}
+              holdDistance={100}
+            >
+              {synergyCards.map((card) => (
+                <ScrollStackItem key={card.title} itemClassName="!p-0 !bg-transparent">
+                  <div className="bg-white border border-slate-200 shadow-sm rounded-3xl overflow-hidden flex flex-col group h-full">
+                    <div className="h-56 w-full overflow-hidden">
+                      <img
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        alt={card.alt}
+                        loading="lazy"
+                        decoding="async"
+                        src={card.src}
+                      />
+                    </div>
+                    <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                      <div>
+                        <span className="font-label-sm text-label-sm text-[#0058bc] font-bold uppercase tracking-wider block mb-1.5">
+                          {card.tag}
+                        </span>
+                        <h4 className="font-headline-sm text-headline-sm text-slate-900 mb-2 font-bold">
+                          {card.title}
+                        </h4>
+                        <p className="font-body-sm text-body-sm text-slate-600 font-medium leading-relaxed">
+                          {card.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollStackItem>
+              ))}
+            </ScrollStack>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
             {synergyCards.map((card) => (
               <div
                 key={card.title}
-                className="glass-card-pro rounded-3xl overflow-hidden glass-rim flex flex-col group"
+                className="bg-white border border-slate-200 shadow-sm rounded-3xl overflow-hidden flex flex-col group hover:shadow-md transition-shadow"
               >
                 <div className="h-56 w-full overflow-hidden">
                   <img
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     alt={card.alt}
+                    loading="lazy"
+                    decoding="async"
                     src={card.src}
                   />
                 </div>
                 <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider block mb-1.5">
+                    <span className="font-label-sm text-label-sm text-[#0058bc] font-bold uppercase tracking-wider block mb-1.5">
                       {card.tag}
                     </span>
-                    <h4 className="font-headline-sm text-headline-sm text-on-surface mb-2 font-bold">
+                    <h4 className="font-headline-sm text-headline-sm text-slate-900 mb-2 font-bold">
                       {card.title}
                     </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant font-medium leading-relaxed">
+                    <p className="font-body-sm text-body-sm text-slate-600 font-medium leading-relaxed">
                       {card.desc}
                     </p>
                   </div>

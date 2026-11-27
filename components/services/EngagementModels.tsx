@@ -1,8 +1,20 @@
 import Link from "next/link";
 import GlassSlabSection from "@/components/layout/GlassSlabSection";
+import ScrollStack, { ScrollStackItem } from "@/components/home/ScrollStack";
 import SplitText from "@/components/home/SplitText";
 
-const models = [
+interface Model {
+  icon: string;
+  badge: string | null;
+  eyebrow: string;
+  title: string;
+  description: string;
+  features: string[];
+  cta: string;
+  featured: boolean;
+}
+
+const models: Model[] = [
   {
     icon: "group_work",
     badge: null,
@@ -50,6 +62,62 @@ const models = [
   },
 ];
 
+function EngagementCard({ model }: { model: Model }) {
+  return (
+    <div
+      className={`bg-[#f4f7fb] border p-7 sm:p-8 rounded-3xl flex flex-col justify-between relative group hover:shadow-md transition-shadow h-full ${
+        model.featured ? "border-[#0058bc]/40 ring-1 ring-[#0058bc]/20 shadow-md" : "border-slate-200"
+      }`}
+    >
+      {model.badge && (
+        <div className="absolute -top-3 right-6 bg-[#0058bc] text-white px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold tracking-wider shadow-md">
+          {model.badge}
+        </div>
+      )}
+      <div>
+        <div
+          className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-105 ${
+            model.featured
+              ? "bg-[#0058bc] text-white shadow-md shadow-[#0058bc]/20"
+              : "bg-white border border-slate-200 text-[#0058bc]"
+          }`}
+        >
+          <span className="material-symbols-outlined text-2xl">{model.icon}</span>
+        </div>
+        <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold tracking-widest block mb-2 font-mono">
+          {model.eyebrow}
+        </span>
+        <h3 className="font-headline-sm text-headline-sm text-slate-900 font-bold mb-3">
+          {model.title}
+        </h3>
+        <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed mb-6 font-medium">
+          {model.description}
+        </p>
+
+        <div className="space-y-3 mb-8 pt-4 border-t border-slate-200">
+          {model.features.map((feature) => (
+            <div key={feature} className="flex items-center gap-2.5 text-slate-700">
+              <span className="material-symbols-outlined text-[#0058bc] text-base shrink-0">check_circle</span>
+              <span className="font-body-sm text-body-sm font-semibold">{feature}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <Link
+        href="/contact-us"
+        className={`w-full py-3.5 px-6 rounded-xl font-label-md text-label-md uppercase tracking-wider font-bold text-center transition-all ${
+          model.featured
+            ? "bg-[#0058bc] hover:bg-[#004696] text-white shadow-md shadow-[#0058bc]/20"
+            : "bg-white hover:bg-slate-100 text-slate-900 border border-slate-200"
+        }`}
+      >
+        {model.cta}
+      </Link>
+    </div>
+  );
+}
+
 export default function EngagementModels() {
   return (
     <GlassSlabSection>
@@ -67,58 +135,31 @@ export default function EngagementModels() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      {/* Mobile: ScrollStack */}
+      <div className="md:hidden">
+        <ScrollStack
+          useWindowScroll
+          smoothScroll={false}
+          stackPosition={104}
+          itemDistance={72}
+          itemStackDistance={22}
+          itemScale={0.04}
+          baseScale={0.88}
+          dimAmount={0.12}
+          holdDistance={100}
+        >
+          {models.map((model) => (
+            <ScrollStackItem key={model.title} itemClassName="!p-0 !bg-transparent">
+              <EngagementCard model={model} />
+            </ScrollStackItem>
+          ))}
+        </ScrollStack>
+      </div>
+
+      {/* Desktop Grid */}
+      <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
         {models.map((model) => (
-          <div
-            key={model.title}
-            className={`bg-[#f4f7fb] border p-7 sm:p-8 rounded-3xl flex flex-col justify-between relative group hover:shadow-md transition-shadow ${
-              model.featured ? "border-[#0058bc]/40 ring-1 ring-[#0058bc]/20 shadow-md" : "border-slate-200"
-            }`}
-          >
-            {model.badge && (
-              <div className="absolute -top-3 right-6 bg-[#0058bc] text-white px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold tracking-wider shadow-md">
-                {model.badge}
-              </div>
-            )}
-            <div>
-              <div
-                className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-105 ${
-                  model.featured
-                    ? "bg-[#0058bc] text-white shadow-md shadow-[#0058bc]/20"
-                    : "bg-white border border-slate-200 text-[#0058bc]"
-                }`}
-              >
-                <span className="material-symbols-outlined text-2xl">{model.icon}</span>
-              </div>
-              <span className="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider block mb-1">
-                {model.eyebrow}
-              </span>
-              <h3 className="font-headline-md text-headline-md text-on-surface mb-3 font-bold">
-                {model.title}
-              </h3>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mb-6 leading-relaxed font-medium">
-                {model.description}
-              </p>
-              <ul className="space-y-3 font-body-sm text-body-sm text-on-surface mb-8">
-                {model.features.map((feat) => (
-                  <li key={feat} className="flex items-center gap-2.5 font-medium">
-                    <span className="material-symbols-outlined text-primary text-base">check_circle</span>
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <Link
-              className={`w-full py-3.5 rounded-xl font-label-lg text-label-lg text-center transition-all font-bold ${
-                model.featured
-                  ? "tactile-button bg-primary hover:bg-primary-container text-on-primary shadow-md"
-                  : "glass-subcard hover:bg-white/40 text-primary"
-              }`}
-              href="/contact-us"
-            >
-              {model.cta}
-            </Link>
-          </div>
+          <EngagementCard key={model.title} model={model} />
         ))}
       </div>
     </GlassSlabSection>

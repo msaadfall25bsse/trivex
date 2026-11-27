@@ -1,6 +1,15 @@
+import ScrollStack, { ScrollStackItem } from "@/components/home/ScrollStack";
 import SplitText from "@/components/home/SplitText";
 
-const nodes = [
+interface NodeItem {
+  code: string;
+  icon: string;
+  title: string;
+  description: string;
+  outcome: string;
+}
+
+const nodes: NodeItem[] = [
   {
     code: "Synthesis 01",
     icon: "sync_alt",
@@ -27,6 +36,37 @@ const nodes = [
   },
 ];
 
+function SynergyCard({ node }: { node: NodeItem }) {
+  return (
+    <div className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-7 sm:p-8 rounded-3xl flex flex-col justify-between group h-full">
+      <div>
+        <div className="flex items-center justify-between mb-5">
+          <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold tracking-widest bg-[#0058bc]/10 border border-[#0058bc]/20 px-3 py-1 rounded-full">
+            {node.code}
+          </span>
+          <div className="w-10 h-10 rounded-xl bg-[#f4f7fb] border border-slate-200 flex items-center justify-center text-[#0058bc] group-hover:scale-105 transition-transform">
+            <span className="material-symbols-outlined text-2xl">{node.icon}</span>
+          </div>
+        </div>
+        <h3 className="font-headline-sm text-headline-sm text-slate-900 font-bold mb-2.5">
+          {node.title}
+        </h3>
+        <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed mb-6 font-medium">
+          {node.description}
+        </p>
+      </div>
+      <div className="bg-[#f4f7fb] border border-slate-200 rounded-2xl p-4">
+        <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold block mb-1">
+          Compound Outcome
+        </span>
+        <span className="font-label-lg text-label-lg text-slate-900 font-bold leading-snug block">
+          {node.outcome}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export default function SynergyMatrix() {
   return (
     <section className="w-full py-16 md:py-24 bg-transparent relative z-10">
@@ -43,38 +83,31 @@ export default function SynergyMatrix() {
           </p>
         </div>
 
-        {/* Synergy Interactive Matrix Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {/* Mobile: ScrollStack */}
+        <div className="md:hidden">
+          <ScrollStack
+            useWindowScroll
+            smoothScroll={false}
+            stackPosition={104}
+            itemDistance={72}
+            itemStackDistance={22}
+            itemScale={0.04}
+            baseScale={0.88}
+            dimAmount={0.12}
+            holdDistance={100}
+          >
+            {nodes.map((node) => (
+              <ScrollStackItem key={node.code} itemClassName="!p-0 !bg-transparent">
+                <SynergyCard node={node} />
+              </ScrollStackItem>
+            ))}
+          </ScrollStack>
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
           {nodes.map((node) => (
-            <div
-              key={node.code}
-              className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-7 sm:p-8 rounded-3xl flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold tracking-widest bg-[#0058bc]/10 border border-[#0058bc]/20 px-3 py-1 rounded-full">
-                    {node.code}
-                  </span>
-                  <div className="w-10 h-10 rounded-xl bg-[#f4f7fb] border border-slate-200 flex items-center justify-center text-[#0058bc] group-hover:scale-105 transition-transform">
-                    <span className="material-symbols-outlined text-2xl">{node.icon}</span>
-                  </div>
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-slate-900 font-bold mb-2.5">
-                  {node.title}
-                </h3>
-                <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed mb-6 font-medium">
-                  {node.description}
-                </p>
-              </div>
-              <div className="bg-[#f4f7fb] border border-slate-200 rounded-2xl p-4">
-                <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold block mb-1">
-                  Compound Outcome
-                </span>
-                <span className="font-label-lg text-label-lg text-slate-900 font-bold leading-snug block">
-                  {node.outcome}
-                </span>
-              </div>
-            </div>
+            <SynergyCard key={node.code} node={node} />
           ))}
         </div>
       </div>

@@ -1,6 +1,15 @@
+import ScrollStack, { ScrollStackItem } from "@/components/home/ScrollStack";
 import SplitText from "@/components/home/SplitText";
 
-const pillars = [
+interface Pillar {
+  number: string;
+  icon: string;
+  title: string;
+  description: string;
+  footer: string;
+}
+
+const pillars: Pillar[] = [
   {
     number: "01",
     icon: "sentiment_satisfied",
@@ -27,6 +36,33 @@ const pillars = [
   },
 ];
 
+function PhilosophyCard({ pillar }: { pillar: Pillar }) {
+  return (
+    <div className="bg-[#f4f7fb] border border-slate-200 p-8 rounded-3xl flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow h-full">
+      <span className="font-headline-xl text-headline-xl text-[#0058bc]/15 font-extrabold absolute top-4 right-6 select-none">
+        {pillar.number}
+      </span>
+      <div>
+        <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#0058bc] mb-6 group-hover:scale-105 transition-transform">
+          <span className="material-symbols-outlined text-2xl">{pillar.icon}</span>
+        </div>
+        <h3 className="font-headline-md text-headline-md text-slate-900 mb-3 font-bold">
+          {pillar.title}
+        </h3>
+        <p className="font-body-md text-body-md text-slate-600 leading-relaxed mb-6 font-medium">
+          {pillar.description}
+        </p>
+      </div>
+      <div className="mt-2 pt-3 px-3.5 py-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-[#0058bc] font-label-md text-label-md font-bold">
+        <span>{pillar.footer}</span>
+        <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
+          arrow_forward
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export default function AboutPhilosophy() {
   return (
     <section className="w-full py-6 md:py-12 relative z-10">
@@ -46,33 +82,31 @@ export default function AboutPhilosophy() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {/* Mobile: ScrollStack */}
+          <div className="md:hidden">
+            <ScrollStack
+              useWindowScroll
+              smoothScroll={false}
+              stackPosition={104}
+              itemDistance={72}
+              itemStackDistance={22}
+              itemScale={0.04}
+              baseScale={0.88}
+              dimAmount={0.12}
+              holdDistance={100}
+            >
+              {pillars.map((pillar) => (
+                <ScrollStackItem key={pillar.number} itemClassName="!p-0 !bg-transparent">
+                  <PhilosophyCard pillar={pillar} />
+                </ScrollStackItem>
+              ))}
+            </ScrollStack>
+          </div>
+
+          {/* Desktop & Tablet Grid */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8">
             {pillars.map((pillar) => (
-              <div
-                key={pillar.number}
-                className="bg-[#f4f7fb] border border-slate-200 p-8 rounded-3xl flex flex-col justify-between relative overflow-hidden group hover:shadow-md transition-shadow"
-              >
-                <span className="font-headline-xl text-headline-xl text-[#0058bc]/15 font-extrabold absolute top-4 right-6 select-none">
-                  {pillar.number}
-                </span>
-                <div>
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-[#0058bc] mb-6 group-hover:scale-105 transition-transform">
-                    <span className="material-symbols-outlined text-2xl">{pillar.icon}</span>
-                  </div>
-                  <h3 className="font-headline-md text-headline-md text-slate-900 mb-3 font-bold">
-                    {pillar.title}
-                  </h3>
-                  <p className="font-body-md text-body-md text-slate-600 leading-relaxed mb-6 font-medium">
-                    {pillar.description}
-                  </p>
-                </div>
-                <div className="mt-2 pt-3 px-3.5 py-2 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-[#0058bc] font-label-md text-label-md font-bold">
-                  <span>{pillar.footer}</span>
-                  <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                    arrow_forward
-                  </span>
-                </div>
-              </div>
+              <PhilosophyCard key={pillar.number} pillar={pillar} />
             ))}
           </div>
 
