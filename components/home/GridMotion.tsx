@@ -260,25 +260,31 @@ const GridMotion = ({
         plane.style.opacity = String(1 - (1 - motion.intro) ** 3);
       }
 
-      const rect = root.getBoundingClientRect();
-      const scale = rect.width ? root.clientWidth / rect.width : 1;
-      const halfWidth = root.clientWidth / 2 || 1;
-      const halfHeight = root.clientHeight / 2 || 1;
-      const px = (motion.pointer.x - rect.left) * scale - halfWidth;
-      const py = (motion.pointer.y - rect.top) * scale - halfHeight;
-      const inside = motion.pointer.active && Math.abs(px) <= halfWidth && Math.abs(py) <= halfHeight;
-      const lean = (s.tilt * Math.PI) / 180;
-      const turn = (s.angle * Math.PI) / 180;
-      const depth = layout.perspective;
-      let flatY = py;
-      let flatX = px;
-      if (lean > 0.0001) {
-        flatY = (py * depth) / (depth * Math.cos(lean) + py * Math.sin(lean));
-        flatX = (px * (depth - flatY * Math.sin(lean))) / depth;
+      let inside = false;
+      let planeX = 0;
+      let planeY = 0;
+      let nudge = 0;
+      if (motion.pointer.active) {
+        const rect = root.getBoundingClientRect();
+        const scale = rect.width ? root.clientWidth / rect.width : 1;
+        const halfWidth = root.clientWidth / 2 || 1;
+        const halfHeight = root.clientHeight / 2 || 1;
+        const px = (motion.pointer.x - rect.left) * scale - halfWidth;
+        const py = (motion.pointer.y - rect.top) * scale - halfHeight;
+        inside = Math.abs(px) <= halfWidth && Math.abs(py) <= halfHeight;
+        const lean = (s.tilt * Math.PI) / 180;
+        const turn = (s.angle * Math.PI) / 180;
+        const depth = layout.perspective;
+        let flatY = py;
+        let flatX = px;
+        if (lean > 0.0001) {
+          flatY = (py * depth) / (depth * Math.cos(lean) + py * Math.sin(lean));
+          flatX = (px * (depth - flatY * Math.sin(lean))) / depth;
+        }
+        planeX = flatX * Math.cos(turn) + flatY * Math.sin(turn);
+        planeY = -flatX * Math.sin(turn) + flatY * Math.cos(turn);
+        nudge = clamp(px / halfWidth, -1, 1);
       }
-      const planeX = flatX * Math.cos(turn) + flatY * Math.sin(turn);
-      const planeY = -flatX * Math.sin(turn) + flatY * Math.cos(turn);
-      const nudge = motion.pointer.active ? clamp(px / halfWidth, -1, 1) : 0;
       const reach = (0.6 + 2.2 * s.spotlight) * Math.max(layout.tileWidth, layout.tileHeight);
       const settle = 1 - Math.exp(-dt / 0.22);
 

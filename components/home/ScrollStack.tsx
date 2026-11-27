@@ -149,6 +149,7 @@ const ScrollStack = ({
     const target = windowed ? window : root;
     const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const cache = new Map<string, string | number>();
+    let isVisible = true;
     let frame = 0;
     let glide = 0;
     let rest = 0;
@@ -179,14 +180,18 @@ const ScrollStack = ({
 
     const update = () => {
       frame = 0;
+      if (!isVisible || root.offsetParent === null) return;
       const settings = settingsRef.current;
       const slots = (Array.from(inner.children) as HTMLElement[]).filter(child =>
         child.hasAttribute('data-stack-slot')
       );
       if (!settings || !slots.length) return;
 
+      // Batch all DOM reads before any DOM writes to eliminate forced layout thrashing
       const viewHeight = windowed ? window.innerHeight : root.clientHeight;
       const viewTop = windowed ? 0 : root.getBoundingClientRect().top + root.clientTop;
+      const innerTop = inner.getBoundingClientRect().top;
+      const scrollPos = readScroll();
       const stackTop = resolveOffset(settings.stackPosition, viewHeight);
       const offset = settings.itemStackDistance;
       const heights = slots.map(slot => slot.offsetHeight);
@@ -204,7 +209,7 @@ const ScrollStack = ({
           end.style.height = `${value}px`;
         }) || moved;
 
-      let flow = inner.getBoundingClientRect().top - viewTop + readScroll() + padTop;
+      let flow = innerTop - viewTop + scrollPos + padTop;
       points = heights.map((height, i) => {
         const point = flow - stackTop - i * offset;
         flow += height + settings.itemDistance;
@@ -344,8 +349,23 @@ const ScrollStack = ({
     const observer = new ResizeObserver(schedule);
     observer.observe(root);
     observer.observe(inner);
+
+    const visibilityObserver = windowed
+      ? new IntersectionObserver(
+          entries => {
+            const visibleNow = entries.some(entry => entry.isIntersecting);
+            isVisible = visibleNow;
+            if (visibleNow) schedule();
+          },
+          { rootMargin: '400px 0px' }
+        )
+      : null;
+    visibilityObserver?.observe(root);
+
     target.addEventListener('scroll', onScroll, { passive: true });
-    target.addEventListener('wheel', onWheel, { passive: false });
+    if (smoothScroll) {
+      target.addEventListener('wheel', onWheel, { passive: false });
+    }
     target.addEventListener('pointerdown', onPress, { passive: true });
     window.addEventListener('pointerup', onRelease, { passive: true });
     window.addEventListener('pointercancel', onRelease, { passive: true });
@@ -358,15 +378,18 @@ const ScrollStack = ({
       cancelAnimationFrame(glide);
       window.clearTimeout(rest);
       observer.disconnect();
+      visibilityObserver?.disconnect();
       target.removeEventListener('scroll', onScroll);
-      target.removeEventListener('wheel', onWheel);
+      if (smoothScroll) {
+        target.removeEventListener('wheel', onWheel);
+      }
       target.removeEventListener('pointerdown', onPress);
       window.removeEventListener('pointerup', onRelease);
       window.removeEventListener('pointercancel', onRelease);
       window.removeEventListener('resize', schedule);
       scheduleRef.current = null;
     };
-  }, [useWindowScroll]);
+  }, [useWindowScroll, smoothScroll]);
 
   return (
     <div

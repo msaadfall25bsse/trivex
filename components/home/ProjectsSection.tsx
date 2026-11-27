@@ -52,12 +52,14 @@ const projects = [
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <div className="bg-[#0d111a] border border-white/15 backdrop-blur-xl rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl h-full">
+    <div className="bg-[#0d111a] border border-white/15 rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl h-full">
       <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md">
         <img
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           alt={project.alt}
           src={project.image}
+          loading="lazy"
+          decoding="async"
         />
         <div
           className={`absolute top-4 left-4 bg-black/75 backdrop-blur-xl px-3.5 py-1.5 rounded-full ${project.badgeColor} font-label-sm text-label-sm uppercase font-bold shadow-md border border-white/20`}

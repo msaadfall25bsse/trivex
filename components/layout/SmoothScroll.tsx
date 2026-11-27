@@ -38,20 +38,22 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       window.innerWidth < 768 ||
       window.matchMedia("(pointer: coarse)").matches;
 
-    const lenis = new Lenis({
-      lerp: isTouchOrMobile ? 0.1 : 0.085,
-      smoothWheel: true,
-      syncTouch: true,
-      touchMultiplier: 1.5,
-    });
+    let lenis: Lenis | null = null;
+    let raf: ((time: number) => void) | null = null;
 
-    lenis.on("scroll", ScrollTrigger.update);
-    const raf = (time: number) => lenis.raf(time * 1000);
-    gsap.ticker.add(raf);
-    gsap.ticker.lagSmoothing(0);
+    if (!isTouchOrMobile) {
+      lenis = new Lenis({
+        lerp: 0.085,
+        smoothWheel: true,
+      });
 
-    if (isTouchOrMobile) {
-      // On touch devices, ignore resize refreshes triggered by mobile URL bar collapse
+      lenis.on("scroll", ScrollTrigger.update);
+      raf = (time: number) => lenis?.raf(time * 1000);
+      gsap.ticker.add(raf);
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      // On touch devices, use native browser momentum scroll (zero JS touch hijacking)
+      // and ignore resize refreshes triggered by mobile URL bar collapse
       ScrollTrigger.config({ ignoreMobileResize: true });
     }
 

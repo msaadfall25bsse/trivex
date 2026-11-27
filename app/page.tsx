@@ -20,13 +20,13 @@ export default function Home() {
           <IntroSection />
         </MistPageSections>
 
-        {/* Core Pillars sits outside MistPageSections so position:sticky inside ScrollStack pins smoothly */}
+        {/* Sections with mobile ScrollStack sit outside MistPageSections so position:sticky pins smoothly */}
         <CorePillarsSection />
+        <WhyChooseSection />
+        <ProjectsSection />
+        <ProcessSection />
 
         <MistPageSections>
-          <WhyChooseSection />
-          <ProjectsSection />
-          <ProcessSection />
           <TeamPreviewSection />
           <CtaBannerSection />
         </MistPageSections>

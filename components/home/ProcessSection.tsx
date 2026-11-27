@@ -106,7 +106,7 @@ export default function ProcessSection() {
         colors={["#0058bc", "#38bdf8", "#0070eb"]}
         className="w-full md:w-[90%] mx-auto"
       >
-        <div className="backdrop-blur-xl py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+        <div className="py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-2xl mx-auto mb-16">
               <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-2">
