@@ -175,13 +175,13 @@ export default function CorePillarsSection() {
                         alt={pillar.imageAlt}
                         loading="lazy"
                         decoding="async"
-                        className="absolute inset-0 w-full h-full object-cover object-center scale-105 opacity-20"
+                        className="absolute inset-0 w-full h-full object-cover object-center scale-105 opacity-75"
                         draggable={false}
                       />
-                      {/* Light Gradient Overlay for Crisp Dark Text */}
+                      {/* Light Gradient Overlay for Crisp Dark Text on Left while Showing Image Clearly */}
                       <div
                         aria-hidden="true"
-                        className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/75"
+                        className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/55 to-transparent"
                       />
 
                       {/* Top Row */}

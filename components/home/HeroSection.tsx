@@ -28,7 +28,7 @@ export default function HeroSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
       >
-        <div className="w-full h-full min-h-[600px] relative">
+        <div className="w-full h-full min-h-[600px] relative opacity-80">
           <GridMotion
             items={HERO_GRID_ITEMS}
             rows={5}
@@ -41,23 +41,23 @@ export default function HeroSection() {
             direction="alternate"
             parallax={0.5}
             spotlight={0.5}
-            dim={0.18}
-            fade={0.45}
+            dim={0.12}
+            fade={0.3}
             grayscale={false}
             theme="light"
           />
         </div>
       </div>
 
-      {/* Desktop Left-Side Opacity Mask */}
+      {/* Desktop Left-Side Opacity Mask: keeps left text readable while letting right GridMotion shine clearly (~0.75-0.8) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none hidden md:block absolute inset-0 z-[1] bg-gradient-to-r from-white via-white/95 via-48% to-white/25"
+        className="pointer-events-none hidden md:block absolute inset-0 z-[1] bg-gradient-to-r from-white via-white/88 via-42% to-transparent"
       />
       {/* Mobile Legibility Scrim */}
       <div
         aria-hidden="true"
-        className="pointer-events-none md:hidden absolute inset-0 z-[1] bg-white/88"
+        className="pointer-events-none md:hidden absolute inset-0 z-[1] bg-white/75"
       />
 
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin relative z-10">
