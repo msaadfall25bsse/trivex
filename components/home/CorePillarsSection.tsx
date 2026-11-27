@@ -93,7 +93,7 @@ export default function CorePillarsSection() {
   };
 
   return (
-    <section data-no-scroll-anim className="w-full bg-white py-16 md:py-24 relative z-10">
+    <section data-no-scroll-anim className="w-full bg-[#f4f7fb] py-16 md:py-24 relative z-10">
       <div className="max-w-5xl mx-auto px-margin-mobile md:px-margin">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 gap-6">

@@ -72,8 +72,8 @@ function AdvantageCard({ card }: { card: (typeof advantageCards)[number] }) {
 
 export default function WhyChooseSection() {
   return (
-    <section className="w-full bg-white py-10 md:py-16 relative z-10">
-      <div className="w-full md:w-[90%] mx-auto bg-slate-50 py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl border-y md:border border-slate-200 shadow-[0_8px_32px_rgba(15,23,42,0.06)]">
+    <section className="w-full bg-[#f4f7fb] py-10 md:py-16 relative z-10">
+      <div className="w-full md:w-[90%] mx-auto bg-white/75 py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl border-y md:border border-slate-200/90 shadow-[0_8px_32px_rgba(15,23,42,0.05)]">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-14">
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-2">

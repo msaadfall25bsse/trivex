@@ -21,7 +21,7 @@ export default function HeroSection() {
   return (
     <section
       data-no-scroll-anim
-      className="relative w-full bg-white overflow-hidden -mt-20 pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-20 lg:pb-24 border-b border-slate-200/80"
+      className="relative w-full bg-[#f4f7fb] overflow-hidden -mt-20 pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-20 lg:pb-24 border-b border-slate-200/80"
     >
       {/* Interactive GridMotion Background */}
       <div
@@ -52,12 +52,12 @@ export default function HeroSection() {
       {/* Desktop Left-Side Opacity Mask: keeps left text readable while letting right GridMotion shine clearly (~0.75-0.8) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none hidden md:block absolute inset-0 z-[1] bg-gradient-to-r from-white via-white/88 via-42% to-transparent"
+        className="pointer-events-none hidden md:block absolute inset-0 z-[1] bg-gradient-to-r from-[#f4f7fb] via-[#f4f7fb]/88 via-42% to-transparent"
       />
       {/* Mobile Legibility Scrim */}
       <div
         aria-hidden="true"
-        className="pointer-events-none md:hidden absolute inset-0 z-[1] bg-white/75"
+        className="pointer-events-none md:hidden absolute inset-0 z-[1] bg-[#f4f7fb]/78"
       />
 
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin relative z-10">

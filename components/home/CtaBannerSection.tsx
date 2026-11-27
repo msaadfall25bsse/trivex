@@ -3,7 +3,7 @@ import SplitText from "@/components/home/SplitText";
 
 export default function CtaBannerSection() {
   return (
-    <section className="w-full bg-white pt-10 pb-24 relative z-10">
+    <section className="w-full bg-[#f4f7fb] pt-10 pb-24 relative z-10">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
         <div className="relative bg-gradient-to-br from-blue-50 via-white to-sky-50 text-slate-900 rounded-3xl p-10 md:p-16 overflow-hidden shadow-xl border border-slate-200">
           {/* Background Ambient Radial Highlights */}
