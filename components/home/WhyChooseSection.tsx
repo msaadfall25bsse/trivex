@@ -87,7 +87,19 @@ function AdvantageCard({ card }: { card: (typeof advantageCards)[number] }) {
 export default function WhyChooseSection() {
   return (
     <section className="w-full bg-black py-10 md:py-16 relative z-10">
-      <div className="w-full md:w-[90%] mx-auto bg-white/[0.04] backdrop-blur-xl py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl border-y md:border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+      <BorderGlow
+        edgeSensitivity={48}
+        glowColor="210 90 60"
+        backgroundColor="#0a0c10"
+        borderRadius={24}
+        glowRadius={48}
+        glowIntensity={0.45}
+        coneSpread={35}
+        animated
+        colors={["#0058bc", "#38bdf8", "#0070eb"]}
+        className="w-full md:w-[90%] mx-auto"
+      >
+        <div className="backdrop-blur-xl py-12 sm:py-16 md:py-20 px-margin-mobile md:px-12 lg:px-16 md:rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-14">
             <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-2">
@@ -146,6 +158,7 @@ export default function WhyChooseSection() {
           </div>
         </div>
       </div>
+      </BorderGlow>
     </section>
   );
 }
