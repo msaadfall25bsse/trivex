@@ -37,7 +37,7 @@ const pillars: PillarConfig[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAxlHTYflCeyU3k2ZG4CMan8VFKCbw_w4Pgx_yDFPAV1q-XAZoYy1jNiPCl6qC1VZCk8ea2xVWDae2gEZhnFqMupjYUOuxod1zt3e5rRagHL-J5K4nOd6NuDa3g1WfuT05mv6O39AOjFsHcwRz03QYaZ9_8TOdb0VEPQpYsftU8uV3rET4Kd0kkZbugqduWnlfOaurGXP2OTIWSbvi3phIoxsgRHjvgaUxb0hZctLKm",
     imageAlt: "Enterprise software architecture and engineering systems",
     iconName: "terminal",
-    accentGradient: "from-[#0058bc] to-cyan-400",
+    accentGradient: "from-[#0058bc] to-sky-500",
     techTags: ["Next.js 15", "TypeScript", "Microservices", "Cloud DevOps", "PostgreSQL"],
   },
   {
@@ -57,7 +57,7 @@ const pillars: PillarConfig[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAXrvqMasqmCRvDJhDVYbdxBXQutdqdT6jYpNwRHksgJYf1xx2feDG5_8EGSu1xJgJTK7TXrR2hDQJ-BAm2qZW8qPL18uLoBzC3GLuxYeDCxSn6garOsAoCeNRsVviAYDBDH2rRpFpxh_ZZXBc918jkuVQLLYxkfDyvcVgKF5GqPwqbd-uW5NoLGseG58FTwSRUFWG8MB4LhX_0EqsQqbjKlxD_Wve8fLdHlfq3LUjc",
     imageAlt: "Digital marketing performance analytics and global growth console",
     iconName: "trending_up",
-    accentGradient: "from-cyan-400 to-[#0058bc]",
+    accentGradient: "from-sky-500 to-[#0058bc]",
     techTags: ["Technical SEO", "Google & Meta PPC", "CRO Funnels", "14+ GEO Markets", "ROAS Telemetry"],
   },
   {
@@ -77,7 +77,7 @@ const pillars: PillarConfig[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDDUcJpp8frTWqHTEMs64hniQoZCQkajjhUZ05xeG6n2aEynaFl_Z02h26j2UBdyDhsgCVrXUB-T23YzH9ZU-eFYkzQ94A4wSDkYOyr9QunRcSspLCb8yj14c3rR-XhfKG3whljYUWwO4QPuDTjuDkfWCxmw7mteFTdBORUA6Ew7R6g5qWzqo5o1aNH9n9HOhlt2Qt05T6CIeV-OcP50MFfwreJ-hw5raQL09YD5oYc",
     imageAlt: "Enterprise UI/UX design system and brand identity components",
     iconName: "palette",
-    accentGradient: "from-[#3b82f6] to-cyan-300",
+    accentGradient: "from-[#0058bc] to-blue-400",
     techTags: ["Design Tokens", "Figma Systems", "UI/UX Prototypes", "Brand Books", "3D Motion"],
   },
 ];
@@ -93,7 +93,7 @@ export default function CorePillarsSection() {
   };
 
   return (
-    <section data-no-scroll-anim className="w-full bg-black py-16 md:py-24 relative z-10">
+    <section data-no-scroll-anim className="w-full bg-white py-16 md:py-24 relative z-10">
       <div className="max-w-5xl mx-auto px-margin-mobile md:px-margin">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-14 gap-6">
@@ -104,7 +104,7 @@ export default function CorePillarsSection() {
             <SplitText
               tag="h2"
               text="The Three Core Pillars of TRIVEX"
-              className="font-headline-lg text-headline-lg text-white tracking-tight"
+              className="font-headline-lg text-headline-lg text-slate-900 tracking-tight"
               effect="flip"
               splitType="words, chars"
               delay={25}
@@ -118,7 +118,7 @@ export default function CorePillarsSection() {
               textAlign="left"
             />
           </div>
-          <p className="font-body-md text-body-md text-white/80 max-w-md font-medium">
+          <p className="font-body-md text-body-md text-slate-600 max-w-md font-medium">
             Scroll to stack each pillar, and click any card to flip 180° for complete technical specifications.
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function CorePillarsSection() {
           itemStackDistance={22}
           itemScale={0.04}
           baseScale={0.88}
-          dimAmount={0.22}
+          dimAmount={0.12}
           holdDistance={100}
         >
           {pillars.map((pillar) => {
@@ -166,35 +166,37 @@ export default function CorePillarsSection() {
                   >
                     {/* ================= FRONT FACE ================= */}
                     <div
-                      className="absolute inset-0 rounded-[28px] overflow-hidden border border-white/20 bg-[#070b14] flex flex-col justify-between p-6 sm:p-8 md:p-10"
+                      className="absolute inset-0 rounded-[28px] overflow-hidden border border-slate-200 bg-white shadow-xl flex flex-col justify-between p-6 sm:p-8 md:p-10"
                       style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
                     >
                       {/* Related Background Image */}
                       <img
                         src={pillar.image}
                         alt={pillar.imageAlt}
-                        className="absolute inset-0 w-full h-full object-cover object-center scale-105 opacity-45"
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 w-full h-full object-cover object-center scale-105 opacity-20"
                         draggable={false}
                       />
-                      {/* Dark Gradient Overlay for Crisp White Text */}
+                      {/* Light Gradient Overlay for Crisp Dark Text */}
                       <div
                         aria-hidden="true"
-                        className="absolute inset-0 bg-gradient-to-r from-[#050811]/95 via-[#050811]/80 to-[#050811]/45"
+                        className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/75"
                       />
 
                       {/* Top Row */}
                       <div className="relative z-10 flex items-center justify-between gap-3">
                         <div className="inline-flex items-center gap-2.5">
-                          <span className="px-3.5 py-1 rounded-full bg-[#0058bc]/30 border border-[#0058bc]/60 text-cyan-300 font-bold text-xs uppercase tracking-widest">
+                          <span className="px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#0058bc] font-bold text-xs uppercase tracking-widest">
                             {pillar.id}
                           </span>
-                          <span className="text-white/40 font-mono text-xs hidden sm:inline">
+                          <span className="text-slate-400 font-mono text-xs hidden sm:inline">
                             {pillar.number} / 03
                           </span>
                         </div>
 
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-semibold">
-                          <span className="material-symbols-outlined text-sm text-cyan-300">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-semibold">
+                          <span className="material-symbols-outlined text-sm text-[#0058bc]">
                             flip
                           </span>
                           <span>Click to Flip 180°</span>
@@ -203,34 +205,34 @@ export default function CorePillarsSection() {
 
                       {/* Middle Content */}
                       <div className="relative z-10 max-w-2xl my-auto py-3">
-                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#0058bc]/25 border border-[#0058bc]/50 text-cyan-300 mb-4">
+                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 text-[#0058bc] mb-4">
                           <span className="material-symbols-outlined text-2xl">
                             {pillar.iconName}
                           </span>
                         </div>
 
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
                           {pillar.title}
                         </h3>
 
-                        <p className="text-sm sm:text-base text-white/85 leading-relaxed font-medium max-w-xl">
+                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-medium max-w-xl">
                           {pillar.description}
                         </p>
                       </div>
 
                       {/* Bottom Row */}
-                      <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/15">
+                      <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-200">
                         <div className="flex flex-wrap gap-2">
                           {pillar.techTags.slice(0, 3).map((tag) => (
                             <span
                               key={tag}
-                              className="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-white/10 text-white/90 border border-white/15"
+                              className="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-800 border border-slate-200"
                             >
                               {tag}
                             </span>
                           ))}
                         </div>
-                        <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-cyan-300">
+                        <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0058bc]">
                           <span>View Specifications</span>
                           <span className="material-symbols-outlined text-base">sync</span>
                         </span>
@@ -239,7 +241,7 @@ export default function CorePillarsSection() {
 
                     {/* ================= BACK FACE (180° ROTATED) ================= */}
                     <div
-                      className="absolute inset-0 rounded-[28px] overflow-hidden border-2 border-[#0058bc]/60 bg-[#080d18] flex flex-col justify-between p-6 sm:p-8 md:p-10"
+                      className="absolute inset-0 rounded-[28px] overflow-hidden border-2 border-[#0058bc]/30 bg-slate-50 shadow-xl flex flex-col justify-between p-6 sm:p-8 md:p-10"
                       style={{
                         backfaceVisibility: "hidden",
                         WebkitBackfaceVisibility: "hidden",
@@ -251,25 +253,27 @@ export default function CorePillarsSection() {
                         src={pillar.image}
                         alt=""
                         aria-hidden="true"
-                        className="absolute inset-0 w-full h-full object-cover opacity-15"
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 w-full h-full object-cover opacity-10"
                         draggable={false}
                       />
                       <div
                         aria-hidden="true"
-                        className="absolute inset-0 bg-gradient-to-br from-[#060a14]/95 via-[#091224]/92 to-[#050811]/95"
+                        className="absolute inset-0 bg-gradient-to-br from-white/95 via-slate-50/95 to-blue-50/90"
                       />
 
                       {/* Back Top Header */}
-                      <div className="relative z-10 flex items-center justify-between gap-3 pb-3 border-b border-white/15">
+                      <div className="relative z-10 flex items-center justify-between gap-3 pb-3 border-b border-slate-200">
                         <div className="flex items-center gap-2.5">
                           <span className="material-symbols-outlined text-[#0058bc] text-xl">
                             {pillar.iconName}
                           </span>
-                          <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-cyan-300">
+                          <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0058bc]">
                             {pillar.id} • {pillar.title}
                           </span>
                         </div>
-                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white text-xs font-semibold">
+                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-800 text-xs font-semibold shadow-sm">
                           <span className="material-symbols-outlined text-sm">undo</span>
                           <span>Flip Back</span>
                         </span>
@@ -277,7 +281,7 @@ export default function CorePillarsSection() {
 
                       {/* Back Detailed Specifications */}
                       <div className="relative z-10 my-auto py-3 flex flex-col gap-3.5">
-                        <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                           {pillar.description}
                         </p>
 
@@ -285,12 +289,12 @@ export default function CorePillarsSection() {
                           {pillar.bullets.map((bullet) => (
                             <div
                               key={bullet}
-                              className="flex items-start gap-2.5 p-2.5 sm:p-3 rounded-xl bg-white/[0.06] border border-white/10"
+                              className="flex items-start gap-2.5 p-2.5 sm:p-3 rounded-xl bg-white border border-slate-200 shadow-sm"
                             >
                               <span className="material-symbols-outlined text-[#0058bc] text-base sm:text-lg shrink-0 mt-0.5">
                                 check_circle
                               </span>
-                              <span className="text-xs sm:text-sm font-semibold text-white leading-snug">
+                              <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
                                 {bullet}
                               </span>
                             </div>
@@ -299,12 +303,12 @@ export default function CorePillarsSection() {
                       </div>
 
                       {/* Back Bottom Bar & Direct CTA */}
-                      <div className="relative z-10 pt-3 border-t border-white/15 flex flex-wrap items-center justify-between gap-3">
+                      <div className="relative z-10 pt-3 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
                         <div className="hidden sm:flex flex-wrap gap-1.5">
                           {pillar.techTags.map((tag) => (
                             <span
                               key={tag}
-                              className="text-[11px] font-medium px-2.5 py-1 rounded-lg bg-[#0058bc]/20 text-cyan-200 border border-[#0058bc]/30"
+                              className="text-[11px] font-medium px-2.5 py-1 rounded-lg bg-blue-50 text-[#0058bc] border border-blue-200"
                             >
                               {tag}
                             </span>
@@ -313,7 +317,7 @@ export default function CorePillarsSection() {
                         <Link
                           href="/service-details"
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0058bc] hover:bg-[#0070eb] text-white font-bold text-xs sm:text-sm shadow-lg shadow-[#0058bc]/30 transition-all ml-auto"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0058bc] hover:bg-[#004ba3] text-white font-bold text-xs sm:text-sm shadow-lg shadow-[#0058bc]/25 transition-all ml-auto"
                         >
                           <span>{pillar.linkText}</span>
                           <span className="material-symbols-outlined text-base">east</span>

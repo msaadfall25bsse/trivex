@@ -33,9 +33,9 @@ const techItems: TechItem[] = [
     category: "Software Development",
     discipline: "software",
     tag: "React Framework",
-    hoverColor: "#38bdf8",
+    hoverColor: "#0058bc",
     icon: (
-      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-slate-900" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.8 14.4l-5.6-7.2v7.2H9.6V8.4h1.6l5.6 7.2V8.4h1.6v8h-1.6z"/>
       </svg>
     ),
@@ -292,9 +292,9 @@ const techItems: TechItem[] = [
     category: "Video Editing",
     discipline: "video",
     tag: "Social Velocity Cut",
-    hoverColor: "#38bdf8",
+    hoverColor: "#0058bc",
     icon: (
-      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-slate-900" fill="currentColor" viewBox="0 0 24 24">
         <path d="M4 6l8 6-8 6V6zm16 0l-8 6 8 6V6z"/>
       </svg>
     ),
@@ -315,18 +315,18 @@ export default function TechStackMarquee() {
       ariaLabel: `${tech.name} — ${tech.tag}`,
       hoverColor: tech.hoverColor,
       node: (
-        <div className="bg-white/[0.06] backdrop-blur-md border border-white/15 px-4 py-3 rounded-2xl flex items-center gap-3.5 whitespace-nowrap shadow-sm hover:shadow-md hover:border-white/30 transition-all duration-200 shrink-0 select-none">
+        <div className="bg-white border border-slate-200 px-4 py-3 rounded-2xl flex items-center gap-3.5 whitespace-nowrap shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 shrink-0 select-none">
           {/* Brand Icon Hub */}
-          <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center p-1.5 shrink-0">
+          <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center p-1.5 shrink-0">
             {tech.icon}
           </div>
 
           {/* Title & Category Badge */}
           <div className="flex flex-col text-left">
-            <span className="text-sm font-bold text-white group-hover/item:text-[var(--logoloop-item-color)] transition-colors">
+            <span className="text-sm font-bold text-slate-900 group-hover/item:text-[var(--logoloop-item-color)] transition-colors">
               {tech.name}
             </span>
-            <span className="text-[10px] text-white/70 font-mono tracking-tight">
+            <span className="text-[10px] text-slate-500 font-mono tracking-tight">
               {tech.tag}
             </span>
           </div>
@@ -335,10 +335,10 @@ export default function TechStackMarquee() {
           <span
             className={`ml-1 text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded-full ${
               tech.discipline === "software"
-                ? "bg-cyan-400/15 text-cyan-300"
+                ? "bg-blue-50 text-[#0058bc]"
                 : tech.discipline === "marketing"
-                ? "bg-emerald-400/15 text-emerald-300"
-                : "bg-purple-400/15 text-purple-300"
+                ? "bg-emerald-50 text-emerald-700"
+                : "bg-purple-50 text-purple-700"
             }`}
           >
             {tech.discipline === "software"
@@ -353,26 +353,26 @@ export default function TechStackMarquee() {
   }, [activeTab]);
 
   return (
-    <div className="w-full mt-12 sm:mt-16 bg-white/[0.05] backdrop-blur-md border border-white/15 rounded-2xl sm:rounded-3xl p-5 sm:p-7 relative overflow-hidden">
+    <div className="w-full mt-12 sm:mt-16 bg-white/90 border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-7 relative overflow-hidden shadow-sm">
       {/* Header & 3-Part Category Switcher */}
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 mb-6 pb-4 border-b border-white/15">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200">
         <div>
-          <span className="font-label-sm text-label-sm uppercase tracking-widest text-cyan-400 font-bold block mb-1">
+          <span className="font-label-sm text-label-sm uppercase tracking-widest text-[#0058bc] font-bold block mb-1">
             Enterprise Production Stack
           </span>
-          <h3 className="font-headline-sm text-headline-sm text-white font-bold text-base sm:text-lg">
+          <h3 className="font-headline-sm text-headline-sm text-slate-900 font-bold text-base sm:text-lg">
             3-Tier Multidisciplinary Technology Engine
           </h3>
         </div>
 
         {/* 3-Part Discipline Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-white/[0.06] border border-white/15">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-slate-100 border border-slate-200">
           <button
             onClick={() => setActiveTab("all")}
             className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
               activeTab === "all"
                 ? "bg-[#0058bc] text-white shadow-sm"
-                : "text-white/75 hover:text-white"
+                : "text-slate-600 hover:text-slate-900"
             }`}
           >
             All Stack ({techItems.length})
@@ -382,7 +382,7 @@ export default function TechStackMarquee() {
             className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
               activeTab === "software"
                 ? "bg-[#0058bc] text-white shadow-sm"
-                : "text-white/75 hover:text-white"
+                : "text-slate-600 hover:text-slate-900"
             }`}
           >
             <span className="material-symbols-outlined text-sm">terminal</span>
@@ -393,7 +393,7 @@ export default function TechStackMarquee() {
             className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
               activeTab === "marketing"
                 ? "bg-[#0058bc] text-white shadow-sm"
-                : "text-white/75 hover:text-white"
+                : "text-slate-600 hover:text-slate-900"
             }`}
           >
             <span className="material-symbols-outlined text-sm">trending_up</span>
@@ -404,7 +404,7 @@ export default function TechStackMarquee() {
             className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 ${
               activeTab === "video"
                 ? "bg-[#0058bc] text-white shadow-sm"
-                : "text-white/75 hover:text-white"
+                : "text-slate-600 hover:text-slate-900"
             }`}
           >
             <span className="material-symbols-outlined text-sm">movie_filter</span>
@@ -425,6 +425,7 @@ export default function TechStackMarquee() {
           hoverSpeed={0}
           scaleOnHover
           fadeOut
+          fadeOutColor="#ffffff"
           fadeOutWidth={0.12}
           scrollBoost={0.15}
           ariaLabel="Technology partners"

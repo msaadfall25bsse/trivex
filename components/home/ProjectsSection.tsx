@@ -6,7 +6,7 @@ const projects = [
   {
     id: "aurapay",
     badge: "Fintech SaaS",
-    badgeColor: "text-cyan-300",
+    badgeColor: "text-[#0058bc]",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDQM9t5BuA7gSVIfTZaHnRw65gwowH5PrUzqyRn1WYjEyfXjfglETyyonj-hjLrl32E1wtI75a8m7ZGkUqMcf7NzSekkJ5-YX4BbWiCjBidC4hHZSt0A2yrHkS5BxIUE-C6d1S77Ppq8GlR54GzYo_4_ogErgOcMa3oSA3kwE1XUVbmLNeNP6cbzehGwyw4HZlDTcpdt95TJIirJj0sZ3EU3VrMZ5SPvMTC7dwx37fc",
     alt: "Modern financial technology dashboard web application interface",
@@ -21,7 +21,7 @@ const projects = [
   {
     id: "nordic-retail",
     badge: "Global Growth",
-    badgeColor: "text-white",
+    badgeColor: "text-slate-900",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAXrvqMasqmCRvDJhDVYbdxBXQutdqdT6jYpNwRHksgJYf1xx2feDG5_8EGSu1xJgJTK7TXrR2hDQJ-BAm2qZW8qPL18uLoBzC3GLuxYeDCxSn6garOsAoCeNRsVviAYDBDH2rRpFpxh_ZZXBc918jkuVQLLYxkfDyvcVgKF5GqPwqbd-uW5NoLGseG58FTwSRUFWG8MB4LhX_0EqsQqbjKlxD_Wve8fLdHlfq3LUjc",
     alt: "International e-commerce consumer goods brand marketing analytics console",
@@ -36,7 +36,7 @@ const projects = [
   {
     id: "sovereign-aerospace",
     badge: "Enterprise Architecture",
-    badgeColor: "text-cyan-300",
+    badgeColor: "text-[#0058bc]",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDDUcJpp8frTWqHTEMs64hniQoZCQkajjhUZ05xeG6n2aEynaFl_Z02h26j2UBdyDhsgCVrXUB-T23YzH9ZU-eFYkzQ94A4wSDkYOyr9QunRcSspLCb8yj14c3rR-XhfKG3whljYUWwO4QPuDTjuDkfWCxmw7mteFTdBORUA6Ew7R6g5qWzqo5o1aNH9n9HOhlt2Qt05T6CIeV-OcP50MFfwreJ-hw5raQL09YD5oYc",
     alt: "Corporate brand identity book and design system components",
@@ -52,8 +52,8 @@ const projects = [
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <div className="bg-[#0d111a] border border-white/15 rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/60 transition-all duration-300 shadow-2xl h-full">
-      <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-md">
+    <div className="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col gap-6 group hover:-translate-y-2 hover:border-[#0058bc]/40 hover:shadow-xl transition-all duration-300 shadow-lg h-full">
+      <div className="relative h-60 w-full rounded-2xl overflow-hidden shadow-sm">
         <img
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           alt={project.alt}
@@ -62,34 +62,34 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           decoding="async"
         />
         <div
-          className={`absolute top-4 left-4 bg-black/75 backdrop-blur-xl px-3.5 py-1.5 rounded-full ${project.badgeColor} font-label-sm text-label-sm uppercase font-bold shadow-md border border-white/20`}
+          className={`absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full ${project.badgeColor} font-label-sm text-label-sm uppercase font-bold shadow-sm border border-slate-200`}
         >
           {project.badge}
         </div>
       </div>
       <div className="flex flex-col flex-1 justify-between gap-5 px-1">
         <div>
-          <h3 className="font-headline-sm text-headline-sm text-white mb-2 font-bold group-hover:text-cyan-300 transition-colors">
+          <h3 className="font-headline-sm text-headline-sm text-slate-900 mb-2 font-bold group-hover:text-[#0058bc] transition-colors">
             {project.title}
           </h3>
-          <p className="font-body-sm text-body-sm text-white/80 leading-relaxed font-medium">
+          <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed font-medium">
             {project.description}
           </p>
         </div>
-        <div className="bg-white/10 border border-white/10 rounded-2xl p-4 flex items-center justify-between">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex items-center justify-between">
           <div>
-            <span className="font-label-sm text-label-sm text-white/70 block">
+            <span className="font-label-sm text-label-sm text-slate-500 block">
               {project.metric1Label}
             </span>
-            <span className="font-headline-sm text-headline-sm text-white font-extrabold">
+            <span className="font-headline-sm text-headline-sm text-slate-900 font-extrabold">
               {project.metric1Value}
             </span>
           </div>
           <div className="text-right">
-            <span className="font-label-sm text-label-sm text-white/70 block">
+            <span className="font-label-sm text-label-sm text-slate-500 block">
               {project.metric2Label}
             </span>
-            <span className="font-headline-sm text-headline-sm text-cyan-400 font-extrabold">
+            <span className="font-headline-sm text-headline-sm text-[#0058bc] font-extrabold">
               {project.metric2Value}
             </span>
           </div>
@@ -101,7 +101,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
 export default function ProjectsSection() {
   return (
-    <section className="w-full bg-black py-20 relative z-10">
+    <section className="w-full bg-white py-20 relative z-10">
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
@@ -111,7 +111,7 @@ export default function ProjectsSection() {
             <SplitText
               tag="h2"
               text="Recent Enterprise Deliveries"
-              className="font-headline-lg text-headline-lg text-white tracking-tight"
+              className="font-headline-lg text-headline-lg text-slate-900 tracking-tight"
               effect="flip"
               splitType="words, chars"
               delay={25}
@@ -126,7 +126,7 @@ export default function ProjectsSection() {
             />
           </div>
           <Link
-            className="inline-flex items-center gap-2 font-label-lg text-label-lg text-cyan-300 hover:text-white font-bold group transition-colors"
+            className="inline-flex items-center gap-2 font-label-lg text-label-lg text-[#0058bc] hover:text-slate-900 font-bold group transition-colors"
             href="/services"
           >
             <span>View All Documented Cases</span>
@@ -146,7 +146,7 @@ export default function ProjectsSection() {
             itemStackDistance={22}
             itemScale={0.04}
             baseScale={0.88}
-            dimAmount={0.22}
+            dimAmount={0.12}
             holdDistance={100}
           >
             {projects.map((project) => (

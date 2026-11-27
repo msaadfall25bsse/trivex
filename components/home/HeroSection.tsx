@@ -4,8 +4,7 @@ import SplitText from "@/components/home/SplitText";
 import TechStackMarquee from "@/components/home/TechStackMarquee";
 
 /**
- * Hero GridMotion items (8 visual image slots using the provided GridMotion
- * snippet images alongside TRIVEX showcase visuals, ready to swap with custom uploads).
+ * Hero GridMotion items (8 visual image slots alongside TRIVEX showcase visuals).
  */
 const HERO_GRID_ITEMS: GridMotionItem[] = [
   "https://images.unsplash.com/photo-1705032033999-efa3082e1a4e?w=640&q=75&auto=format&fit=crop",
@@ -22,9 +21,9 @@ export default function HeroSection() {
   return (
     <section
       data-no-scroll-anim
-      className="relative w-full bg-[#060911] overflow-hidden -mt-20 pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-20 lg:pb-24"
+      className="relative w-full bg-white overflow-hidden -mt-20 pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-20 lg:pb-24 border-b border-slate-200/80"
     >
-      {/* Interactive GridMotion Background (Extends seamlessly behind the sticky Header & right showcase area) */}
+      {/* Interactive GridMotion Background */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
@@ -42,92 +41,92 @@ export default function HeroSection() {
             direction="alternate"
             parallax={0.5}
             spotlight={0.5}
-            dim={0.25}
-            fade={0.4}
+            dim={0.18}
+            fade={0.45}
             grayscale={false}
-            theme="dark"
+            theme="light"
           />
         </div>
       </div>
 
-      {/* Desktop Left-Side Opacity Mask: hides GridMotion cleanly behind the left-column Hero text while keeping the right side vivid */}
+      {/* Desktop Left-Side Opacity Mask */}
       <div
         aria-hidden="true"
-        className="pointer-events-none hidden md:block absolute inset-0 z-[1] bg-gradient-to-r from-[#060911] via-[#060911]/95 via-45% to-transparent"
+        className="pointer-events-none hidden md:block absolute inset-0 z-[1] bg-gradient-to-r from-white via-white/95 via-48% to-white/25"
       />
       {/* Mobile Legibility Scrim */}
       <div
         aria-hidden="true"
-        className="pointer-events-none md:hidden absolute inset-0 z-[1] bg-[#060911]/80"
+        className="pointer-events-none md:hidden absolute inset-0 z-[1] bg-white/88"
       />
 
       <div className="max-w-7xl mx-auto px-margin-mobile md:px-margin relative z-10">
-          <div className="max-w-2xl flex flex-col items-start text-left">
-            {/* Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/15 text-white mb-6 shadow-sm max-w-full">
-              <span className="w-2 h-2 rounded-full bg-[#0058bc] ring-2 ring-cyan-400/50 animate-pulse shrink-0"></span>
-              <span className="font-label-sm text-[10px] sm:text-label-sm uppercase tracking-widest font-bold text-white/95 truncate">
-                THREE MINDS. ONE VISION. — International Digital &amp; IT Agency
+        <div className="max-w-2xl flex flex-col items-start text-left">
+          {/* Eyebrow Badge */}
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/[0.04] backdrop-blur-md border border-slate-200 text-slate-800 mb-6 shadow-sm max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#0058bc] ring-2 ring-[#0058bc]/25 animate-pulse shrink-0"></span>
+            <span className="font-label-sm text-[10px] sm:text-label-sm uppercase tracking-widest font-bold text-slate-800 truncate">
+              THREE MINDS. ONE VISION. — International Digital &amp; IT Agency
+            </span>
+          </div>
+
+          {/* Main Executive Headline */}
+          <SplitText
+            tag="h1"
+            text="Engineering Digital Velocity for Modern Enterprises."
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-headline-xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.12]"
+            effect="flip"
+            splitType="words, chars"
+            delay={28}
+            duration={1.1}
+            staggerFrom="start"
+            trigger="load"
+            replayOnScroll
+            hoverEffect="none"
+            mask
+            textAlign="left"
+          />
+
+          {/* Concise Professional Subtitle */}
+          <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-slate-600 max-w-xl mb-8 leading-relaxed font-medium">
+            TRIVEX unifies enterprise software engineering, algorithmic performance marketing, and bespoke brand systems under one coordinated leadership triad. Zero silos. Pure execution velocity.
+          </p>
+
+          {/* Tactile CTAs */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
+            <Link
+              className="tactile-button inline-flex items-center justify-center font-label-lg text-label-lg bg-[#0058bc] hover:bg-[#004ba3] text-white px-7 py-3.5 rounded-xl shadow-lg shadow-[#0058bc]/25 group text-center transition-all"
+              href="/services"
+            >
+              <span>Explore Our Services</span>
+              <span className="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">
+                arrow_forward
               </span>
+            </Link>
+            <Link
+              className="inline-flex items-center justify-center font-label-lg text-label-lg bg-white/95 hover:bg-slate-50 border border-slate-300 text-slate-900 px-7 py-3.5 rounded-xl font-semibold text-center shadow-sm transition-all"
+              href="/our-team"
+            >
+              Meet The Founders
+            </Link>
+          </div>
+
+          {/* Bento Stat Tiles */}
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-9 mt-9 border-t border-slate-200 w-full max-w-lg">
+            <div className="bg-white/90 border border-slate-200 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl text-center sm:text-left shadow-sm">
+              <p className="text-xl sm:text-2xl lg:text-headline-md text-slate-900 font-extrabold tracking-tight">99.98%</p>
+              <p className="text-[10px] sm:text-label-sm uppercase tracking-wider text-slate-500 mt-1">Uptime</p>
             </div>
-
-            {/* Main Executive Headline */}
-            <SplitText
-              tag="h1"
-              text="Engineering Digital Velocity for Modern Enterprises."
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-headline-xl font-bold tracking-tight text-white mb-6 leading-[1.12]"
-              effect="flip"
-              splitType="words, chars"
-              delay={28}
-              duration={1.1}
-              staggerFrom="start"
-              trigger="load"
-              replayOnScroll
-              hoverEffect="none"
-              mask
-              textAlign="left"
-            />
-
-            {/* Concise Professional Subtitle */}
-            <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-white/80 max-w-xl mb-8 leading-relaxed font-medium">
-              TRIVEX unifies enterprise software engineering, algorithmic performance marketing, and bespoke brand systems under one coordinated leadership triad. Zero silos. Pure execution velocity.
-            </p>
-
-            {/* Tactile CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
-              <Link
-                className="tactile-button inline-flex items-center justify-center font-label-lg text-label-lg bg-[#0058bc] hover:bg-[#0070eb] text-white px-7 py-3.5 rounded-xl shadow-lg shadow-[#0058bc]/30 group text-center transition-all"
-                href="/services"
-              >
-                <span>Explore Our Services</span>
-                <span className="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">
-                  arrow_forward
-                </span>
-              </Link>
-              <Link
-                className="inline-flex items-center justify-center font-label-lg text-label-lg bg-white/[0.08] hover:bg-white/[0.16] backdrop-blur-md border border-white/20 text-white px-7 py-3.5 rounded-xl font-semibold text-center transition-all"
-                href="/our-team"
-              >
-                Meet The Founders
-              </Link>
+            <div className="bg-white/90 border border-slate-200 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl text-center sm:text-left shadow-sm">
+              <p className="text-xl sm:text-2xl lg:text-headline-md text-[#0058bc] font-extrabold tracking-tight">3.4x</p>
+              <p className="text-[10px] sm:text-label-sm uppercase tracking-wider text-slate-500 mt-1">Client Growth</p>
             </div>
-
-            {/* Bento Stat Tiles */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-9 mt-9 border-t border-white/15 w-full max-w-lg">
-              <div className="bg-white/[0.06] backdrop-blur-md border border-white/15 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl text-center sm:text-left">
-                <p className="text-xl sm:text-2xl lg:text-headline-md text-white font-extrabold tracking-tight">99.98%</p>
-                <p className="text-[10px] sm:text-label-sm uppercase tracking-wider text-white/70 mt-1">Uptime</p>
-              </div>
-              <div className="bg-white/[0.06] backdrop-blur-md border border-white/15 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl text-center sm:text-left">
-                <p className="text-xl sm:text-2xl lg:text-headline-md text-cyan-400 font-extrabold tracking-tight">3.4x</p>
-                <p className="text-[10px] sm:text-label-sm uppercase tracking-wider text-white/70 mt-1">Client Growth</p>
-              </div>
-              <div className="bg-white/[0.06] backdrop-blur-md border border-white/15 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl text-center sm:text-left">
-                <p className="text-xl sm:text-2xl lg:text-headline-md text-white font-extrabold tracking-tight">140+</p>
-                <p className="text-[10px] sm:text-label-sm uppercase tracking-wider text-white/70 mt-1">Deployments</p>
-              </div>
+            <div className="bg-white/90 border border-slate-200 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl text-center sm:text-left shadow-sm">
+              <p className="text-xl sm:text-2xl lg:text-headline-md text-slate-900 font-extrabold tracking-tight">140+</p>
+              <p className="text-[10px] sm:text-label-sm uppercase tracking-wider text-slate-500 mt-1">Deployments</p>
             </div>
           </div>
+        </div>
 
         {/* Interactive Technology Loop Bar */}
         <TechStackMarquee />

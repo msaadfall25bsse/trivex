@@ -77,20 +77,20 @@ const scrollsInside = (node: Element | null, stop: Element, delta: number) => {
 };
 
 const CARD_SHADOW = [
-  '0 0 0 1px rgba(255, 255, 255, 0.14)',
-  '0 -12px 40px -16px rgba(0, 0, 0, 0.55)',
-  '0 24px 48px -24px rgba(0, 0, 0, 0.65)'
+  '0 0 0 1px rgba(15, 23, 42, 0.06)',
+  '0 10px 28px -8px rgba(15, 23, 42, 0.12)',
+  '0 20px 40px -16px rgba(15, 23, 42, 0.08)'
 ].join(', ');
 
 export const ScrollStackItem = ({ children, itemClassName = '', style }: ScrollStackItemProps) => (
   <div
-    className={`relative box-border w-full origin-top rounded-[28px] will-change-transform ${itemClassName}`.trim()}
+    className={`relative box-border w-full origin-top rounded-3xl will-change-transform ${itemClassName}`.trim()}
     style={{ boxShadow: CARD_SHADOW, ...style }}
   >
     {children}
     <span
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 rounded-[inherit] bg-black opacity-[var(--scroll-stack-dim,0)] transition-opacity duration-75"
+      className="pointer-events-none absolute inset-0 rounded-[inherit] bg-slate-900 opacity-[var(--scroll-stack-dim,0)] transition-opacity duration-75"
     />
   </div>
 );
