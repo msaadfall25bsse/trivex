@@ -5,7 +5,7 @@ import { useState } from 'react';
 const serviceOptions = [
   { title: 'Software Development', desc: 'Cloud, Microservices, API' },
   { title: 'Digital Marketing', desc: 'Scale Growth, Performance' },
-  { title: 'Graphic Designing', desc: 'UI/UX Systems, Identity' },
+  { title: 'Video Editing', desc: '4K Post-Production, Reels, VFX' },
   { title: 'Full Integrated Solution', desc: 'End-to-End Execution' },
 ];
 

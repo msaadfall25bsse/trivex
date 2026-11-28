@@ -2,7 +2,7 @@ import GlassSlabSection from "@/components/layout/GlassSlabSection";
 import ScrollStack, { ScrollStackItem } from "@/components/home/ScrollStack";
 import SplitText from "@/components/home/SplitText";
 
-interface DesignScope {
+interface VideoScope {
   icon: string;
   title: string;
   desc: string;
@@ -10,40 +10,40 @@ interface DesignScope {
   spanTwo: boolean;
 }
 
-const designScopes: DesignScope[] = [
+const videoScopes: VideoScope[] = [
   {
-    icon: "auto_stories",
-    title: "Brand Identity",
-    desc: "Comprehensive corporate guidelines, color hierarchy matrices, accessibility-tested type scales, tone of voice rules, and cross-channel brand books.",
-    tags: ["Tokens", "Guidelines", "Brand Book"],
+    icon: "movie_edit",
+    title: "Commercial & Promotional Video Editing",
+    desc: "High-impact brand films, product launch promos, and corporate storytelling engineered to capture attention in the first three seconds.",
+    tags: ["Premiere Pro", "Storytelling", "4K Master"],
     spanTwo: false,
   },
   {
-    icon: "draw",
-    title: "Logo Design",
-    desc: "Mathematically balanced vector marks, responsive wordmarks, emblems, and app icon treatments engineered for legibility from 16px favicons to building billboards.",
-    tags: ["Vector Marks", "Scalable SVG", "Responsive"],
+    icon: "smart_display",
+    title: "YouTube, Reels & Short-Form Content",
+    desc: "Platform-optimized horizontal and vertical edits featuring retention-driven pacing, kinetic captions, and crisp sound design.",
+    tags: ["CapCut Pro", "YouTube Retention", "Reels / Shorts"],
     spanTwo: false,
   },
   {
-    icon: "perm_media",
-    title: "Social Media Graphics",
-    desc: "High-impact LinkedIn carousel decks, Twitter visual teasers, Instagram campaign systems, and modular Figma asset libraries for instant internal generation.",
-    tags: ["Carousels", "Figma Kits", "Templates"],
+    icon: "animation",
+    title: "Motion Graphics & Visual Effects",
+    desc: "Custom After Effects title sequences, lower thirds, UI callouts, seamless transitions, and 3D Blender motion compositions.",
+    tags: ["After Effects", "Blender 3D", "VFX & Transitions"],
     spanTwo: false,
   },
   {
-    icon: "campaign",
-    title: "Marketing Creatives",
-    desc: "High-converting programmatic display advertising packs, enterprise investor pitch presentations, trade show exhibits, and one-sheet PDF sales sheets.",
-    tags: ["Keynotes / Pitch", "Display Banners", "Print Production"],
+    icon: "gradient",
+    title: "Video Color Grading & Audio Mastering",
+    desc: "Cinematic DaVinci Resolve color grading, LUT calibration, skin-tone balancing, and broadcast-standard audio mixing.",
+    tags: ["DaVinci Resolve", "Color Grading", "Audio Mix"],
     spanTwo: false,
   },
   {
-    icon: "devices",
-    title: "UI/UX Design & Prototyping",
-    desc: "Frictionless user experiences validated by user journey mapping, low-fidelity wireframing, and pixel-precise interactive prototypes in Figma. Full design token systems synced directly into React component libraries.",
-    tags: ["Interactive Prototypes", "Figma Tokens", "User Testing", "WCAG AAA Compliance"],
+    icon: "video_settings",
+    title: "End-to-End Video Post-Production",
+    desc: "We transform raw footage into compelling visual stories through professional video editing, creative storytelling, motion graphics, and cinematic post-production—delivering consistent visual quality across every platform.",
+    tags: ["Multi-Cam Sync", "Proxy Workflows", "Broadcast Delivery", "Platform Optimization"],
     spanTwo: true,
   },
 ];
@@ -51,18 +51,18 @@ const designScopes: DesignScope[] = [
 const deliverySteps = [
   {
     step: "1",
-    title: "Concept Exploration",
-    desc: "Visual moodboarding, structural territory definition, typography pairing studies, and high-concept diverge sprints.",
+    title: "Ingest & Rough Cut",
+    desc: "Footage organization, proxy generation, narrative assembly, and pacing structure aligned with your campaign goals.",
   },
   {
     step: "2",
-    title: "Design Iterations",
-    desc: "Collaborative Figma walkthroughs, asynchronous Loom feedback loops, stress testing across dark/light contrast.",
+    title: "Motion, VFX & Color Grading",
+    desc: "After Effects motion graphics, seamless transitions, DaVinci Resolve color grading, and sound design refinement.",
   },
   {
     step: "3",
-    title: "Master Component Export",
-    desc: "Handover of production-ready vector assets, SVG sprite trees, dynamic design tokens, and comprehensive developer documentation.",
+    title: "Final Master & Multi-Format Export",
+    desc: "Frame-accurate review cycles and delivery in 4K landscape, 9:16 vertical Reels, and web-optimized formats.",
   },
 ];
 
@@ -82,15 +82,15 @@ const synergyCards = [
     src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCuDj-0WitwCfIYJprOdWehU69xnELbYqfODY3zIIjxL4zsPpoQNqIwuT0QccTjDbFw_9yYCSZdbvX0jLZyLD0PbbkSTpKHmg0dgg6J8bhf8wAt9x1tl1gcaLA9GlhS0srTuBFSCPr5D1btjWzhQLQcmsgeDuOVuGlJTtyuNaXJL1VsUrrOXCSm8pmm8aLHe9IEFNKgIaapsePanQcy3wnb6FbIRinpSZRcfpV9HNNE",
   },
   {
-    tag: "Design System",
-    title: "Figma-to-Code Pipeline",
-    desc: "Systemized modular components reducing frontend development cycle turnaround by 40%.",
-    alt: "Digital product design lead fine-tuning an enterprise design system in Figma",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCKKHAkBRgyFLMjQW0hhhfE8RVYQEOowHHUDKs_1rCRd9FUAEC0VUvI9mrHO1SuCjjpe1rC-5I68l3f9KCbE8BpQ9iYgp4icNnYXFw3FJE7pKnAh2BD9qTpO5WbbK1rduGpRD2_WdhPTg2xCqVmxJs5NE5hwHpDeMZSOTI9a2bKfzskIsz82XjZh9VfnyCQozYTQWmpmVTZ1Y9JD9fYZqcyAz5_S5Ak_yaeOtkCYkZS",
+    tag: "Video Editing",
+    title: "Cinematic Post-Production",
+    desc: "4K multi-track editing, After Effects motion graphics, and DaVinci color grading for high-retention campaigns.",
+    alt: "Professional video editing timeline and post-production studio workstation",
+    src: "/images/video-timeline-pro.jpg",
   },
 ];
 
-function DesignCard({ item }: { item: DesignScope }) {
+function VideoCard({ item }: { item: VideoScope }) {
   return (
     <div
       className={`bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow p-6 sm:p-7 rounded-3xl flex flex-col justify-between group h-full ${
@@ -129,21 +129,21 @@ function DesignCard({ item }: { item: DesignScope }) {
 export default function DesignDetail() {
   return (
     <>
-      <GlassSlabSection id="graphic-designing">
+      <GlassSlabSection id="video-editing">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-12 sm:mb-14">
           <div>
             <div className="flex items-center gap-2 text-[#0058bc] font-label-sm text-label-sm font-bold uppercase tracking-widest mb-2">
-              <span className="font-mono text-slate-500">03 / IDENTITY</span>
+              <span className="font-mono text-slate-500">03 / POST-PRODUCTION</span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#0058bc]"></span>
-              <span>Design Systems &amp; Visual Mastery</span>
+              <span>Storytelling, Motion &amp; Color Mastery</span>
             </div>
             <h2 className="font-headline-lg text-headline-lg text-slate-900">
-              <SplitText text="Comprehensive Graphic Designing" effect="flip" replayOnScroll />
+              <SplitText text="Professional Video Editing" effect="flip" replayOnScroll />
             </h2>
           </div>
           <p className="font-body-md text-body-md text-slate-600 max-w-xl font-medium">
-            Visual languages forged for enterprise recognition. Scalable design tokens, high-velocity marketing collateral, and uncompromising interface usability.
+            We transform raw footage into compelling visual stories through professional video editing, creative storytelling, motion graphics, and cinematic post-production.
           </p>
         </div>
 
@@ -160,9 +160,9 @@ export default function DesignDetail() {
             dimAmount={0.12}
             holdDistance={100}
           >
-            {designScopes.map((item) => (
+            {videoScopes.map((item) => (
               <ScrollStackItem key={item.title} itemClassName="!p-0 !bg-transparent">
-                <DesignCard item={item} />
+                <VideoCard item={item} />
               </ScrollStackItem>
             ))}
           </ScrollStack>
@@ -170,18 +170,18 @@ export default function DesignDetail() {
 
         {/* Scope Breakdown Grid (Desktop & Tablet) */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 sm:mb-12">
-          {designScopes.map((item) => (
-            <DesignCard key={item.title} item={item} />
+          {videoScopes.map((item) => (
+            <VideoCard key={item.title} item={item} />
           ))}
         </div>
 
-        {/* Creative Delivery Process Rail */}
+        {/* Video Delivery Process Rail */}
         <div className="w-full bg-[#f4f7fb] border border-slate-200 p-6 sm:p-8 md:p-10 rounded-3xl">
           <span className="font-label-sm text-label-sm text-[#0058bc] uppercase font-bold tracking-widest block mb-1">
             Execution Rhythm
           </span>
           <h3 className="font-headline-md text-headline-md text-slate-900 mb-6 font-bold">
-            Creative Delivery Process
+            Post-Production Delivery Process
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {deliverySteps.map((s) => (
@@ -214,7 +214,7 @@ export default function DesignDetail() {
               </h2>
             </div>
             <p className="font-body-sm text-body-sm text-slate-600 max-w-md font-medium">
-              How code, data intelligence, and visual craftsmanship merge into high-performing digital flagships.
+              How code, data intelligence, and cinematic video production merge into high-performing digital flagships.
             </p>
           </div>
 

@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us — TRIVEX Architecture Group",
   description:
-    "Born from a conviction that technology, growth, and design should function as a unified engine rather than fragmented silos.",
+    "Born from a conviction that software development, digital marketing, and video editing should function as a unified engine rather than fragmented silos.",
 };
 
 export default function AboutPage() {

@@ -18,7 +18,7 @@ export default function AboutOrigin() {
                 <SplitText text="Architected to eliminate the agency divide." effect="flip" replayOnScroll />
               </h2>
               <p className="font-body-md text-body-md text-slate-600 leading-relaxed mb-7 font-medium">
-                Traditional holding agencies isolate engineering, design, and marketing into disparate divisions. The result is chronic misalignment, duplicated budgets, and sluggish time-to-market.
+                Traditional holding agencies isolate engineering, video production, and marketing into disparate divisions. The result is chronic misalignment, duplicated budgets, and sluggish time-to-market.
               </p>
 
               {/* Founding Principle Callout */}
@@ -69,14 +69,14 @@ export default function AboutOrigin() {
               <div className="bg-[#f4f7fb] border border-slate-200 p-6 sm:p-7 rounded-3xl group hover:shadow-md transition-shadow">
                 <div className="flex items-start gap-4 sm:gap-5">
                   <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 text-slate-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                    <span className="material-symbols-outlined text-2xl">polyline</span>
+                    <span className="material-symbols-outlined text-2xl">movie_edit</span>
                   </div>
                   <div>
                     <h4 className="font-headline-sm text-headline-sm text-slate-900 mb-1.5 font-bold">
-                      Ergonomic Industrial-Grade Design
+                      Cinematic Video Editing &amp; Post-Production
                     </h4>
                     <p className="font-body-md text-body-md text-slate-600 leading-relaxed font-medium">
-                      Aesthetic polish serves cognitive speed. Every interaction pattern, typography hierarchy, and spatial rhythm is tailored to turn complex workflows into intuitive mechanics.
+                      Storytelling drives retention. Every frame, motion graphic, color grade, and transition is engineered to turn raw footage into compelling brand narratives.
                     </p>
                   </div>
                 </div>

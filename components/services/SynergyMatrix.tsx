@@ -21,18 +21,18 @@ const nodes: NodeItem[] = [
   {
     code: "Synthesis 02",
     icon: "all_inclusive",
-    title: "Marketing + Design",
+    title: "Marketing + Video Editing",
     description:
-      "Conversion rate data shapes the UI typography, layout friction points, and hero visuals to minimize bounce rates and build immediate brand conviction.",
-    outcome: "38% Higher In-Session Funnel Conversions",
+      "Conversion rate data shapes video hooks, pacing, and visual storytelling to maximize viewer retention and drive immediate brand conviction.",
+    outcome: "38% Higher Video Ad Engagement & Conversions",
   },
   {
     code: "Synthesis 03",
     icon: "token",
-    title: "Design + Software",
+    title: "Video Editing + Software",
     description:
-      "Tokenized component systems pass directly into production React/Native repos with zero design debt, ensuring pixel-perfect fidelity at scale.",
-    outcome: "60% Faster Time-To-Market from Mockup",
+      "Motion graphics, product walkthroughs, and optimized video assets integrate seamlessly into web platforms with zero playback lag.",
+    outcome: "60% Faster Campaign Launch & Load Speed",
   },
 ];
 
@@ -79,7 +79,7 @@ export default function SynergyMatrix() {
             <SplitText text="The Cross-Discipline Synergy Matrix" effect="flip" replayOnScroll />
           </h2>
           <p className="font-body-md text-body-md text-slate-600 font-medium">
-            Agencies traditionally silo engineering, marketing, and design. At TRIVEX, they reinforce one another simultaneously to drive unmatched compounding advantage.
+            Agencies traditionally silo engineering, marketing, and video production. At TRIVEX, they reinforce one another simultaneously to drive unmatched compounding advantage.
           </p>
         </div>
 

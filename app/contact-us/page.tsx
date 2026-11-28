@@ -8,7 +8,7 @@ import MistPageSections from '@/components/layout/MistPageSections';
 
 export const metadata = {
   title: 'Contact Us | TRIVEX',
-  description: 'Initiate contact with TRIVEX founding partners for enterprise software, digital marketing, and UI/UX engineering.',
+  description: 'Initiate contact with TRIVEX founding partners for enterprise software development, digital marketing, and professional video editing.',
 };
 
 export default function ContactUsPage() {

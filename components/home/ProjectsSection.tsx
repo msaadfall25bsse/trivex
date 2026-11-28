@@ -35,18 +35,17 @@ const projects = [
   },
   {
     id: "sovereign-aerospace",
-    badge: "Enterprise Architecture",
+    badge: "Video Production",
     badgeColor: "text-[#0058bc]",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDDUcJpp8frTWqHTEMs64hniQoZCQkajjhUZ05xeG6n2aEynaFl_Z02h26j2UBdyDhsgCVrXUB-T23YzH9ZU-eFYkzQ94A4wSDkYOyr9QunRcSspLCb8yj14c3rR-XhfKG3whljYUWwO4QPuDTjuDkfWCxmw7mteFTdBORUA6Ew7R6g5qWzqo5o1aNH9n9HOhlt2Qt05T6CIeV-OcP50MFfwreJ-hw5raQL09YD5oYc",
-    alt: "Corporate brand identity book and design system components",
-    title: "Sovereign Aerospace UI/UX Design System",
+    image: "/images/video-production-studio.jpg",
+    alt: "Dual-monitor video post-production workstation editing 4K brand films and short-form reels",
+    title: "Global Product Launch Film & Reels Suite",
     description:
-      "Crafted multi-platform design tokens and accessibility validated cockpit interface components for defense avionics.",
-    metric1Label: "System Components",
-    metric1Value: "480+",
-    metric2Label: "Adoption Velocity",
-    metric2Value: "3.2x",
+      "Produced and color-graded a high-impact 4K launch documentary alongside 45+ platform-optimized short-form reels.",
+    metric1Label: "Video Retention",
+    metric1Value: "78%+",
+    metric2Label: "Content Output",
+    metric2Value: "45+ Assets",
   },
 ];
 

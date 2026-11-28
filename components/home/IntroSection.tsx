@@ -29,14 +29,14 @@ export default function IntroSection() {
             </div>
             <div className="lg:col-span-7 flex flex-col gap-8">
               <p className="font-body-lg text-body-lg text-slate-600 leading-relaxed font-medium">
-                Most technology firms excel in deep engineering but outsource creative strategy. Creative agencies deliver stunning visuals but fail on high-concurrency cloud backends. Marketing consultancies optimize funnels without technical command of product velocity.
+                Most technology firms excel in deep engineering but outsource creative strategy. Production studios deliver compelling visuals but fail on high-concurrency cloud backends. Marketing consultancies optimize funnels without technical command of product velocity.
               </p>
 
               {/* Light Glass Triad Callout Panel */}
               <div className="p-8 bg-white rounded-3xl border border-slate-200 border-l-4 border-l-[#0058bc] shadow-lg relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-36 h-36 bg-[#0058bc]/5 rounded-full blur-2xl pointer-events-none"></div>
                 <p className="font-body-md text-body-md text-slate-800 font-semibold leading-relaxed relative z-10">
-                  TRIVEX operates on a direct triad: dedicated leadership over Technical Systems, Performance Acquisition, and Visual Brand Systems. One point of contact. Zero fragmented vendors. Guaranteed delivery.
+                  TRIVEX operates on a direct triad: dedicated leadership over Software Development, Digital Marketing, and Professional Video Editing. One point of contact. Zero fragmented vendors. Guaranteed delivery.
                 </p>
                 <div className="flex flex-wrap items-center gap-4 mt-6 pt-5 border-t border-slate-200 relative z-10 text-slate-700 font-label-sm text-label-sm uppercase tracking-wider">
                   <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-blue-50 text-[#0058bc] font-bold border border-blue-100">
@@ -46,7 +46,7 @@ export default function IntroSection() {
                     <span className="material-symbols-outlined text-base">trending_up</span> Growth
                   </span>
                   <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-blue-50 text-[#0058bc] font-bold border border-blue-100">
-                    <span className="material-symbols-outlined text-base">palette</span> Design
+                    <span className="material-symbols-outlined text-base">movie_edit</span> Video Editing
                   </span>
                 </div>
               </div>

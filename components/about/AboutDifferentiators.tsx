@@ -23,7 +23,7 @@ const differentiators: Differentiator[] = [
     icon: "sync_alt",
     title: "Synchronized Execution",
     description:
-      "Engineers sit alongside product designers and performance marketers. Features are built with data telemetry and UX ergonomics fully wired from inception.",
+      "Engineers sit alongside video editors and performance marketers. Campaigns and platforms are built with data telemetry and visual storytelling wired from inception.",
     impact: "Zero post-launch refactoring due to uncommunicated marketing requirements.",
   },
   {

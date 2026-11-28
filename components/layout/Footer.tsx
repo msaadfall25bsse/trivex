@@ -113,7 +113,7 @@ export default function Footer() {
             {[
               { name: "Software Development", href: "/services", icon: "terminal" },
               { name: "Digital Marketing & SEO", href: "/services", icon: "trending_up" },
-              { name: "Brand & UI/UX Systems", href: "/services", icon: "palette" },
+              { name: "Video Editing & Motion", href: "/services", icon: "movie_edit" },
               { name: "Technical Architecture", href: "/service-details", icon: "architecture" },
               { name: "Enterprise Consulting", href: "/contact-us", icon: "hub" },
             ].map((cap) => (

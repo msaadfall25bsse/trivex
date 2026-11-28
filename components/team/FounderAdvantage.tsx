@@ -14,14 +14,14 @@ const advantages: Advantage[] = [
     icon: "hub",
     label: "01 / Frictionless Flow",
     title: "Zero Delegation Gap",
-    desc: "Strategic decisions bypass intermediary account management layers. Decisions on systems, campaigns, and design protocols are made in real time by the founders responsible for delivering them.",
+    desc: "Strategic decisions bypass intermediary account management layers. Decisions on systems, campaigns, and video production protocols are made in real time by the founders responsible for delivering them.",
     footer: "Direct Partner Communications",
   },
   {
     icon: "interests",
     label: "02 / Tri-Core Synchronization",
     title: "Holistic Technical & Creative Alignment",
-    desc: "Code never contradicts design; branding never impairs performance; marketing campaigns never run ahead of platform capabilities. All three disciplines are integrated from day zero.",
+    desc: "Code never contradicts storytelling; video pacing drives campaign retention; marketing never runs ahead of platform capabilities. All three disciplines are integrated from day zero.",
     footer: "Synchronized Architecture",
   },
   {

@@ -12,7 +12,7 @@ export default function DetailMasthead() {
               Technical Specifications &amp; Service Breakdowns
             </h1>
             <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-slate-600 mt-4 max-w-2xl leading-relaxed font-medium">
-              Surgical execution across engineered web software, programmatic performance growth, and modular brand systems. Structured with algorithmic clarity for enterprise CTOs and commercial leaders.
+              Surgical execution across engineered web software, programmatic performance growth, and cinematic video editing. Structured with algorithmic clarity for enterprise CTOs and commercial leaders.
             </p>
           </div>
 
@@ -50,10 +50,10 @@ export default function DetailMasthead() {
           </a>
           <a
             className="flex-1 py-3 px-4 text-center rounded-xl font-label-lg text-label-lg text-slate-800 hover:text-[#0058bc] hover:bg-[#f4f7fb] transition-all flex items-center justify-center gap-2 font-bold"
-            href="#graphic-designing"
+            href="#video-editing"
           >
-            <span className="material-symbols-outlined text-[#0058bc] text-xl">palette</span>
-            <span>Graphic Designing</span>
+            <span className="material-symbols-outlined text-[#0058bc] text-xl">movie_edit</span>
+            <span>Video Editing</span>
           </a>
         </div>
       </div>

@@ -16,11 +16,11 @@ const processSteps = [
     step: "02",
     icon: "architecture",
     iconColor: "text-sky-600",
-    title: "Architecture & Design",
+    title: "Architecture & Storyboarding",
     description:
-      "Wireframe blueprints, microservice infrastructure modeling, brand design tokens, and technical documentation.",
-    footerIcon: "design_services",
-    footerLabel: "Interactive Prototype Gate",
+      "System blueprints, microservice infrastructure modeling, video storyboards, and technical documentation.",
+    footerIcon: "movie_edit",
+    footerLabel: "Prototype & Storyboard Gate",
   },
   {
     step: "03",

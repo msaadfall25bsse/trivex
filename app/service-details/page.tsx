@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Service Details — TRIVEX Technical Specifications",
   description:
-    "Technical specifications and service breakdowns across Software Development, Digital Marketing, and Graphic Designing.",
+    "Technical specifications and service breakdowns across Software Development, Digital Marketing, and Video Editing.",
 };
 
 export default function ServiceDetailsPage() {

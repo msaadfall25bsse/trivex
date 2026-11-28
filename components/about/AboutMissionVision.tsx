@@ -14,7 +14,7 @@ export default function AboutMissionVision() {
           </div>
         </div>
         <p className="font-headline-sm text-headline-sm text-slate-900 font-semibold leading-snug mb-6">
-          To empower ambitious enterprises with mission-critical software, data-backed digital marketing, and world-class design.
+          To empower ambitious enterprises with mission-critical software, data-backed digital marketing, and cinematic video editing.
         </p>
       </div>
       <div className="pt-5 border-t border-slate-200 flex items-center gap-2.5 text-slate-600">

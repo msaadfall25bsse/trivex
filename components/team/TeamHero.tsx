@@ -32,7 +32,7 @@ export default function TeamHero() {
               <span className="text-[#0058bc]">One Shared Vision.</span>
             </h1>
             <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-slate-600 max-w-2xl font-medium">
-              United across technology, marketing, and creative design to lead every client partnership directly from the top.
+              United across software development, digital marketing, and video editing to lead every client partnership directly from the top.
             </p>
           </div>
           <div className="lg:col-span-4 flex flex-col justify-end">
@@ -46,7 +46,7 @@ export default function TeamHero() {
                 </span>
               </div>
               <p className="font-body-sm text-body-sm text-slate-600 font-medium leading-relaxed">
-                Every system architecture, brand interface, and acquisition campaign is directly architected, authored, and verified by our founding partners.
+                Every system architecture, video production, and acquisition campaign is directly architected, authored, and verified by our founding partners.
               </p>
             </div>
           </div>

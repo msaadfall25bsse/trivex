@@ -18,7 +18,7 @@ const advantageCards = [
     iconColor: "text-sky-600",
     title: "Integrated Capabilities",
     description:
-      "Technology, creative design, and digital marketing work together to create cohesive solutions that support your business objectives.",
+      "Software development, digital marketing, and video editing work together to create cohesive solutions that support your business objectives.",
     badge: "Connected Solutions",
     badgeColor: "text-sky-600",
   },

@@ -63,22 +63,21 @@ const pillars: PillarConfig[] = [
   {
     id: "PILLAR 03",
     number: "03",
-    title: "Graphic Designing",
+    title: "Video Editing",
     description:
-      "Cohesive brand identity systems, ergonomic product UI/UX architectures, and precision visual assets.",
+      "We transform raw footage into compelling visual stories through professional video editing, creative storytelling, motion graphics, and cinematic post-production.",
     bullets: [
-      "Enterprise Design Systems & Token Libraries",
-      "High-Fidelity UI/UX Prototyping",
-      "Brand Identity Guidelines & Asset Creation",
-      "Interactive Motion & Vector Illustrations",
+      "Commercial, YouTube & Corporate Video Editing",
+      "Reels & Platform-Optimized Short-Form Content",
+      "Motion Graphics, Transitions & Visual Effects",
+      "Cinematic Color Grading & Post-Production",
     ],
-    linkText: "Discover Design Systems",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDDUcJpp8frTWqHTEMs64hniQoZCQkajjhUZ05xeG6n2aEynaFl_Z02h26j2UBdyDhsgCVrXUB-T23YzH9ZU-eFYkzQ94A4wSDkYOyr9QunRcSspLCb8yj14c3rR-XhfKG3whljYUWwO4QPuDTjuDkfWCxmw7mteFTdBORUA6Ew7R6g5qWzqo5o1aNH9n9HOhlt2Qt05T6CIeV-OcP50MFfwreJ-hw5raQL09YD5oYc",
-    imageAlt: "Enterprise UI/UX design system and brand identity components",
-    iconName: "palette",
+    linkText: "Explore Video Production",
+    image: "/images/video-timeline-pro.jpg",
+    imageAlt: "Professional video editing timeline and 4K post-production workstation",
+    iconName: "movie_edit",
     accentGradient: "from-[#0058bc] to-blue-400",
-    techTags: ["Design Tokens", "Figma Systems", "UI/UX Prototypes", "Brand Books", "3D Motion"],
+    techTags: ["Premiere Pro", "After Effects", "DaVinci Resolve", "CapCut Pro", "Blender"],
   },
 ];
 

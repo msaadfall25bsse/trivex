@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Services — TRIVEX Core Capabilities",
   description:
-    "Comprehensive solutions across Software Development, Digital Marketing, and Graphic Designing.",
+    "Comprehensive solutions across Software Development, Digital Marketing, and Video Editing.",
 };
 
 export default function ServicesPage() {

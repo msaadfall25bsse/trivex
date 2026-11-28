@@ -28,14 +28,14 @@ const values: ValueItem[] = [
     label: "03 / SYNCHRONY",
     title: "Integrated Thinking",
     description:
-      "Code, branding, and conversion are handled as a single interconnected system to avoid costly translation debt.",
+      "Code, video storytelling, and conversion are handled as a single interconnected system to avoid costly translation debt.",
   },
   {
     icon: "cached",
     label: "04 / CADENCE",
     title: "Continuous Evolution",
     description:
-      "Perpetual benchmarking against next-generation infrastructure, LLM integrations, and modern design systems.",
+      "Perpetual benchmarking against next-generation infrastructure, LLM integrations, and modern post-production pipelines.",
   },
 ];
 

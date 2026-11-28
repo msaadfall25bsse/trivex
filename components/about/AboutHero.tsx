@@ -18,7 +18,7 @@ export default function AboutHero() {
             </h1>
 
             <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-slate-600 max-w-2xl leading-relaxed font-medium">
-              Born from a conviction that technology, growth, and design should function as a unified engine rather than fragmented silos.
+              Born from a conviction that software development, digital marketing, and video editing should function as a unified engine rather than fragmented silos.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function AboutHero() {
                 Engineered Equilibrium
               </h3>
               <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed mb-6 font-medium">
-                We eliminated the latency between high-fidelity interface design, enterprise system stability, and data-backed scale engines.
+                We eliminated the latency between cinematic video storytelling, enterprise system stability, and data-backed scale engines.
               </p>
             </div>
             <div className="space-y-3 bg-[#f4f7fb] border border-slate-200 p-5 rounded-2xl">

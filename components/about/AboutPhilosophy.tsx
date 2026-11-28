@@ -115,10 +115,10 @@ export default function AboutPhilosophy() {
             <div className="relative min-h-[260px] overflow-hidden">
               <img
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                alt="Close up architectural detail of senior software and UI designers in a bright glass meeting room"
+                alt="Video post-production studio with dual monitors editing 4K footage and short-form reels"
                 loading="lazy"
                 decoding="async"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqYiOoW8cPxEyCpeb5EIGWtAUvznSE4SYAofr-TWVa2vps61ordMFSVoP6bcsKVaamPTCoxzzxWqZzNlN7cayd1sRRb6ObVHo53H4xQG5HXeJpEFcJ3z4nZlL24GRCXK2de2RAIlifx-r7W_lWFDu7LYu6PvcFLAhCP7SPLHhM5bW4W0C3uyRLYY8MuvJzsYraYFgUA7DzFuXfpHrd5FKv3Ra7jvrKvpY6PoCI0ogq"
+                src="/images/video-production-studio.jpg"
               />
             </div>
             <div className="bg-transparent p-8 sm:p-10 md:p-12 flex flex-col justify-center">
@@ -129,7 +129,7 @@ export default function AboutPhilosophy() {
                 Relentless Attention to Execution
               </h4>
               <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed font-medium">
-                By limiting concurrent enterprise partnerships, our discipline founders stay actively involved in codebase commits, design critiques, and high-stakes deployment releases.
+                By limiting concurrent enterprise partnerships, our discipline founders stay actively involved in codebase commits, post-production reviews, and high-stakes deployment releases.
               </p>
             </div>
           </div>

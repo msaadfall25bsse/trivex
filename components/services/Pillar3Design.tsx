@@ -3,42 +3,42 @@ import GlassSlabSection from "@/components/layout/GlassSlabSection";
 
 const modules = [
   {
-    icon: "auto_awesome",
-    title: "Brand Identity & Logo Systems",
-    desc: "Iconography, bespoke brand guidelines, typography hierarchies, and tactile tone.",
+    icon: "movie_edit",
+    title: "Commercial & Corporate Video Editing",
+    desc: "High-impact brand stories, promotional films, and executive communications.",
   },
   {
-    icon: "draw",
-    title: "UI/UX Product Design",
-    desc: "High-fidelity Figma prototypes, micro-interactions, and design systems for enterprise scale.",
+    icon: "smart_display",
+    title: "YouTube, Reels & Short-Form Content",
+    desc: "Platform-optimized cuts, dynamic pacing, captions, and retention-driven hooks.",
   },
   {
-    icon: "layers",
-    title: "Marketing & Campaign Assets",
-    desc: "Key visual suites, global pitch decks, conference experiences, and print ephemera.",
+    icon: "animation",
+    title: "Motion Graphics & Visual Effects",
+    desc: "Custom After Effects animations, smooth transitions, and 3D Blender motion.",
   },
   {
-    icon: "motion_photos_on",
-    title: "Motion Design & Design Systems",
-    desc: "3D product animations, tokenized component libraries, and unified multi-brand code-sync.",
+    icon: "gradient",
+    title: "Color Grading & Post-Production",
+    desc: "Cinematic DaVinci Resolve color grading, audio mastering, and 4K delivery.",
   },
 ];
 
 export default function Pillar3Design() {
   return (
-    <GlassSlabSection id="design-discipline">
+    <GlassSlabSection id="video-editing-discipline">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         {/* Left Narrative */}
         <div className="lg:col-span-6 flex flex-col">
           <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 bg-[#0058bc]/10 border border-[#0058bc]/20 text-[#0058bc] rounded-full font-label-sm text-label-sm uppercase font-bold mb-4">
-            <span className="material-symbols-outlined text-sm">palette</span>
-            Pillar 03 • Brand &amp; Interface
+            <span className="material-symbols-outlined text-sm">movie_edit</span>
+            Pillar 03 • Post-Production
           </div>
           <h2 className="font-headline-lg text-headline-lg text-slate-900 tracking-tight mb-4">
-            Graphic Designing
+            Video Editing
           </h2>
           <p className="font-body-lg text-body-lg text-slate-600 mb-8 leading-relaxed font-medium">
-            Memorable visual identities and human-centered user interfaces that elevate brand authority, inspire conviction, and drive effortless digital conversion.
+            We transform raw footage into compelling visual stories through professional video editing, creative storytelling, motion graphics, and cinematic post-production.
           </p>
 
           {/* Module List */}
@@ -70,75 +70,79 @@ export default function Pillar3Design() {
 
           <Link
             className="inline-flex items-center gap-2 font-label-lg text-label-lg text-[#0058bc] font-bold hover:gap-3 transition-all duration-200 self-start"
-            href="/service-details"
+            href="/service-details#video-editing"
           >
-            View Design Details
+            View Video Editing Details
             <span className="material-symbols-outlined text-base">arrow_forward</span>
           </Link>
         </div>
 
-        {/* Right Creative UI/UX Showcase */}
+        {/* Right Video Production Showcase */}
         <div className="lg:col-span-6">
           <div className="bg-[#f4f7fb] border border-slate-200 rounded-3xl p-5 sm:p-7 relative overflow-hidden">
-            {/* Canvas Simulation Bar */}
+            {/* Timeline Simulation Bar */}
             <div className="flex items-center justify-between mb-4 bg-white border border-slate-200 rounded-2xl p-3.5">
               <div className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-[#0058bc] text-xl">design_services</span>
+                <span className="material-symbols-outlined text-[#0058bc] text-xl">movie_edit</span>
                 <span className="font-label-sm text-label-sm font-bold text-slate-900 uppercase tracking-wider">
-                  TRIVEX UI Design System v4.8
+                  TRIVEX Post-Production Suite
                 </span>
               </div>
-              <span className="font-label-sm text-label-sm text-primary font-mono font-bold">
-                100% Tokenized
+              <span className="font-label-sm text-label-sm text-[#0058bc] font-mono font-bold">
+                4K / 60fps Master
               </span>
             </div>
 
-            {/* Bento Design Preview Cards */}
+            {/* Bento Video Preview Cards */}
             <div className="grid grid-cols-2 gap-4 mb-4">
-              <div className="relative rounded-2xl overflow-hidden h-44 border border-white/50 shadow-sm">
+              <div className="relative rounded-2xl overflow-hidden h-44 border border-slate-200 shadow-sm">
                 <img
                   className="w-full h-full object-cover"
-                  alt="Sophisticated typography specimen booklet and branding kit"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP3FRmy_VBKe8mmx6c28tG78oJ7zsDP0zs84saT9GRuzjBuAZuBpLqP1dNSzzAzgZNbgPwmCN8lRZFogoZVKopSdhNK_yG5POghYH95m0Vr-9QKkUkP0LS-gLLnkQa-kQQu2anyBly2hWv_T70L3knE1cHCT2j6aU24LpO2xtHbLttiOHvrmVGf6G7WCYuuUcu202bzUPW2uNyR5oqK5cuxrc3njDg_GomHFQPYGGZ"
+                  alt="Adobe Premiere Pro multi-track video editing timeline workspace"
+                  loading="lazy"
+                  decoding="async"
+                  src="/images/video-timeline-pro.jpg"
                 />
-                <div className="absolute bottom-2.5 left-2.5 bg-white/75 backdrop-blur-xl border border-white/90 px-2.5 py-1 rounded-full text-xs font-bold text-on-surface shadow-sm">
-                  Brand Guides
+                <div className="absolute bottom-2.5 left-2.5 bg-white/90 backdrop-blur-md border border-slate-200 px-2.5 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">
+                  Timeline &amp; Cuts
                 </div>
               </div>
-              <div className="relative rounded-2xl overflow-hidden h-44 border border-white/50 shadow-sm">
+              <div className="relative rounded-2xl overflow-hidden h-44 border border-slate-200 shadow-sm">
                 <img
                   className="w-full h-full object-cover"
-                  alt="Futuristic software interface component library in high resolution"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUjAqSBjQLqXnpVIXmESXpot2OYvSroYY4a7_2LeUWD3mWF8Fc9i6uh3lLGalxfsL5xr56wCSbhRc_R8NJqPLIAwxV0BNh_oNp2v_NLsvyK6XiVuZU87m3khsjzNxJq0hFtkKITwHTR3wp2lh1bNbpRwTsWaQskFgfk6fnq-_immoqrmmoXh78ZUm-zYIlEPNT3raBnMoEE5lZdF_peZUI5co6jvZDIRQTB02DaXQD"
+                  alt="Dual-monitor video post-production and color grading studio"
+                  loading="lazy"
+                  decoding="async"
+                  src="/images/video-production-studio.jpg"
                 />
-                <div className="absolute bottom-2.5 left-2.5 bg-white/75 backdrop-blur-xl border border-white/90 px-2.5 py-1 rounded-full text-xs font-bold text-on-surface shadow-sm">
-                  UI Kit 4.8
+                <div className="absolute bottom-2.5 left-2.5 bg-white/90 backdrop-blur-md border border-slate-200 px-2.5 py-1 rounded-full text-xs font-bold text-slate-900 shadow-sm">
+                  Reels &amp; Color
                 </div>
               </div>
             </div>
 
-            {/* Interactive Token Display Strip */}
-            <div className="p-4 glass-subcard rounded-2xl">
+            {/* Production Toolchain Strip */}
+            <div className="p-4 bg-white border border-slate-200 rounded-2xl">
               <div className="flex justify-between items-center mb-3">
-                <span className="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant">
-                  Token Swatches
+                <span className="font-label-sm text-label-sm uppercase font-bold text-slate-600">
+                  Production Pipeline
                 </span>
-                <span className="font-label-sm text-label-sm text-primary font-bold">
-                  WCAG AAA Certified
+                <span className="font-label-sm text-label-sm text-[#0058bc] font-bold">
+                  Broadcast &amp; Social Ready
                 </span>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                <div className="h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary font-mono text-xs font-bold shadow-sm">
-                  #0058BC
+                <div className="h-9 rounded-xl bg-[#0058bc] flex items-center justify-center text-white font-mono text-xs font-bold shadow-sm">
+                  Premiere Pro
                 </div>
-                <div className="h-9 rounded-xl bg-on-background flex items-center justify-center text-surface-container-lowest font-mono text-xs font-bold shadow-sm">
-                  #0D1C2E
+                <div className="h-9 rounded-xl bg-slate-900 flex items-center justify-center text-white font-mono text-xs font-bold shadow-sm">
+                  After Effects
                 </div>
-                <div className="h-9 rounded-xl bg-surface-container flex items-center justify-center text-primary font-mono text-xs font-bold shadow-sm">
-                  #E6EEFF
+                <div className="h-9 rounded-xl bg-[#f4f7fb] border border-slate-200 flex items-center justify-center text-[#0058bc] font-mono text-xs font-bold">
+                  DaVinci
                 </div>
-                <div className="h-9 rounded-xl bg-secondary-container flex items-center justify-center text-secondary font-mono text-xs font-bold shadow-sm">
-                  #DBE2F8
+                <div className="h-9 rounded-xl bg-[#f4f7fb] border border-slate-200 flex items-center justify-center text-slate-800 font-mono text-xs font-bold">
+                  CapCut Pro
                 </div>
               </div>
             </div>

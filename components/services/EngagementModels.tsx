@@ -21,7 +21,7 @@ const models: Model[] = [
     eyebrow: "Squad Integration",
     title: "Dedicated Squads",
     description:
-      "Full-stack autonomous teams (Architect, Tech Lead, Senior UI/UX, Growth Strategist) embedded directly into your operational rhythm.",
+      "Full-stack autonomous teams (Architect, Tech Lead, Senior Video Editor, Growth Strategist) embedded directly into your operational rhythm.",
     features: [
       "Sprint-by-sprint continuous delivery",
       "Immediate bandwidth scaling",
@@ -36,7 +36,7 @@ const models: Model[] = [
     eyebrow: "Fixed Scope & Target",
     title: "End-to-End Delivery",
     description:
-      "Full lifecycle design, engineering, and rollout with strict milestone governance, predictable pricing, and ironclad execution SLAs.",
+      "Full lifecycle engineering, video production, and growth rollout with strict milestone governance, predictable pricing, and ironclad execution SLAs.",
     features: [
       "Turnkey roadmap from Discovery to Launch",
       "Defined scope, timeline, and cost ceiling",
@@ -51,7 +51,7 @@ const models: Model[] = [
     eyebrow: "Always-On Advisory",
     title: "Strategic Retainers",
     description:
-      "Ongoing advisory, architecture oversight, campaign optimization, and incremental design evolution with priority SLA access.",
+      "Ongoing advisory, architecture oversight, campaign optimization, and continuous video production with priority SLA access.",
     features: [
       "Fractional CTO & CMO counsel",
       "Guaranteed monthly resource allocation",

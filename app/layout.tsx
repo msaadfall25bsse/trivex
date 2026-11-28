@@ -15,7 +15,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "TRIVEX — International Digital & IT Agency",
   description:
-    "TRIVEX unifies software engineering, high-impact performance marketing, and bespoke brand design under one coordinated leadership team. No silos. Just enterprise execution.",
+    "TRIVEX unifies Software Development, Digital Marketing, and Professional Video Editing under one coordinated leadership team. No silos. Just enterprise execution.",
   icons: {
     icon: "/trivex-logo.png",
     shortcut: "/trivex-logo.png",

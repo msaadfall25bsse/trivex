@@ -3,15 +3,15 @@ import GlassSlabSection from "@/components/layout/GlassSlabSection";
 const points = [
   {
     title: "Continuous Cross-Domain Peer Review",
-    desc: "Design reviews code efficiency; engineers evaluate UX accessibility; marketing measures data telemetry on every interface.",
+    desc: "Video leads review visual storytelling; engineers evaluate web playback performance; marketing measures viewer retention on every campaign.",
   },
   {
     title: "Daily Founder Executive Huddles",
-    desc: "Active roadmaps across engineering, growth, and creative tracks are synchronized daily at 09:00 UTC for unified cadence.",
+    desc: "Active roadmaps across engineering, growth, and video production tracks are synchronized daily at 09:00 UTC for unified cadence.",
   },
   {
-    title: "Unified Design-to-Production Pipeline",
-    desc: "Zero assets or codebases leave TRIVEX without the joint cryptographic verification and sign-off of all three discipline leads.",
+    title: "Unified Production-to-Launch Pipeline",
+    desc: "Zero assets or codebases leave TRIVEX without the joint quality verification and sign-off of all three discipline leads.",
   },
 ];
 
@@ -28,7 +28,7 @@ export default function CollaborationPhilosophy() {
               Team Collaboration Philosophy
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant mb-6 font-medium">
-              Under the direct, hands-on supervision of our three founders, our specialized engineering squads, performance marketing strategists, and UI/UX designers operate not as isolated silos, but as a unified cross-disciplinary unit.
+              Under the direct, hands-on supervision of our three founders, our specialized engineering squads, performance marketing strategists, and video editors operate not as isolated silos, but as a unified cross-disciplinary unit.
             </p>
             <div className="space-y-4">
               {points.map((pt) => (
@@ -89,11 +89,11 @@ export default function CollaborationPhilosophy() {
                     <text fill="#0058bc" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="110" y="217">MARKETING</text>
                     <text fill="#414754" fontFamily="Plus Jakarta Sans" fontSize="8" textAnchor="middle" x="110" y="230">Head of Growth</text>
                   </g>
-                  {/* Node 3: Creative */}
+                  {/* Node 3: Video Editing */}
                   <g className="cursor-pointer group">
                     <circle cx="390" cy="220" fill="rgba(255,255,255,0.75)" r="32" stroke="currentColor" strokeWidth="2"></circle>
-                    <text fill="#0058bc" fontFamily="Plus Jakarta Sans" fontSize="12" fontWeight="700" textAnchor="middle" x="390" y="217">DESIGN</text>
-                    <text fill="#414754" fontFamily="Plus Jakarta Sans" fontSize="8" textAnchor="middle" x="390" y="230">Head of Creative</text>
+                    <text fill="#0058bc" fontFamily="Plus Jakarta Sans" fontSize="11" fontWeight="700" textAnchor="middle" x="390" y="217">VIDEO EDIT</text>
+                    <text fill="#414754" fontFamily="Plus Jakarta Sans" fontSize="8" textAnchor="middle" x="390" y="230">Head of Video</text>
                   </g>
                 </svg>
               </div>

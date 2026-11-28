@@ -125,7 +125,7 @@ export default function AgencyInfo() {
               />
               <img
                 className="w-9 h-9 rounded-full object-cover ring-2 ring-white/80"
-                alt="Executive design director"
+                alt="Executive video production director"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcyL6ZTFCTaxPT8ISrC5t_xy8MCwgBuUzu9pLw6q_FllZagiNxaWualVvOMhZE1a8UeUdJwo5BiEACcr1e0Rqq49mpy938aBoK6VpbVlwP0yrgqMgLWcFXmsU5W0Sh5wMqbGaojvte64D0zGrkkddw-jRwHJbF0ll2kNIE_YW2lcOIQ43Skgv2Oo3wP36rAN9b1PdFNNjDSc4n05RF24pInnrXbT7XOXTt7cnMwgGn"
               />
             </div>
@@ -150,7 +150,7 @@ export default function AgencyInfo() {
               { label: 'LinkedIn', icon: 'work' },
               { label: 'X Twitter', icon: 'tag' },
               { label: 'GitHub', icon: 'code' },
-              { label: 'Behance', icon: 'palette' },
+              { label: 'Showreel', icon: 'movie_edit' },
             ].map((soc) => (
               <a
                 key={soc.label}

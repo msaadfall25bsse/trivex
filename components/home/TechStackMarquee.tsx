@@ -236,46 +236,6 @@ const techItems: TechItem[] = [
     ),
   },
   {
-    name: "Figma",
-    category: "Video Editing",
-    discipline: "video",
-    tag: "UI/UX & Tokens",
-    hoverColor: "#a259ff",
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24">
-        <path fill="#f24e1e" d="M9 2h6v5H9z"/>
-        <path fill="#a259ff" d="M9 7h6v5H9z"/>
-        <path fill="#0acf83" d="M9 12a2.5 2.5 0 0 0 0 5h6v-5H9z"/>
-        <circle cx="15" cy="9.5" r="2.5" fill="#1abcfe"/>
-        <circle cx="9" cy="19.5" r="2.5" fill="#f24e1e"/>
-      </svg>
-    ),
-  },
-  {
-    name: "Adobe Illustrator",
-    category: "Video Editing",
-    discipline: "video",
-    tag: "Vector Brand Systems",
-    hoverColor: "#ea580c",
-    icon: (
-      <div className="w-5 h-5 bg-[#330000] text-[#ff9a00] rounded font-bold text-[10px] flex items-center justify-center border border-[#ff9a00]/40">
-        Ai
-      </div>
-    ),
-  },
-  {
-    name: "Adobe Photoshop",
-    category: "Video Editing",
-    discipline: "video",
-    tag: "Creative Compositing",
-    hoverColor: "#0284c7",
-    icon: (
-      <div className="w-5 h-5 bg-[#001e36] text-[#31a8ff] rounded font-bold text-[10px] flex items-center justify-center border border-[#31a8ff]/40">
-        Ps
-      </div>
-    ),
-  },
-  {
     name: "Blender 3D",
     category: "Video Editing",
     discipline: "video",

@@ -130,24 +130,24 @@ export default function TeamPreviewSection() {
             <div className="flex flex-col flex-1 justify-between gap-5 px-1">
               <div>
                 <span className="font-label-sm text-label-sm uppercase tracking-wider text-[#0058bc] font-bold block mb-1">
-                  CORE DOMAIN: CREATIVE
+                  CORE DOMAIN: VIDEO PRODUCTION
                 </span>
                 <h3 className="font-headline-sm text-headline-sm text-slate-900 font-bold group-hover:text-[#0058bc] transition-colors">
                   Elena Rostova
                 </h3>
                 <p className="font-label-md text-label-md text-slate-500 mb-3 font-semibold">
-                  Head of Brand &amp; UX Architecture
+                  Head of Video Editing &amp; Post-Production
                 </p>
                 <p className="font-body-sm text-body-sm text-slate-600 leading-relaxed font-medium">
-                  Multi-award-winning product designer behind design systems powering enterprise SaaS and Fortune 500 mobile apps.
+                  Award-winning post-production director crafting cinematic brand films, motion graphics, and high-retention video campaigns.
                 </p>
               </div>
               <div className="flex items-center gap-2 pt-4 border-t border-slate-200">
                 <span className="px-3 py-1.5 rounded-xl bg-slate-100 text-xs font-mono text-slate-700 font-medium border border-slate-200">
-                  Design Tokens
+                  Color Grading
                 </span>
                 <span className="px-3 py-1.5 rounded-xl bg-slate-100 text-xs font-mono text-slate-700 font-medium border border-slate-200">
-                  Interaction Systems
+                  Motion &amp; VFX
                 </span>
               </div>
             </div>

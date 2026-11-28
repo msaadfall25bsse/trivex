@@ -21,9 +21,9 @@ const faqs = [
       "Clients receive live access to a custom Looker Studio dashboard connected to BigQuery, providing real-time ROAS, CPL, search visibility indexes, and organic rank movement. In addition to daily dashboard availability, we conduct bi-weekly sprint reviews with your marketing stakeholders to unpack cohort trends, discuss CRO test variants, and reallocate capital to the highest-yielding ad channels.",
   },
   {
-    question: "How are revisions and creative direction handled during design sprints?",
+    question: "How are revisions and feedback handled during video editing sprints?",
     answer:
-      "Our design deliverables are never static surprises. We provide dynamic Figma prototypes with designated feedback boards. Each phase includes up to three structured revision cycles with clear criteria based on user experience benchmarks rather than subjective conjecture. Upon final sign-off, our designers run a formal developer handoff review to ensure 100% parity in code implementation.",
+      "Our video post-production deliverables are structured around clear milestones. We share frame-accurate review links for rough cuts, motion graphics, and color grading. Each phase includes structured revision rounds so pacing, transitions, and platform exports (YouTube, Reels, Shorts) are finalized cleanly on schedule.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function FaqSection() {
           <SplitText text="Frequently Asked Questions" effect="flip" replayOnScroll />
         </h2>
         <p className="font-body-md text-body-md text-slate-600 mt-3 max-w-xl mx-auto font-medium">
-          Clear answers on delivery timelines, engineering selections, reporting intervals, and design iteration protocols.
+          Clear answers on delivery timelines, engineering selections, reporting intervals, and video post-production protocols.
         </p>
       </div>
 

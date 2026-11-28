@@ -30,7 +30,7 @@ export default function ServicesHero() {
             Disciplines.
           </h1>
           <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-slate-600 max-w-2xl leading-relaxed font-medium">
-            From enterprise software architecture to measurable customer acquisition and distinct brand identity systems. Engineered in lockstep for global market leaders.
+            From enterprise software architecture to measurable customer acquisition and cinematic video editing. Engineered in lockstep for global market leaders.
           </p>
 
           {/* Bento KPI Strip */}
